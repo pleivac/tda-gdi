@@ -1,0 +1,466 @@
+// ---------------------------------------------funciones jquery para di --inicio--
+
+$(document).ready(function(){
+
+    $('#div_programa_curso #tabs').tabs();
+    $('#div_ayuda_di #tabs').tabs();
+    $('#div_contexto_di #tabs').tabs();
+    //Genera la matriz del DI, que estará en memoria
+    di_matriz = jQuery.makeArray();
+    inicio_fila = 0;
+    total_fila = parseInt($('#instructional_design tr').length - 1);
+    total_column = parseInt($('#menu_opciones li').length);
+    celdas_totales = total_fila * total_column;
+    //llena la matriz con espacios en blanco
+    for(inicio_fila = 0; inicio_fila < total_fila; inicio_fila++) {
+        var sesion_di = jQuery.makeArray();
+        var inicio_column = 0;
+        for (inicio_column = 0; inicio_column < total_column; inicio_column++) {
+            sesion_di[inicio_column] = '';
+        }
+        di_matriz[inicio_fila] = sesion_di;
+    }
+    //Verifica si se invoco la pagina para ver el programa del curso o es directamente al di.
+    $(function(){    
+        var opcion = obtener_parametros_url()[0].split('=');
+        //opcion=0 == Ver programa curso.
+        //opcion=1 == Matriz DI. 
+        if(opcion[0] == "opcion"){
+            switch (opcion[1]) {
+            case "0":
+                $('#contenedor #div_programa_curso').css('display','none');
+                $('#contenedor #di').css('display','block');  
+                
+                $('#menu #guardar').attr('src', '/resources/tda-gdi/images/iconos/guardar.png');
+                $('#menu #guardar').addClass('menu_items');
+                $('#menu #guardar').removeClass('inhabilitado');
+        
+                $('#menu #vista_previa').attr('src', '/resources/tda-gdi/images/iconos/vista_previa.png');
+                $('#menu #vista_previa').addClass('menu_items');
+                $('#menu #vista_previa').removeClass('inhabilitado');
+                
+                $('#menu #compartir').attr('src', '/resources/tda-gdi/images/iconos/compartir.png');
+                $('#menu #compartir').addClass('menu_items');
+                $('#menu #compartir').removeClass('inhabilitado');
+                
+                $('#menu #programa_curso').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso.png');
+                $('#menu #programa_curso').addClass('menu_items');
+                $('#menu #programa_curso').removeClass('inhabilitado');
+                
+                $('#menu #contexto_di').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso.png');
+                $('#menu #contexto_di').addClass('menu_items');
+                $('#menu #contexto_di').removeClass('inhabilitado');
+                
+                $('#menu #ayuda').attr('src', '/resources/tda-gdi/images/iconos/ayuda.png');
+                $('#menu #ayuda').addClass('menu_items');
+                $('#menu #ayuda').removeClass('inhabilitado');
+                break
+           }
+        }
+    });
+    //indica que el div con id progressbar es una barra de progreso en 0.
+	$( "#progressbar" ).progressbar({
+		value: 0
+	});
+/*mueve el wizar y la flecha que señala la sesión que se está editando ------- inicio ---*/
+    $('#instructional_design tr:not(:first) td').click(function(){
+        //toma la posición de la columna con el número de sesion.
+        var objetivo = $(this).parent().find('.sesion').offset();
+        //toma la posicion de la primer fila, para usarla como base.
+        var incioWizard = $('#instructional_design tr .sesion:first').offset();
+        //toma el largo del wizard, para validar cuando este sea más pequeño que la tabla.
+        var largoWizard = $('#wizard').innerHeight();
+        //toma la posición de la fila que se quiere editar.
+        var fila = $(this).parent().find('.sesion').offset();
+        //valor de la posición inicial del wizard en Y
+        var incioWizardY = incioWizard.top - 20;
+        //valor de la posición inicial del wizard en X
+        var incioWizardX = incioWizard.left + 50;
+        //valor de la posición inicial de la flecha en Y
+        var flechaY = fila.top + 7;
+        //valor de la posición inicial de la flecha en X
+        var flechaX = incioWizardX -19;
+        //valida que si el click está más abajo del borde inferior del wizard+30, baje lo necesario, para que la flecha 
+        //siga dentro del wizard
+        if( flechaY + 30 > incioWizardY + largoWizard ){
+        // lo debe de bajar es: (la posición Y del click + 30) - (el punto inicial del wizard en Y + el largo del wizard)
+            incioWizardY = incioWizardY + ((flechaY + 30) - (incioWizardY + largoWizard));
+        }
+        //setea las posiciones del wizard y la flecha.
+        $('#wizard').css('top',incioWizardY);      
+        $('#wizard').css('left',incioWizardX);  
+        $('#arrow').css('top', flechaY);
+        $('#arrow').css('left', flechaX);        
+        //marca la opción del wizar correspondiente, según la celda clickleada en el wizard
+        $('#wizard #menu_opciones li').removeClass('seleccionado');
+        var column = $(this).attr('id') - 2;
+        //cambia el texto del encabezado
+        $('#encabezado #encabezado_sesion').text($('#instructional_design tr:first th:first').text());
+        //si da click en las 2 primeras columnas
+        if (column < 0) {
+            //agrega la clase correspondiente a la seleccion
+            $('#wizard #menu_opciones li:first').addClass('seleccionado');
+            //cambia el texto del numero de sesion
+            $('#encabezado #encabezado_num_sesion').text($(this).parent().find('.sesion').text());
+            //cambia el texto del componente
+            $('#encabezado #encabezado_act_sesion').text(' / '+$('#wizard #menu_opciones li:first').text());
+        //si da click en cualquier otra columna
+        }else {
+            //agrega la clase correspondiente a la seleccion
+            $('#wizard #menu_opciones li:gt('+column+'):first').addClass('seleccionado');
+            //cambia el texto del numero de sesion
+            $('#encabezado #encabezado_num_sesion').text($(this).parent().find('.sesion').text());
+            //cambia el texto del componente
+            $('#encabezado #encabezado_act_sesion').text(' / '+$('#wizard #menu_opciones li:gt('+column+'):first').text());
+        }
+        //pone el valor correspondiente a la celda seleccionada.
+        var id = parseInt($('#menu_opciones .seleccionado').attr('id'));
+        $('#txt_observaciones').val(actualizar_contenido(id));
+        //hace visible el wizard
+        $('#wizard').show('slow');
+        $('#arrow').show('slow');
+        //igualar tamaños --debe ir despues de mostrarlo
+        var size = $('#contenido_wizard').height();
+        $('#menu_wizard').height(size);
+        //agrega la clase bandera que indica a la hora de ver el programa del curso, si esta visible o no.
+        $('#wizard').addClass('visible');                
+    });
+/*mueve el wizar y la flecha que señala la sesión que se está editando ------- fin ---*/
+    
+    
+
+/*se mueve dentro del wizard -------------------------------------------------------- inicio ---*/
+    //cierra el wizard, guarda, actualiza, verifica el final, mueve el progressbar...
+    $('#encabezado .cerrar').click(function(){
+        var value = $('#txt_observaciones').val();
+        var id = parseInt($('#menu_opciones .seleccionado').attr('id'));
+        salvar_contenido(id,value);
+       $('#txt_observaciones').val('');
+        $('#wizard').hide('slow');
+        $('#arrow').hide('slow');
+        //quita la clase bandera que indica a la hora de ver el programa del curso, si esta visible o no.
+        $('#wizard').removeClass('visible');
+        completado();
+    });
+    //se encarga de "caminar" en el wizard hacie adelante
+    $('#encabezado .siguiente').click(function(){
+        var id = parseInt($('#menu_opciones .seleccionado').attr('id'));
+        var total = $('#menu_opciones li').length;
+        var value = $('#txt_observaciones').val();       
+        if(id < total) {
+            salvar_contenido(id,value);
+            $('#txt_observaciones').val('');
+            $('#menu_opciones li:eq('+(id -1)+')').removeClass('seleccionado');
+            $('#menu_opciones li:eq('+id+')').addClass('seleccionado');
+            //cambia el texto del componente
+            $('#encabezado #encabezado_act_sesion').text($('#menu_opciones .seleccionado').find('span').text());
+            $('#txt_observaciones').val(actualizar_contenido(id+1));
+        }
+        completado();
+    });
+    //se encarga de "caminar" en el wizard hacie atrás
+    $('#encabezado .anterior').click(function(){
+        var id = parseInt($('#menu_opciones .seleccionado').attr('id'));
+        var total = $('#menu_opciones li').length;
+        var value = $('#txt_observaciones').val();
+        if(id > 1) {
+            salvar_contenido(id,value);
+            $('#txt_observaciones').val('');
+            $('#menu_opciones li:eq('+(id-1)+')').removeClass('seleccionado');
+            $('#menu_opciones li:eq('+(id-2)+')').addClass('seleccionado');
+            //cambia el texto del componente
+            $('#encabezado #encabezado_act_sesion').text($('#menu_opciones .seleccionado').find('span').text());
+            $('#txt_observaciones').val(actualizar_contenido(id-1));
+        }
+        completado();
+    });
+    //cambia el estilo de la opcion seccionada
+    $('#menu_opciones li').click(function(){
+        var id = parseInt($('#menu_opciones .seleccionado').attr('id'));
+        salvar_contenido(id,$('#txt_observaciones').val());
+        //cambia el texto del componente
+        $('#encabezado #encabezado_act_sesion').text($(this).find('.menu_wizard_item_texto').text());
+        $('#menu_opciones li').removeClass('seleccionado');
+        $(this).addClass('seleccionado');
+        var id = parseInt($('#menu_opciones .seleccionado').attr('id'));
+        $('#txt_observaciones').val(actualizar_contenido(id));
+        completado();
+    });
+/*se mueve dentro del wizard -------------------------------------------------------- fin ---*/
+    
+    
+/*barra de menú, íconos -------------------------------------------------------- inicio ---*/
+    //Hace el switch entre el programa del curso y el diseño instruccional
+    $('#menu #programa_curso').click(function(){
+        $('#contenedor #div_programa_curso #boton_siguiente').css('display','none'); 
+        if(!$('#menu #programa_curso').hasClass('inhabilitado')){       
+            if($('#contenedor #di').css('display') == 'none'){
+               
+                $('#menu #programa_curso').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso.png');
+               
+                $('#menu #ayuda').attr('src', '/resources/tda-gdi/images/iconos/ayuda.png');
+                $('#menu #ayuda').addClass('menu_items');
+                $('#menu #ayuda').removeClass('inhabilitado');
+                
+
+                $('#menu #contexto_di').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso.png');
+                $('#menu #contexto_di').addClass('menu_items');
+                $('#menu #contexto_di').removeClass('inhabilitado');
+                
+            }else {
+                $('#menu #programa_curso').attr('src', '/resources/tda-gdi/images/iconos/diseno_instruccional.png');
+                
+                $('#menu #ayuda').attr('src', '/resources/tda-gdi/images/iconos/ayuda_i.png');
+                $('#menu #ayuda').removeClass('menu_items');
+                $('#menu #ayuda').addClass('inhabilitado');
+                
+
+                $('#menu #contexto_di').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso_i.png');
+                $('#menu #contexto_di').removeClass('menu_items');
+                $('#menu #contexto_di').addClass('inhabilitado');
+            }
+            $('#contenedor #di').slideToggle('slow'); 
+            if($('#wizard').hasClass('visible')){
+                $('#wizard').slideToggle('fast');
+                $('#arrow').slideToggle('fast');
+            }
+            $('#contenedor #div_programa_curso').slideToggle('slow');
+        }
+    });
+    //Hace el switch entre la ayuda y el diseño instruccional
+    $('#menu #ayuda').click(function(){
+        if(!$('#menu #ayuda').hasClass('inhabilitado')){        
+            if($('#contenedor #di').css('display') == 'none'){
+            
+                $('#menu #ayuda').attr('src', '/resources/tda-gdi/images/iconos/ayuda.png');
+                
+                $('#menu #programa_curso').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso.png');
+                $('#menu #programa_curso').addClass('menu_items');
+                $('#menu #programa_curso').removeClass('inhabilitado');
+                
+                $('#menu #contexto_di').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso.png');
+                $('#menu #contexto_di').addClass('menu_items');
+                $('#menu #contexto_di').removeClass('inhabilitado');
+                
+            }else {
+                $('#menu #ayuda').attr('src', '/resources/tda-gdi/images/iconos/diseno_instruccional.png');
+                
+                $('#menu #programa_curso').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso_i.png');
+                $('#menu #programa_curso').removeClass('menu_items');
+                $('#menu #programa_curso').addClass('inhabilitado');
+      
+                
+                $('#menu #contexto_di').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso_i.png');
+                $('#menu #contexto_di').removeClass('menu_items');
+                $('#menu #contexto_di').addClass('inhabilitado');
+            }
+            $('#contenedor #di').slideToggle('slow'); 
+            if($('#wizard').hasClass('visible')){
+                $('#wizard').slideToggle('fast');
+                $('#arrow').slideToggle('fast');
+            }
+            $('#contenedor #div_ayuda_di').slideToggle('slow');
+        }
+    });
+    //Hace el switch entre el contexto y el diseño instruccional
+    $('#menu #contexto_di').click(function(){
+        $('#contenedor #div_contexto_di #boton_anterior').css('display','none');
+        $('#contenedor #div_contexto_di #boton_siguiente').css('display','none');
+        if(!$('#menu #contexto_di').hasClass('inhabilitado')){        
+            if($('#contenedor #di').css('display') == 'none'){
+            
+                $('#menu #contexto_di').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso.png');
+                
+                $('#menu #ayuda').attr('src', '/resources/tda-gdi/images/iconos/ayuda.png');
+                $('#menu #ayuda').addClass('menu_items');
+                $('#menu #ayuda').removeClass('inhabilitado');
+                
+                $('#menu #programa_curso').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso.png');
+                $('#menu #programa_curso').addClass('menu_items');
+                $('#menu #programa_curso').removeClass('inhabilitado');
+            }else {
+                $('#menu #contexto_di').attr('src', '/resources/tda-gdi/images/iconos/diseno_instruccional.png');
+                
+                $('#menu #ayuda').attr('src', '/resources/tda-gdi/images/iconos/ayuda_i.png');
+                $('#menu #ayuda').removeClass('menu_items');
+                $('#menu #ayuda').addClass('inhabilitado');
+                
+                $('#menu #programa_curso').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso_i.png');
+                $('#menu #programa_curso').removeClass('menu_items');
+                $('#menu #programa_curso').addClass('inhabilitado');
+            }
+            $('#contenedor #di').slideToggle('slow'); 
+            if($('#wizard').hasClass('visible')){
+                $('#wizard').slideToggle('fast');
+                $('#arrow').slideToggle('fast');
+            }
+            $('#contenedor #div_contexto_di').slideToggle('slow');
+        }
+    });
+/*barra de menú, íconos -------------------------------------------------------- fin ---*/
+    
+    
+/*propiedades del documento -------------------------------------------------------- inicio ---*/
+	// Indica que el div dialog va a ser un widget dialog
+    $('#dialog').dialog({ 
+        resizable: false,
+        closeOnEscape: false,
+        zIndex: 3000,
+        autoOpen: false,
+        modal: true,
+        closeText: 'X',
+        draggable: true,
+        maxWidth: 450,
+    });   
+    //función que realiza cuando se preciona menu_propiedades_documento
+    $('#menu_propiedades_documento').click(function(){
+        $('#dialog').dialog('open');
+        bloquear();
+    });
+    //función para cerrar el dialog, y quedar en la misma página
+    $('.ui-dialog-titlebar-close').click(function(){
+        $('#dialog').dialog('close');
+        desbloquear();
+    });
+/*propiedades del documento -------------------------------------------------------- fin ---*/
+    
+/*---------------------------------------------------------------------------------------pop up compartir---- inicio---*/ 
+    //hace visible y no visible al popup.  
+    $('#menu #compartir').click(function(){
+        $('#compartir-pop_up').slideToggle('slow');
+    });
+    //indica que esto va a ser un tab.    
+	$('#compartir-pop_up #tabs').tabs();
+    //primero, se agrega la clase 'select_index_propios' a todos los compañeros de la misma escuela.
+    $('#seleccionar_persona option').addClass('select_index_propios');
+    //se agrega la opción para que busque en otras escuelas.
+    $('#seleccionar_persona').append('<option value=\"0\" class=\"select_index_otros\" >Buscar en otra escuela</option>');
+ 
+    $('#form_compartir_persona .form-item-wrapper').filter(':first').after('<br><div id=\"buscar_otras_personas\"></div>');
+    //acomoda los selects para que unos esten el el div oculto y otros no
+    $('#form_compartir_buscar_persona').appendTo('#buscar_otras_personas');
+ 
+        // si selecciona la opcion de buscar otros cursos, muestra el formulario para la búsqueda.
+    $('.select_index_otros').click(function() {
+        $('#buscar_otras_personas').slideDown('slow').show();
+    });
+    //si selecciona la un curso que imparta en este momento, oculta el formulario para buscar otros cursos.
+    $('.select_index_propios').click(function() {
+        $('#buscar_otras_personas').slideUp('slow');
+    });
+    
+    
+    $('#div_programa_curso #boton_siguiente').click(function() {
+        $('#div_programa_curso').hide('fast');
+        $('#div_contexto_di').show('fast'); 
+        
+        $('#menu #guardar').attr('src', '/resources/tda-gdi/images/iconos/guardar.png');
+        $('#menu #guardar').removeClass('menu_items');
+        $('#menu #guardar').addClass('inhabilitado');        
+    });
+    $('#div_contexto_di #boton_anterior').click(function() {
+        $('#div_contexto_di').hide('fast');
+        $('#div_programa_curso').show('fast');
+        
+        $('#menu #guardar').attr('src', '/resources/tda-gdi/images/iconos/guardar_i.png');
+        $('#menu #guardar').removeClass('menu_items');
+        $('#menu #guardar').addClass('inhabilitado');
+    });
+    $('#div_contexto_di #boton_siguiente').click(function() {
+        $('#div_contexto_di').hide('fast');
+        $('#di').show('fast');
+        
+        $('#menu #vista_previa').attr('src', '/resources/tda-gdi/images/iconos/vista_previa.png');
+        $('#menu #vista_previa').addClass('menu_items');
+        $('#menu #vista_previa').removeClass('inhabilitado');
+        
+        $('#menu #compartir').attr('src', '/resources/tda-gdi/images/iconos/compartir.png');
+        $('#menu #compartir').addClass('menu_items');
+        $('#menu #compartir').removeClass('inhabilitado');
+        
+        $('#menu #programa_curso').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso.png');
+        $('#menu #programa_curso').addClass('menu_items');
+        $('#menu #programa_curso').removeClass('inhabilitado');
+        
+        $('#menu #contexto_di').attr('src', '/resources/tda-gdi/images/iconos/programa_del_curso.png');
+        $('#menu #contexto_di').addClass('menu_items');
+        $('#menu #contexto_di').removeClass('inhabilitado');
+        
+        $('#menu #ayuda').attr('src', '/resources/tda-gdi/images/iconos/ayuda.png');
+        $('#menu #ayuda').addClass('menu_items');
+        $('#menu #ayuda').removeClass('inhabilitado');
+    });
+/*---------------------------------------------------------------------------------------pop up compartir---- fin---*/
+});
+/*--------------------------------------------------------------Funciones ------------ inicio ------*/
+/*funcion que se encarga de guardar en memoria la matriz
+además cambia el ícono para representar los campos editados 
+de la matriz.
+*/
+function salvar_contenido(id, contenido){
+    var fila = parseInt($('#encabezado #encabezado_num_sesion').text());
+    di_matriz[fila-1][id-1] = contenido;
+    if(contenido != ''){
+        $('#instructional_design tr:eq('+fila+') \
+            td:eq('+id+') img.bolita').attr('src','/resources/tda-gdi/images/iconos/bolita_llena.png');
+        //pone como title el contenido de la columna 1, que sería el título del DI.
+        if(id==1){
+            $('#instructional_design tr:eq('+fila+') \
+            td:eq('+id+')').attr('title',contenido);
+        }
+    }
+    else{
+        $('#instructional_design tr:eq('+$('#encabezado #encabezado_num_sesion').text()+') \
+            td:eq('+id+') img.bolita').attr('src','/resources/tda-gdi/images/iconos/bolita_incompleta.png');
+    }
+}
+/*funcion que se encarga de poner el contenido correspondiente
+en el área de trabajo, para ser visto o editado.
+*/
+function actualizar_contenido(id){
+    var fila = parseInt($('#encabezado #encabezado_num_sesion').text());
+    return di_matriz[fila-1][id-1];
+}
+/*
+se encarga de notificar cuando se terminó el diseño instruccional
+actualiza el progressbar y las bolitas
+*/
+function completado(){
+    var resultado = false;
+    var celdas_completadas = 0;
+    for(inicio_fila = 0; inicio_fila < total_fila; inicio_fila++) {
+    var inicio_column = 0;
+        for (inicio_column = 0; inicio_column < total_column; inicio_column++) {
+            if(di_matriz[inicio_fila][inicio_column] != ''){
+                celdas_completadas++;
+            }
+        }
+    }
+    var aumento = Math.round((celdas_completadas / celdas_totales)*100);
+	controladorBarra(aumento);
+    if(celdas_completadas == celdas_totales){
+        alert('Fin. Notificar que ya finalizó y que si desea publicar ya su DI, así como compartirlo.');
+    }
+}
+/*
+llamada por completado(), se encarga de controlar la barra de progreso.
+*/
+function controladorBarra(punto){
+    var valor = parseInt($('#progressbar').progressbar("value"));
+    var movimientos = Math.abs(valor-punto);
+    $('#progresstext').text(valor+'%');
+    if(valor == punto){
+        return;
+    } else if (valor > punto){
+        setTimeout("controladorBarra("+punto+");",100);
+        valor=valor-1;
+        $('#progressbar').progressbar("option", "value", valor);
+    } else {
+        setTimeout("controladorBarra("+punto+");",100);
+        valor=valor+1;
+        $('#progressbar').progressbar("option", "value", valor);
+    }
+}
+/*--------------------------------------------------------------Funciones ------------ fin ------*/
+
+// ---------------------------------------------funciones jquery para di --fin--

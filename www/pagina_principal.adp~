@@ -1,0 +1,57 @@
+<div id="tabs">
+    <ul>
+        <li><a href="#paso_1">@tab1@</a></li>
+        <li><a href="#paso_2">@tab2@</a></li>
+    </ul>
+    <div id="paso_1">
+        <h1>Bienvenida</h1>
+        <p>@index_texto_bienvenida@</p>
+        <formtemplate id="form_bienvenida"></formtemplate>
+    </div>
+    <div id="paso_2">
+        <h1>Selección</h1>
+        <p>Selección</p>
+        <div id="opciones" class="opciones">
+            <formtemplate id="form_seleccion"></formtemplate>
+            <formtemplate id="form_seleccion_buscar_curso"></formtemplate>                    
+        </div>
+        <div id="contenidoCONF">
+    		<table id="horario" class="list-table" summary="Data for resultados" cellpadding="3" cellspacing="1">
+    		    <tbody><tr class="list-header">
+		        <th class="list-table" id="resultados_funcion" align="center">
+		            Código          
+		        </th>
+
+		        <th class="list-table" id="id_curso" align="center">
+		            Escuela
+		        </th>
+
+		        <th class="list-table" id="resultados_codigo" align="center">
+	                Carrera
+		        </th>
+		        <th class="list-table" id="resultados_nombre" align="center">
+		            Nombre del curso
+		        </th>
+	              
+		        <th class="list-table" id="resultados_grupo" align="center">
+		            Profesor(es)
+		        </th>      
+		        <th class="list-table" id="resultados_horario" align="center">
+
+		            Horario
+		        </th>
+    			</tr>
+            </tbody></table>
+        </div>
+        <div id="clear" class="clear"></div>
+    </div>
+</div>
+
+<div id="index_botones">
+    <button type="button" id="index_button_tab" class="boton">Siguiente</button>
+    <div id="index_button_func_div">
+        <button type="button" fun="" id="index_button_func" class="boton">func</button>
+    </div>
+</div>
+<!-- incluye los mensajes de esta página
+<include src="popups/pagina_principal__programa_curso">-->

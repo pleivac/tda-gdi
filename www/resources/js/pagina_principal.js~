@@ -1,0 +1,151 @@
+// ---------------------------------------------funciones jquery para pagina_principal --inicio--
+
+$(document).ready(function(){
+
+    // Indica que el div tabs va a ser un widget tab
+	$('#tabs').tabs();
+	//Oculta el botón de funiones 
+	$('#index_button_func_div').hide();
+	// Indica que el div dialog va a ser un widget dialog
+    /*$('#dialog').dialog({ 
+        resizable: false,
+        closeOnEscape: false,
+        zIndex: 3000,
+        autoOpen: false,
+        modal: true,
+        closeText: 'X',
+        draggable: true,
+        width: 450,
+        buttons: [{
+        //opcion=0 abre el programa del curso.
+        //opcion=1 va directo a la matriz del DI.
+            text: "Si",
+            click: function() { 
+                $(this).dialog("close");
+                desbloquear();
+                window.location='design?opcion=0';
+            }
+        },{
+            text: "No",
+            click: function() { 
+                $(this).dialog("close"); 
+                desbloquear();
+            }
+        }] 
+    });   */
+    //Verifica si el invoco la pagina para abrir o crear un nuevo DI/
+    $(function(){    
+        var opcion = obtener_parametros_url()[0].split('=');
+        //opcion=0 == Nuevo DI.
+        //opcion=1 == Abrir DI. 
+        if(opcion[0] == "opcion"){
+            $('#index_button_tab').text('Anterior');
+            $( "#tabs" ).tabs({selected:1});
+            switch (opcion[1]) {
+            case "0":
+                $('#form_seleccion .form-item-wrapper:last').fadeTo("slow",0.5);
+                $('#form_seleccion .form-item-wrapper:first').fadeTo("slow",0.99);
+                break
+            case "1":
+                $('#form_seleccion .form-item-wrapper:first').fadeTo("slow",0.5);
+                $('#form_seleccion .form-item-wrapper:last').fadeTo("slow",0.99);
+                break
+           }
+        }
+    });
+	/*//saca los .from-widget de los tag label
+	$('#marco #contenedor .form-widget').each(function(){
+	    $(this).parent().after($(this));
+    });*/
+    //primero, se agrega la clase 'select_index_propios' a todos los cursos que da el profesor.
+    $('#selecionar_curso option').addClass('select_index_propios');
+    //se agrega la opción para que busque otros cursos.
+    $('#selecionar_curso').append('<option value=\"selecionar_curso\" class=\"select_index_otros\" >Buscar otros cursos</option>');
+    //crea un div en el form, para que este oculto o no.
+    $('#form_seleccion .form-item-wrapper').filter(':first').after('<div id=\"div_buscar_otros\"></div>');
+    //acomoda los selects para que unos esten el el div oculto y otros no
+    $('#form_seleccion_buscar_curso').appendTo('#div_buscar_otros');
+    //agrega una nota luego del form anterior
+	$('#div_buscar_otros .form-item-wrapper').filter(':last').after('<span class=\"nota\">* Información Requerida.</span>');
+    //agrega una nota luego del form anterior
+	$('#div_buscar_otros .form-button').find('input').val('Buscar');
+
+    // si selecciona la opcion de buscar otros cursos, muestra el formulario para la búsqueda.
+    $('.select_index_otros').click(function() {
+        $('#div_buscar_otros').slideDown('slow').show();
+    });
+    //si selecciona la un curso que imparta en este momento, oculta el formulario para buscar otros cursos.
+    $('.select_index_propios').click(function() {
+        $('#div_buscar_otros').slideUp('slow');
+    });
+    // Si decide seleccionar un curso, se baja la intensidad al de abrir DI ( y se aumenta la propia)
+     $('#form_seleccion .form-item-wrapper').filter(':first').click(function() {
+        $('#form_seleccion .form-item-wrapper').filter(':last').fadeTo("slow",0.5);
+        $('#form_seleccion .form-item-wrapper').filter(':first').fadeTo("slow",0.99);
+    });
+    // Si decide abrir DI, se baja la intensidad al de seleccionar un curso( y se aumenta la propia)
+     $('#form_seleccion .form-item-wrapper').filter(':last').click(function() {
+        $('#form_seleccion .form-item-wrapper ').filter(':first').fadeTo("slow",0.5);
+        $('#form_seleccion .form-item-wrapper').filter(':last').fadeTo("slow",0.99);
+        $('#div_buscar_otros').slideUp('slow');
+    });
+    // verifica que si hay un click en el tab, se refleje en el botón que controla también el tab
+	$('#tabs ul li a').click(function(){
+	    if ( $('#tabs').tabs('option','selected') == 1 ) { 
+	        $('#index_button_tab').text('Anterior');
+	        $('#index_button_func').show();
+	    }
+	    else {
+	        $('#index_button_tab').text('Siguiente');
+	        $('#index_button_func').hide();
+        }
+    });
+    // cambia el tab cuando se cliquea el botón	
+	$('#index_button_tab').click(function(){
+	    if ($('#index_button_tab').text() == 'Siguiente' ) {
+	        $('#index_button_tab').text('Anterior');
+	        $( "#tabs" ).tabs({selected:1});
+	        $('#index_button_func').show();
+	    }
+	    else {
+	        $('#index_button_tab').text('Siguiente');
+	        $( "#tabs" ).tabs({selected:0});
+	        $('#index_button_func').hide();
+        }
+    });
+    //Para mostrar la información del curso que está dando y fue seleccionado
+    $('#selecionar_di option').click(function(){
+        $('#contenidoCONF').show('slow');
+	    $('#index_button_func').text('Ver/Modificar diseño instruccional');
+	    $('#index_button_func_div').show();
+    });
+    //Para que realice la búsqueda cuando se escoge un curso diferente, que no está dando
+    $('#form_seleccion_buscar_curso .form-button formbutton:ok').click(function(){
+        $('#contenidoCONF').show('slow');
+	    $('#index_button_func').text('Ver/Modificar diseño instruccional');
+	    $('#index_button_func').show();
+    });
+    //Para mostrar la información de un DI existente
+    $('#selecionar_curso option:not(:last)').click(function(){
+        $('#contenidoCONF').show('slow');
+	    $('#index_button_func').text('crea diseño instruccional');
+	    $('#index_button_func_div').show();
+    });
+    //función que realiza cuando se preciona el botón index_button_func
+    $('#index_button_func').click(function(){
+        if($('#index_button_func').text() == 'Ver/Modificar diseño instruccional') {
+            window.location='design?opcion=0';
+        } else {
+            window.location='design';
+        }
+        
+        //$('#dialog').dialog('open');
+        //bloquear();
+    });
+   /* //función para cerrar el dialog, y quedar en la misma página
+    $('.ui-dialog-titlebar-close').click(function(){
+        $('#dialog').dialog('close');
+        desbloquear();
+    });*/
+});
+// ---------------------------------------------funciones jquery para pagina_principal --fin--

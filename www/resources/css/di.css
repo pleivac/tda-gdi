@@ -1,0 +1,899 @@
+/*------------------------------------------------------------------------------------CSS para di---inicio--------------------------*/
+#dialog-form-guardar{
+    display:none;
+}
+.floatingHeader {
+  position: fixed;
+  top: 0;
+  visibility: hidden;
+}
+#di{
+   /* height:353px; */
+     width: auto;/*1096px;*/
+   /* width:1095px; */
+    /*margin: 0 auto 0 auto;*/
+    margin: 0 1% 1%;
+    font-size:10px;
+    color:#777777;	
+    overflow-x:hidden;
+    overflow-y:auto;
+}
+.bolita {
+    background-image: url("/resources/tda-gdi/images/iconos/iconos_circulos.png");
+    background-size: 55px 63px;
+    height: 16px;
+    width: 55px;
+}
+.bolita_vacia{
+    background-position: 0px 0px;
+}
+.bolita_pendiente{
+    background-position: 0 16.25px;
+}
+
+.bolita_no_terminada{
+    background-position: 0 31.5px;
+}
+.bolita_llena{
+    background-position: 0 47.49px;
+}
+.list-table {
+    cursor: default;
+}
+.list-table tr.list-header {
+    background-color: #FFFFFF;
+    font-size: 11pt;
+} 
+/*
+#instructional_design tr.list-header{
+	margin-left: -1px;
+    margin-top: -56px;
+    position: absolute;
+    width:1080.59px;
+}
+
+#instructional_design thead{
+    margin: -4.85% 0 0 -1px;
+    position: absolute;
+}
+*/
+table.list-table {
+    border-collapse: collapse;
+    width: 1195px;
+}
+#instructional_design tr.list-header th{
+	width: 132.5px;
+}
+
+th.list-table, th.list-table-narrow, .list-table th {
+	padding: 8px 18.59px;
+	border: 1px solid #E9EAEB;
+}
+.list-table tr.even, .list-tiny tr.even {
+	background-color: #ffffff;
+}
+.list-table tr.odd, .list-tiny tr.odd {
+	background-color: #f2f2f2;
+}
+.list-table td .sesion{
+	/*padding-right:50%;*/
+}
+td.list-table, td.list-table-narrow, .list-table td {
+	/*padding: 8px 20px;*/
+	border: 1px solid #E9EAEB;
+	/*text-align:center;*/
+	/*padding-right:0px;*/
+	width: 133px;
+}
+/*
+td.list-table-narrow, th.list-table-narrow {
+	padding-left: 4px;
+	padding-right: 4px;
+}*/
+tr.last td {
+  border: 1px solid #E9EAEB;
+}
+tr .sesion {
+    font-size:26px;
+}
+#contenedor #di, #contenedor #div_ayuda_di, #contenedor #div_contexto_di{
+    display:none;
+}
+.list-table tr.even:hover, .list-tiny tr.even:hover, .list-table tr.odd:hover, .list-tiny tr.odd:hover{
+	background-color: #cccccc;
+	background-color: #EAEAEA;
+}
+
+
+/*formato de la ayuda y programa del curso--------------------------------------inicio---*/
+#div_programa_curso, #div_ayuda_di, #div_contexto_di{
+    /*margin: 1% auto 0 auto;
+    height:auto;
+    width:1000px;*/
+    text-align:left;
+    margin-left:11px;
+    color: #4E4E4E;
+    font: 12pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+#div_programa_curso #tabs, #div_ayuda_di #tabs, #div_contexto_di #tabs{
+    border: 2px solid #777777;
+    padding:0;
+    display:inline-block;
+}
+#div_programa_curso #contenido, #div_ayuda_di #contenido, #div_contexto_di #contenido{
+    position:relative;
+    float:right;
+    height:100%;
+    width:650px;
+    overflow:auto;
+    text-align:left;
+}
+#div_programa_curso #contenido, #div_ayuda_di #contenido, #div_contexto_di #contenido p{
+    border-left: 2px solid #777777;
+    margin-left: -2px;
+    padding: 20px;
+}
+#div_programa_curso #tabs ul, #div_ayuda_di #tabs ul, #div_contexto_di #tabs ul{
+    position:relative;
+    float:left;
+    padding:0;
+    margin:0 0 -1px 0;
+    width:auto;
+    height:100%;
+}
+#div_programa_curso #tabs ul li, #div_ayuda_di #tabs ul li, #div_contexto_di #tabs ul li{
+/*
+para el ul y li de tabs, los despliega en línea y bloque
+*/
+    display: block;
+    width: 250px;
+    text-align:center;
+    color: #4E4E4E;
+    font: 11pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+#div_programa_curso #tabs ul li:hover, #div_ayuda_di #tabs ul li:hover, #div_contexto_di #tabs ul li:hover{
+/*
+para el ul y li de tabs, los despliega en línea y bloque
+*/
+    background-color:#CECCCC;
+    color: #4E4E4E;
+}
+#div_programa_curso #tabs li a, #div_ayuda_di #tabs li a, #div_contexto_di #tabs li a{
+/*
+para el texto de los li, parque que estén centrados 
+*/
+    padding: 0 15px 0 15px;
+}
+#div_programa_curso li.ui-state-default, #div_ayuda_di li.ui-state-default, #div_contexto_di li.ui-state-default{
+/*
+para los tabs inactivos.
+*/
+    padding: 12px 0 12px 0;
+    background-color:#FFFFFF;
+    border-right: 2px solid #777777;
+    border-bottom: 1px solid #777777;
+}
+
+#div_programa_curso #tabs ul li a, #div_ayuda_di #tabs ul li a, #div_contexto_di #tabs ul li a {
+
+/*
+Para las tabs de index.adp, que no muestre efectos en los links (a) y que sean gris
+centre el texto y no lo decore
+*/  
+    color:#4E4E4E;
+    position: relative;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    outline: none;
+}
+.ui-state-default .ui-corner-top .ui-tabs-active .ui-state-active{
+    color: #FFFFFF;
+}
+
+.ui-state-default .ui-corner-top .ui-tabs-active .ui-state-active a:link{
+    color: #FFFFFF;
+}
+#div_programa_curso #tabs ul li a:hover, #div_ayuda_di #tabs ul li a:hover, #div_contexto_di #tabs ul li a:hover{
+/* 
+para las tabs de index.adp, que no muestre efectos en los links (a) y que sean gris
+centre el texto y no lo decore
+*/
+    background-color:#CECCCC;
+    color:#4E4E4E;
+}
+#div_programa_curso #tabs li.ui-tabs-active a:hover, #div_ayuda_di #tabs li.ui-tabs-active a:hover, #div_contexto_di #tabs li.ui-tabs-active a:hover {
+    color:#4E4E4E;
+}
+
+#div_programa_curso #tabs ul li.ui-state-active, #div_ayuda_di #tabs ul li.ui-tabs-active, #div_contexto_di #tabs ul li.ui-tabs-active {
+/*
+para los tabs activos.
+*/
+    padding: 12px 0 12px 0;
+    color: white;
+    background-color: #808080;
+    border-right: 2px solid #777777;
+    border-bottom: 1px solid #777777;
+}
+#div_programa_curso #tabs ul li.ui-state-active:hover, #div_ayuda_di #tabs ul li.ui-tabs-active:hover, #div_contexto_di #tabs ul li.ui-tabs-active:hover {
+/*
+para los tabs activos.
+*/
+    background-color:#CECCCC;
+    color:#4E4E4E;
+}
+
+#div_programa_curso  #tabs li.ui-tabs-active a, #div_ayuda_di  #tabs li.ui-tabs-active a, #div_contexto_di  #tabs li.ui-tabs-active a {
+/*
+para los tabs activos.
+*/
+    color: white;
+}
+#div_programa_curso .ui-tabs-hide, #div_ayuda_di .ui-tabs-hide, #div_contexto_di .ui-tabs-hide {
+/*
+para que no muestre el contenido de los tabs inactivos.
+*/
+    display: none;
+}
+#div_programa_curso li.ui-state-default a:hover, #div_ayuda_di li.ui-state-default a:hover, #div_contexto_di li.ui-state-default a:hover {
+/*
+para los tabs inactivos, cuando el mouse pasa sobre ellos
+*/
+    background-color:#FFFFFF;
+    padding: 12px -5px 12px -5px;
+}
+/*
+#div_programa_curso li.ui-tabs-active a:hover, #div_ayuda_di li.ui-tabs-active a:hover, #div_contexto_di li.ui-tabs-active a:hover {
+/*
+para los tabs inactivos, cuando el mouse pasa sobre ellos
+*//*
+    background-color:#F2F2F2;
+}*/
+
+
+
+#contenido #programa_paso_0 #programa_paso_1 #programa_paso_2 #programa_paso_3 #programa_paso_4{
+    border: medium none;
+    height: 300px;
+    width: 98%;
+
+}
+
+.txtPaso{
+	font:bold 12pt "Helvetica"; 
+	color: #004379;	
+	margin: 0 0 21px 11px;
+	position:relative;
+}
+
+#paso_3{;	
+	margin: 10px 0 21px 0px;
+}
+
+
+/*-------------------------------------- Botones ---inicio---*/
+
+/*------------------Estilos generales------Inicio----------------*/
+.menuPrincipal li {
+/*
+para cada uno de los elementos li (incluye: botón, texto y punto) 
+*/
+     margin-right: 50px;
+     text-align: center;
+}
+
+.menuPrincipal:hover {
+     color: #808081;
+}
+
+li:active .menuPrincipal {
+     color: #1D69B2;
+}
+
+.menuPrincipal div {
+/*
+sobre las imágenes específicas de cada botón
+*/
+     height: 35px;
+     margin: auto;
+     width: 32px;
+}
+
+li:hover label {
+/*
+cambia el color de todos los textos de los botones cuando el mouse está sobre la imagen o el mismo texto. 
+*/
+     color: #CCCCCC;
+}
+
+
+.txtBoton {
+/*
+formato de todos los textos de los botones
+*/
+     color: #808081;
+     font-family: Helvetica,Futura,Arial,Verdana,sans-serif;
+     margin-bottom: 20px;
+     font-size: 7pt;
+}
+
+
+.textoActivo {
+/*
+cambia el color del textos de los botones cuando se le da clic. 
+*/
+     color: #1D69B2;
+}
+
+
+.Activo {
+/*
+para agregar la imagen del punto cuando un botón esta activo 
+*/
+     background-image: url("/resources/tda-gdi/images/circulo_activo.png");
+     display: block;
+     height: 10px;
+     margin: auto;
+     text-align: center;
+     width: 10px;
+}
+/*------------------Estilos generales------fin----------------*/
+
+
+
+
+/*---------------------------------Botón de Menu----------------------*/
+
+/*
+Repite mismo comportamiento en todos los demás botones. 
+*/
+
+.btnMenu {
+/*
+imagen cuando el botón está inactivo
+*/
+     background-image: url("/resources/tda-gdi/images/iconos_.png");
+     background-position: -673.48px 0;
+}
+
+li:hover .btnMenu {
+/*
+imagen cuando el mouse está sobre el botón
+*/
+     background-position: -673.48px -37px;
+}
+
+li:active .btnMenu {
+/*
+imagen cuando el se le da clic al botón
+*/
+     background-position: -673.48px -75px;
+}
+
+.btnMenu_activo {
+/*
+imagen cuando el botón está activo
+*/
+     background-position: -673.48px -75px;
+     color: #1D69B2;
+}
+
+li:hover .btnMenu.btnMenu_activo {
+    background-position: -673.48px -75px;
+}
+li:hover .txtLabel.textoActivo {
+    color: #1D69B2;
+}
+
+/*------------------Botón de Ayuda----------------------*/
+
+.btnAyuda {
+     background-image: url("/resources/tda-gdi/images/iconos_.png");
+     background-position: -1050px 0px;
+}
+
+li:hover .btnAyuda {
+     background-position: -1050px -37px;
+}
+
+li:active .btnAyuda {
+     background-position: -1050px -75px;
+}
+
+.btnAyuda_activo {
+     background-position: -1050px -75px;
+     color: #1D69B2;
+}
+
+
+/*------------------Botón de exportar----------------------*/
+
+.btnExportar {
+     background-image: url("/resources/tda-gdi/images/iconos_.png");
+     background-position: -1163px 0px;
+}
+
+li:hover .btnExportar {
+     background-position: -1163px -37px;
+}
+
+li:active .btnExportar {
+     background-position: -1163px -75px;
+}
+
+.btnExportar_activo {
+     background-position: -1163px -75px;
+     color: #1D69B2;
+}
+
+
+/*------------------Botón de Programa de curso----------------------*/
+
+.btnPrograma {
+     background-image: url("/resources/tda-gdi/images/iconos_.png");
+     background-position: -974px 0px;
+}
+
+li:hover  .btnPrograma {
+     background-position: -974px -37px;
+}
+
+li:active .btnPrograma {
+     background-position: -974px -75px;
+}
+
+.btnPrograma_activo {
+     background-position: -974px -75px;
+     color: #1D69B2;
+}
+
+/*------------------Botón de Contexto----------------------*/
+
+.btnContexto {
+     background-image: url("/resources/tda-gdi/images/iconos_.png");
+     background-position: -1011px 0px;
+}
+
+li:hover .btnContexto {
+     background-position: -1011px -37px;
+}
+
+
+li:active .btnContexto {
+     background-position: -1011px -75px;
+}
+
+li:active label {
+     color: #1D69B2;
+}
+
+.btnContexto_activo {
+     background-position: -1011px -75px;
+     color: #1D69B2;
+}
+
+
+/*------------------Botón de Contexto----------------------*/
+
+.btnMatriz {
+     background-image: url("/resources/tda-gdi/images/iconos_.png");
+     background-position: -1124px 0px;
+}
+
+li:hover .btnMatriz {
+     background-position: -1124px -37px;
+}
+
+
+li:active .btnMatriz {
+     background-position: -1124px -75px;
+}
+
+li:active label {
+     color: #1D69B2;
+}
+
+.btnMatriz_activo {
+     background-position: -1124px -75px;
+     color: #1D69B2;
+}
+
+
+/*------------------FIN DE BOTONES DE MENU PRINCIPAL----------------------*/
+
+#boton_anterior{
+    height: 19px;
+    margin-top: 10px;
+    padding-top: 0.23%;
+    position: absolute;
+    right: 184px;
+    vertical-align: top;
+    width: 103px;
+}
+
+#boton_siguiente{
+    height: 19px;
+    margin-top: 10px;
+    padding-top: 0.23%;
+    position: absolute;
+    right: 47px;
+    vertical-align: top;
+    width: 103px;
+}
+
+#contenedor #di #boton_anterior {
+    float: right;
+    margin: 15px 1.5% 0 0;
+}
+
+#contenedor #div_programa_curso {
+    
+}
+/*
+#boton_siguiente:hover{
+    background-image: url("/resources/tda-gdi/images/iconos/btn-siguiente2.png");
+    }
+    
+#boton_siguiente:active{
+    background-image: url("/resources/tda-gdi/images/iconos/btn-siguiente3.png");
+    }*/
+/*formato de la ayuda y programa del curso--------------------------------------fin---*/
+/*------------------------tabs ---fin---*/
+#btn_guardar{
+	background-image: url("/resources/tda-gdi/images/iconos/btn-guardar1.png");
+	border: none;
+	border-radius: 2px 2px 2px 2px;
+	height: 19px;
+	vertical-align: top;
+	width: 103px;
+}
+
+#btn_guardar:hover{
+	background-image: url("/resources/tda-gdi/images/iconos/btn-guardar2.png");	
+}
+
+#btn_guardar:active{
+	background-image: url("/resources/tda-gdi/images/iconos/btn-guardar3.png");	
+}
+#btn_cancelar{
+	background-image: url("/resources/tda-gdi/images/iconos/btn-cancelar1.png");
+	border: none;
+	border-radius: 2px 2px 2px 2px;
+	height: 19px;
+	vertical-align: top;
+	width: 103px;
+}
+#btn_cancelar:hover{
+	background-image: url("/resources/tda-gdi/images/iconos/btn-cancelar2.png");	
+}
+#btn_cancelar:active{
+	background-image: url("/resources/tda-gdi/images/iconos/btn-cancelar3.png");	
+}
+
+text_area::-webkit-input-placeholder {
+  color: red;
+}
+text_area:-moz-placeholder {
+  color: red;
+}
+text_area:-ms-input-placeholder {
+  color: red;
+}
+#arrow{
+	background-image: url('/resources/tda-gdi/images/iconos/Iconos.png');
+	background-position: -2467px 0; 
+	width: 36.66px;  
+	height: 35px;
+}
+.img_borrar_observaciones{
+	background-image: url("/resources/tda-gdi/images/iconos/Iconos.png");
+    	background-position: -2057px 0;
+    	clear: both;
+    	display: inline-block;
+    	height: 36px;
+    	width: 30.2px;
+    	cursor:pointer;
+}
+.img_borrar_observaciones:hover{
+    	background-position: -2057px -38px;
+}
+.img_borrar_observaciones:active{
+    	background-position: -2057px -75.2px;
+}
+
+
+/*---------------- Estilos para los estados de las respuestas del contexto -------*/
+.ctxt_estado {
+    background-image: url("/resources/tda-gdi/images/iconos/Iconos.png");
+    background-position: -2764px 70px;
+    height: 36.66px;
+    width: 36.66px;
+}
+
+.ctxt_estados {
+    margin-left: 20px;
+    margin-right: 17px;
+    margin-top: 27px;
+}
+.ctxt_estado:hover {
+    background-position: -2764px -4px;
+}
+.ctxt_estado:active {
+    background-position: -2764px 32.5px;
+}
+
+.llenarEstado {
+    background-position: -2764px 32.5px;
+}
+
+#div_contexto_di #tabs #contenido textarea {
+    color: #808081;
+    font: 11pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    margin-left: 20px;
+    margin-right: 17px;
+    margin-top: 7px;
+    padding: 8px;
+    border: 1px solid #CDCCCC;
+    border-radius: 1px 1px 1px 1px;
+    width:500px;
+    height: 150px;
+}
+
+#contenido {
+    border-left: 2px solid #777777;
+    margin-left: -2px;
+}
+
+#div_programa_curso, #div_ayuda_di, #div_contexto_di {
+    margin: 7px 17px 2% 11px;
+}
+/* Estilos para las propiedades del documento (Propiedades del DI) */
+#form_propiedades_documento {
+    display:none;
+    background-color: #FFFFFF;
+    border: 1px solid #808080;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 5px 5px #CECCCC;
+    min-width: 400px;
+    padding: 25px;
+    color: #4E4E4E;
+    font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+#form_propiedades_documento input {
+    background-color: #FFFFFF;
+    border: 0px solid #808080;
+    color: #4E4E4E;
+    font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}/*
+#form_propiedades_documento div {
+    margin-top: 10px;
+}*/
+#form_propiedades_documento #h2, #form_asociar_di #h2, #form_clonar_di #h2 {
+    border-bottom: 2px solid #808080;
+    border-width: 2px;
+    font: bold 11pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    margin-top: -10px;
+    padding-bottom: 5.5px;
+    width: inherit;
+}
+#form_propiedades_documento #txt_explicativo_propiedades {
+    /* color: #888888; */
+    color: #915757;
+    margin-left: 10px;
+    margin-top: 5px;
+    visibility: hidden; 
+    font: 9pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+/*-------------------------------------------------------Estilos para el popup del Asociar y de clonar DI--------------------------*/
+#form_asociar_di, #form_clonar_di { 
+    display:none;
+    background-color: #FFFFFF;
+    border: 1px solid #808080;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 5px 5px #CECCCC;
+    min-height: 16%;
+    min-width: 406px;
+    padding: 25px;
+    color: #4E4E4E;
+    font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+#form_asociar_di table, #form_asociar_di th, #form_asociar_di td,
+#form_clonar_di table, #form_clonar_di th, #form_clonar_di td
+{
+	border: 1px solid #CDCBCA;
+    border-collapse: collapse;
+    margin-top: 10px;
+    padding: 2px 5px;
+}
+
+#btn_cerrar_clonar {
+	margin-top: 11px;
+}
+
+/*----------------------------------------------------Estilos de botones-------------------------------------------------*/
+/*Estilos generales*/
+.btn {
+	margin: 5px 0.5%;
+	background-color: #FFFFFF;
+    border: 1px solid #CDCBCA;
+    border-radius: 3px 3px 3px 3px;
+    color: #808081;
+    font: 9pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    height: 7%;
+    margin: 5px 0.5%;
+    min-height: 24px;
+    min-width: 129px;
+    padding: 0.5% 2.5%;
+    width: 12.7em;
+    cursor:pointer;
+}
+
+
+.btn:hover	{ border-color: #CCCCCC; background-color: #CCCCCC; color: #ffffff; }
+.btn:active { border-color: #808080; background-color: #808080; color: #ffffff; }
+/*Estilos para el boton de las propiedades*/
+.propiedades_btn_cerrar {
+	/*margin-bottom: -10px;
+    margin-top: -7px;*/
+    position: absolute;
+    right: 23px;	
+}
+#propiedades_space { /*Sirve para dar espacio en el texto de las propiedades */
+    background-color: white;
+    height: 4px;
+}
+#form_propiedades_documento #tbl_propiedades_asociar { /*Estilos para la tabla de los cursos asociados para las propiedades*/
+	border: 1px solid #CDCBCA;
+    border-collapse: collapse;
+    margin-left: inherit;
+    margin-right: inherit;
+    margin-top: 5px;
+}
+#tbl_propiedades_asociar td, #tbl_propiedades_asociar th {
+	padding: 2px 10px;
+	border: 1px solid #CDCBCA;
+}
+#asociar_btns, #clonar_btns {
+	margin-top:10px;
+}
+#asociar_btns button, #clonar_btns button{
+	float: right;
+    margin-top: 8px;
+}
+#asociar_btns #btn_guardar_asociar, #clonar_btns #btn_guardar_clonar {
+	float: right;
+    height: 7.1%;
+    margin-right: 7px;
+    margin-top: -8.11px;
+}
+
+/* Estilos para los popup */
+.popup {
+    background-color: #FFFFFF;
+	border: 1px solid #808080;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0 0 5px 5px #CECCCC;
+	color: #111111;
+	min-width: 350px;
+	padding: 12px 7px;
+	color: #4E4E4E;
+	font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+.popup p{
+	margin-top: -5px;
+	font: 11pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-weight:bold;
+	border-bottom-color: #808080;
+        border-bottom-style: solid;
+        border-width: 1px;
+        margin-bottom: -1px;
+        padding-bottom: 4.5px;
+}
+
+.btns_popup button {
+    float: right;
+    height: 23px;
+    margin: 15px 1.5px -5px 0;
+}
+
+#area_trabajo #observaciones > div:not(.clear):hover {
+     cursor: -moz-grab;
+     cursor: url(/resources/tda-gdi/images/iconos/openhand.cur) 4 4, move;
+     border-left: 2px dotted #CCCCCC;
+}
+
+#area_trabajo #observaciones > div:not(.clear):active {
+     cursor: -moz-grabbing;
+     cursor: url(/resources/tda-gdi/images/iconos/closedhand.cur), move;
+     border-left: 2px dotted #004379;
+}
+
+#instructional_design > tbody > tr > td:first-child:hover{
+    cursor: -moz-grab;
+    cursor: url(/resources/tda-gdi/images/iconos/openhand.cur) 4 4, move;
+    background: url("/resources/tda-gdi/images/grippy_large.png") no-repeat scroll 1px 50% rgba(0, 0, 0, 0) !important;
+    cursor: url("/resources/tda-gdi/images/iconos/openhand.cur") 4 4, move;
+} 
+
+#instructional_design > tbody > tr > td:first-child:active{
+    cursor: -moz-grabbing;
+    cursor: url(/resources/tda-gdi/images/iconos/closedhand.cur), move;
+    background: url("/resources/tda-gdi/images/grippy_large.png") no-repeat scroll 1px 50% rgba(0, 0, 0, 0) !important;
+} 
+
+.tds-lib-icon-menu2 {
+    margin-left: 90px;
+    margin-right: -40px;
+}
+
+
+ul.menu_items_session {
+    background: none repeat scroll 0 0 #ffffff;
+    border: 1px solid #777777;
+    border-radius: 3px;
+    display: none;
+    margin-left: 43px;
+    margin-top: 15px;
+    padding-left: 0;
+    position: absolute;
+    width: 110px;
+    z-index: 1000;
+}
+ul.menu_items_session:after {
+    border-color: #ffffff transparent;
+    border-style: solid;
+    border-width: 0 7px 14px;
+    content: "";
+    display: block;
+    right: 7px;
+    position: absolute;
+    top: -12px;
+    width: 2px;
+    z-index: 1;
+}
+ul.menu_items_session:before {
+    border-color: #7f7f7f rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 0 7px 14px;
+    content: "";
+    display: block;
+    right: 7px;
+    position: absolute;
+    top: -15px;
+    width: 13px;
+    z-index: 0;
+}
+
+ul.menu_items_session > li {
+    font-size: 9pt;
+    font-weight: lighter;
+    margin-left: 0;
+    width: 119px;
+    cursor: pointer;
+    float: left;
+    list-style: none outside none;
+    margin: 0 8px;
+    text-align: center;
+}
+
+ul.menu_items_session li a {
+    padding-left: 9px;
+    color: #777777;
+    display: block;
+    float: left;
+    text-decoration: none;
+}
+ul.menu_items_session li a:hover {
+    background-color: #f2f2f2;
+    color: #000000;
+    cursor: pointer;
+    text-align: left;
+    width: 90%;
+}
+/*------------------------------------------------------------------------------------CSS para di---fin--------------------------*/

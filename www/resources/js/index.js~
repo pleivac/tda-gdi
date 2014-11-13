@@ -1,0 +1,23 @@
+// ---------------------------------------------funciones jquery para index --inicio--
+$(document).ready(function(){
+    //Controla el menú
+	$("ul.menu li span").click(function() {
+		$(this).parent().find("ul.menu_items_menu").slideDown('fast').show();
+		$(this).parent().hover(  function() {}, function() {$(this).parent().find("ul.menu_items_menu").slideUp('slow'); }  );
+	});
+
+
+    //Menu, cambia los links que está habilitados o no.
+    $('#menu_nuevo').click(function(){
+        window.location='index?opcion=0';
+    });
+    $('#menu_abrir').click(function(){
+        window.location='index?opcion=1';
+    });
+});
+// ---------------------------------------------funciones jquery para index --fin--
+
+
+
+
+

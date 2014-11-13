@@ -1,0 +1,68 @@
+<div id="di">
+	@tabla;noquote@
+</div>
+
+
+
+<div id="div_programa_curso">
+    <h2>Programa del Curso</h2>
+    <div id="tabs">
+        @ul_programa_curso;noquote@
+        
+        <div id="contenido">
+            @divs_programa_curso;noquote@
+        </div>
+    </div>
+    <div id="clear" class="clear"></div>
+    <button type="button" id="boton_siguiente" class="boton">@siguiente@</button>
+    <div id="clear" class="clear"></div>
+</div>
+
+
+
+<div id="div_contexto_di">
+    <h2>Contexto del DI</h2>
+    <div id="tabs">
+        <ul>
+            <li><a href="#contexto_paso_1">1</a></li>
+            <li><a href="#contexto_paso_2">2</a></li>
+            <li><a href="#contexto_paso_3">3</a></li>
+            <li><a href="#contexto_paso_4">4</a></li>
+            <li><a href="#contexto_paso_5">5</a></li>
+        </ul>
+        
+        <div id="contenido">
+            @divs_contenido;noquote@
+        </div>
+    </div>
+    <div id="clear" class="clear"></div>
+    <button type="button" id="boton_anterior" class="boton">@anterior@</button>
+    <button type="button" id="boton_siguiente" class="boton">@siguiente@</button>
+    <div id="clear" class="clear"></div>
+</div>
+
+
+<div id="div_ayuda_di">
+    <h2>Ayuda</h2>
+    <div id="tabs">
+        <ul>
+            <li><a href="#ayuda_paso_1">1</a></li>
+            <li><a href="#ayuda_paso_2">2</a></li>
+            <li><a href="#ayuda_paso_3">3</a></li>
+            <li><a href="#ayuda_paso_4">4</a></li>
+            <li><a href="#ayuda_paso_5">5</a></li>
+        </ul>
+        
+        <div id="contenido">
+            @divs_ayuda;noquote@
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<include src="popups/wizard">
+<include src="popups/compartir">
+<include src="popups/di__propiedades_documento">

@@ -1,0 +1,108 @@
+/*------------------------------------------------------------------------------------CSS para pagina_principal---inicio--------------------------*/
+.contenidoDI{
+	height:100%;
+	width:100%;
+}
+.opciones{
+	height:100%;
+	width:39%;
+	float:left;
+}
+#contenidoCONF{
+	height:100%;
+	width:59%;
+	float:right;
+	display:none;
+}
+.select_index_otros{
+	border-top: 1px solid #777777;
+    text-align: right;
+}
+#div_buscar_otros{
+    display:none;
+}
+#div_buscar_otros .nota{
+    margin:0 0 0 10%;
+    font-style:italic;
+}
+#index_botones{
+    display: inline-block;
+    margin: 0 0 0 60%;
+}
+#index_button_func_div{
+    float:right;
+}
+/*------------------------tabs ---inicio---*/
+#tabs{
+	height:10%;
+	width:100%;
+}
+#tabs ul{
+    border-bottom: 1px solid #F2F2F2;
+}
+#tabs ul li{
+/*
+para el ul y li de tabs, los despliega en línea y bloque, con un ancho de 231px 
+*/
+    display: inline-block;
+    width: 231px;
+}
+li.ui-state-default{
+/*
+para los tabs inactivos.
+*/
+    padding: 12px 0 12px 0;
+    background-color:#FFFFFF;
+    border-top: 1px solid #F2F2F2;
+    border-left: 1px solid #F2F2F2;
+    border-right: 1px solid #F2F2F2;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    margin: 0 0 0 -5px;
+}
+li.ui-tabs-selected {
+/*
+para los tabs activos.
+*/
+    padding: 12px 0 12px 0;
+    background-color:#F2F2F2;
+    border-top: 1px solid #F2F2F2;
+    border-left: 1px solid #F2F2F2;
+    border-right: 1px solid #F2F2F2;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+}
+#tabs ul li a {
+/* 
+para las tabs de index.adp, que no muestre efectos en los links (a) y que sean gris
+centre el texto y no lo decore
+*/
+    position: relative;
+    display: block;
+    text-align: center;
+    color: #777777;
+    text-decoration: none;
+    outline: none;
+}
+.ui-tabs-hide {
+/*
+para que no muestre el contenido de los tabs inactivos.
+*/
+    display: none;
+}
+li.ui-state-default a:hover {
+/*
+para los tabs inactivos, cuando el mouse pasa sobre ellos
+*/
+    background-color:#FFFFFF;
+    padding: 12px -5px 12px -5px;
+}
+li.ui-tabs-selected a:hover {
+/*
+para los tabs inactivos, cuando el mouse pasa sobre ellos
+*/
+    background-color:#F2F2F2;
+}
+/*------------------------tabs ---fin---*/
+
+/*------------------------------------------------------------------------------------CSS para pagina_principal---fin--------------------------*/

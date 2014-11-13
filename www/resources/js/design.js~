@@ -1,0 +1,55 @@
+// ---------------------------------------------funciones jquery para design --inicio--
+
+$(document).ready(function(){
+    //Controla el menú
+	$("ul.menu li span").click(function() {
+		$(this).parent().find("ul.menu_items_menu").slideDown('fast').show();
+		$(this).parent().hover(  function() {}, function() {$(this).parent().find("ul.menu_items_menu").slideUp('slow'); }  );
+	
+		if($('#contenedor #di').css('display') == 'none') {
+            $('#menu_guardar').addClass('deshabilitados');
+            $('#menu_cerrar').addClass('deshabilitados');
+            $('#menu_guardar_como').addClass('deshabilitados');
+            $('#menu_publicar').addClass('deshabilitados');
+            $('#menu_propiedades_documento').addClass('deshabilitados');
+		} else{
+            $('#menu_guardar').removeClass('deshabilitados');
+            $('#menu_cerrar').removeClass('deshabilitados');
+            $('#menu_guardar_como').removeClass('deshabilitados');
+            $('#menu_publicar').removeClass('deshabilitados');
+            $('#menu_propiedades_documento').removeClass('deshabilitados');
+		}
+	});
+    /// hace al usuario confirmar si sale o no del sitio.
+    $(window).bind("beforeunload",function(event) {
+       return "Nota: utilice únicamente los menues de la plataforma para navegar sobre ella... Si es el caso, guarde su trabajo antes de salir.";
+    });
+    
+
+				$("#progressbar").progressBar(100, { showText: true} );
+				
+
+
+
+
+    //Menu, asigna la acción de cada uno. 
+    $('#menu_nuevo').click(function(){
+        window.location='index?opcion=0';
+    });
+    $('#menu_abrir').click(function(){
+        window.location='index?opcion=1';
+    });
+    $('#menu_cerrar').click(function(){
+        window.location='index';
+    });
+    $('#menu_guardar').click(function(){        
+    });
+    $('#menu_guardar_como').click(function(){
+    });
+    $('#menu_publicar').click(function(){
+    });
+    $('#menu_propiedades_documento').click(function(){
+    });
+
+});
+// ---------------------------------------------funciones jquery para design --fin--

@@ -1,0 +1,29 @@
+<div id="wizard" class="">
+    
+    <div id="menu_wizard">
+        <div id="menu_nav">
+            @ullist;noquote@
+        </div>
+    </div>
+    
+    <div id="contenido_wizard">
+        <div id="encabezado">
+            <a class="anterior"><</a>
+            <span id="encabezado_sesion"></span> 
+            <span id="encabezado_num_sesion"></span> 
+            <span id="encabezado_act_sesion"></span>           
+            <a class="siguiente">></a>         
+            <a class="cerrar">X</a>
+        </div>
+        <div id="info">
+            informacion
+        </div>
+        <div id="area_trabajo">
+            <formtemplate id="area_trabajo_widget"></formtemplate>	
+        </div>
+    </div>
+        
+    
+</div>
+
+<img id="arrow" class="" src="/resources/tda-gdi/images/iconos/arrow.png" />

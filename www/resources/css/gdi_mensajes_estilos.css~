@@ -1,0 +1,322 @@
+/*------------------------------------------------------------------------------------CSS para los mensajes---inicio--------------------------*/
+
+/*---------------------------esqueleto---inicio---*/
+.ui-dialog { 
+    position: absolute; 
+    background-color: #ffffff;
+	border: 1px solid #777777;
+}
+.ui-dialog .ui-dialog-titlebar { 
+    padding: 10px; 
+    position: relative;  
+/*	border-bottom: 1px solid #777777;*/
+}
+.ui-dialog .ui-dialog-title { 
+    float: left; 
+} 
+.ui-dialog .ui-dialog-titlebar-close { 
+    position: absolute; 
+    right: 3px;  
+    width: 5%;
+    height:100%;
+    margin: -10px 0 0 0;
+    text-align:center;
+}
+.ui-dialog .ui-dialog-titlebar-close span { 
+    display: block; 
+}
+.ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { 
+    background-color:#ffffff;
+    text-decoration:none;
+}
+.ui-dialog .ui-dialog-content { 
+    padding: 0 15px 0 15px;
+    position: relative; 
+    text-align:justify;
+}
+.ui-dialog .ui-dialog-buttonpane { 
+    text-align: center; 
+/*	border-top: 1px solid #777777;*/
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { 
+    float: right; 
+}
+.ui-dialog .ui-dialog-buttonpane button { 
+    margin: .5em .4em .5em 0; 
+    cursor: pointer; 
+}
+.ui-dialog .ui-resizable-se { 
+    width: 14px; 
+    height: 14px; 
+    right: 3px; 
+    bottom: 3px; 
+}
+.ui-draggable .ui-dialog-titlebar { 
+    cursor: move; 
+}
+/*---------------------------esqueleto---fin---*/
+
+
+
+/*------------------------wizard ---fin---*/
+/*no usa esqueleto*/
+#wizard{
+    position:absolute;
+    height: auto;
+    width:800px;
+	border: 3px solid #777777;
+	z-index:3500;
+	background-color:#ffffff;
+	display:none;
+    background-color:#f2f2f2;
+    cursor:default;
+}
+#arrow{
+    position:absolute;
+	z-index:3500;
+	display:none;
+}
+#menu_wizard{
+    float:left;
+    font-size:13px;
+	width:250px;
+	margin-right:-1px;
+    border-right: 1px solid #777777;
+}
+#menu_opciones{
+	padding-top:30px;
+	padding-bottom:20px;
+	margin-top:0px;
+	margin-bottom:50px;
+}
+#menu_opciones li{
+    display:block;    
+	cursor:pointer;
+	padding-top:15px;
+	padding-left:30px;
+	margin-left:-40px;
+}
+#menu_opciones li:hover{
+    background-color:#cccccc;
+    text-decoration:none;
+    outline:none;
+}
+.seleccionado{
+	margin-right:-1px;
+    background-color:#ffffff;
+	border-top: 1px solid #777777;
+	border-bottom: 1px solid #777777;
+    border-right: 1px solid #f2f2f2;
+}
+#contenido_wizard{
+    float:right;
+    background-color:#ffffff;
+	width:549px;
+}
+#encabezado{
+    text-align:center;
+}
+#encabezado #encabezado_sesion{
+    font-size:18px;
+}
+#encabezado #encabezado_num_sesion{
+    font-size:18px;
+}
+#encabezado #encabezado_act_sesion{
+    font-size:18px;
+}
+#encabezado .anterior{
+    position:absolute;
+    top:0px;
+    left:300px;
+    font-size:24px;
+}
+#encabezado .siguiente{
+    position:absolute;
+    top:0px;
+    right:50px;
+    font-size:24px;
+}
+#encabezado .cerrar{
+    position:absolute;
+    top:-10px;
+    right:-10px;
+    font-size:18px;
+    background-color:#ffffff;
+    border:3px solid #777777;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+}
+#encabezado .cerrar:hover{
+    cursor:pointer;
+    text-decoration:none;
+    outline:none;
+    background-color:#cccccc;
+}
+#encabezado .siguiente:hover, #encabezado .anterior:hover {
+    cursor:pointer;
+    text-decoration:none;
+    outline:none;
+    background-color:#ffffff;
+}
+#info{
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    text-align:center;
+}
+#txt_observaciones{
+    height:200px;
+    width:400px;
+    top:auto;
+    right:auto;
+}
+#area_trabajo_widget .form-item-wrapper{
+    position:relative;
+    left:-120px;
+    top:auto;
+    right:auto;
+}
+/*------------------------wizard ---fin---*/
+
+
+
+/*---------------------------di__propiedades_documento---inicio---*/
+#propiedades_documento li h4{
+    display:inline-block;
+    margin: 5px 0px 5px -15px;
+}
+#propiedades_documento li{
+    display:inline-block;
+    list-style:none;
+    cursor:default;
+}
+/*---------------------------di__propiedades_documento---fin---*/
+
+
+
+/*---------------------------compartir---inicio---*/
+#compartir-pop_up{
+	position:absolute;
+	border-right: 1px solid #777777;
+	border-left: 1px solid #777777;
+	border-bottom: 1px solid #777777;
+	display:none;
+    cursor:default;
+	top:30%;
+	left:15%;
+	background-color:#ffffff;
+    width: 900px;
+    height:388px;
+    z-index: 3500;
+}
+#paso_1 #contenido, #paso_2 #contenido{
+    padding:0;
+    margin:0;
+    height:350px;
+    //border: 1px solid red;
+}
+#compartir-pop_up #paso_1 #contenido #contenido_izquierda{
+    float:left;
+    width:449px;
+    border-right: 1px solid #cccccc;
+    height:100%;
+    //border: 1px solid blue;
+}
+#compartir-pop_up #paso_1 #contenido #contenido_derecha{
+    float:right;
+    width:440px;
+    //border: 1px solid green;
+    height:100%;
+}
+#compartir-pop_up #tabs{
+	height:10%;
+	width:100%;
+}
+#compartir-pop_up #tabs ul{
+    position:relative;
+    padding:0 0 0 5px;
+    margin:-8px -1px 0 -1px;
+}
+#compartir-pop_up #tabs ul li{
+/*
+para el ul y li de tabs, los despliega en línea y bloque
+*/
+    display: inline-block;
+    width: 450px;
+    text-align:center;
+}
+#compartir-pop_up #tabs li a{
+/*
+para el texto de los li, parque que estén centrados 
+*/
+    padding: 0 15px 0 15px;
+}
+#compartir-pop_up li.ui-state-default{
+/*
+para los tabs inactivos.
+*/
+    padding: 12px 0 12px 0;
+    background-color:#FFFFFF;
+    border-top: 1px solid #777777;
+    border-left: 1px solid #777777;
+    border-right: 1px solid #777777;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    margin: 0 0 0 -5px;
+    border-bottom: 1px solid #F2F2F2;
+}
+#compartir-pop_up li.ui-tabs-selected {
+/*
+para los tabs activos.
+*/
+    padding: 12px 0 12px 0;
+    background-color:#F2F2F2;
+    border-top: 1px solid #777777;
+    border-left: 1px solid #777777;
+    border-right: 1px solid #777777;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+}
+#compartir-pop_up li.ui-state-default a {
+/* 
+para las tabs de index.adp, que no muestre efectos en los links (a) y que sean gris
+centre el texto y no lo decore
+*/
+    position: relative;
+    display: block;
+    text-align: center;
+    color: #777777;
+    text-decoration: none;
+    outline: none;
+    margin: 0 -15px 0 0;
+}
+#compartir-pop_up .ui-tabs-hide {
+/*
+para que no muestre el contenido de los tabs inactivos.
+*/
+    display: none;
+}
+#compartir-pop_up li.ui-state-default a:hover {
+/*
+para los tabs inactivos, cuando el mouse pasa sobre ellos
+*/
+    background-color:#FFFFFF;
+}
+#compartir-pop_up li.ui-tabs-selected a:hover {
+/*
+para los tabs inactivos, cuando el mouse pasa sobre ellos
+*/
+    background-color:#F2F2F2;
+}
+#buscar_otras_personas{
+    display:none;
+}
+.select_index_otros{
+	border-top: 1px solid #777777;
+    text-align: right;
+}
+/*---------------------------compartir---fin---*/
+
+/*------------------------------------------------------------------------------------CSS para los mensajes---fin--------------------------*/
+
+

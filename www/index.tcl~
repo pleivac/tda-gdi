@@ -1,0 +1,31 @@
+ad_page_contract {
+
+} {
+}
+
+############ add css and javascript files...
+template::head::add_css -href "/resources/tda-gdi/css/gdi_estilos.css" -order 1
+
+
+template::head::add_javascript -src "/resources/tda-gdi/js/lib/jquery-1.5.1.min.js" -order 2
+template::head::add_javascript -src "/resources/tda-gdi/js/lib/jquery-ui-1.8.13.custom.min.js" -order 3
+
+
+template::head::add_javascript -src "/resources/tda-gdi/js/gdi_funciones.js" -order 8
+template::head::add_javascript -src "/resources/tda-gdi/js/index.js" -order 9
+
+
+
+
+set menu_items {"Nuevo" "Abrir" "Salir" "Guardar" "Guardar como" "Publicar" "Propiedades del documento"}
+
+
+set menu "<ul class=\"menu_items_menu\"> \
+            <li><a id=\"menu_nuevo\">[lindex $menu_items 0]</a></li> \
+            <li class=\"limite\"><a id=\"menu_abrir\">[lindex $menu_items 1]</a></li> \
+            <li><a class=\"deshabilitados\"  id=\"menu_cerrar\">[lindex $menu_items 2]</a></li> \
+            <li><a class=\"deshabilitados\"  id=\"menu_guardar\">[lindex $menu_items 3]</a></li> \
+            <li><a class=\"deshabilitados\"  id=\"menu_guardar_como\">[lindex $menu_items 4]</a></li> \
+            <li class=\"limite\"><a class=\"deshabilitados\" id=\"menu_publicar\">[lindex $menu_items 5]</a></li> \
+            <li><a class=\"deshabilitados\"  id=\"menu_propiedades_documento\">[lindex $menu_items 6]</a></li>\
+        </ul>"

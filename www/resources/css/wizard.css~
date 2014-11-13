@@ -1,0 +1,119 @@
+/*------------------------------------------------------------------------------------CSS para wizard---inicio--------------------------*/
+#wizard{
+    position:absolute;
+    height: auto;
+    width:800px;
+	border: 3px solid #777777;
+	z-index:3500;
+	background-color:#ffffff;
+	display:none;
+    background-color:#f2f2f2;
+    cursor:default;
+}
+#arrow{
+    position:absolute;
+	z-index:3500;
+	display:none;
+}
+#menu_wizard{
+    float:left;
+    font-size:13px;
+	width:250px;
+	margin-right:-1px;
+    border-right: 1px solid #777777;
+}
+#menu_opciones{
+	padding-top:30px;
+	padding-bottom:20px;
+	margin-top:0px;
+	margin-bottom:50px;
+}
+#menu_opciones li{
+    display:block;    
+	cursor:pointer;
+	padding-top:15px;
+	padding-left:30px;
+	margin-left:-40px;
+}
+#menu_opciones li:hover{
+    background-color:#cccccc;
+    text-decoration:none;
+    outline:none;
+}
+.seleccionado{
+	margin-right:-1px;
+    background-color:#ffffff;
+	border-top: 1px solid #777777;
+	border-bottom: 1px solid #777777;
+    border-right: 1px solid #f2f2f2;
+}
+#contenido_wizard{
+    float:right;
+    background-color:#ffffff;
+	width:549px;
+}
+#encabezado{
+    text-align:center;
+}
+#encabezado #encabezado_sesion{
+    font-size:18px;
+}
+#encabezado #encabezado_num_sesion{
+    font-size:18px;
+}
+#encabezado #encabezado_act_sesion{
+    font-size:18px;
+}
+#encabezado .anterior{
+    position:absolute;
+    top:0px;
+    left:300px;
+    font-size:24px;
+}
+#encabezado .siguiente{
+    position:absolute;
+    top:0px;
+    right:50px;
+    font-size:24px;
+}
+#encabezado .cerrar{
+    position:absolute;
+    top:-10px;
+    right:-10px;
+    font-size:18px;
+    background-color:#ffffff;
+    border:3px solid #777777;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+}
+#encabezado .cerrar:hover{
+    cursor:pointer;
+    text-decoration:none;
+    outline:none;
+    background-color:#cccccc;
+}
+#encabezado .siguiente:hover, #encabezado .anterior:hover {
+    cursor:pointer;
+    text-decoration:none;
+    outline:none;
+    background-color:#ffffff;
+}
+#info{
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    text-align:center;
+}
+#txt_observaciones{
+    height:200px;
+    width:400px;
+    top:auto;
+    right:auto;
+}
+#area_trabajo_widget .form-item-wrapper{
+    position:relative;
+    left:-120px;
+    top:auto;
+    right:auto;
+}
+/*------------------------tabs ---fin---*/
+/*------------------------------------------------------------------------------------CSS para wizard---fin--------------------------*/

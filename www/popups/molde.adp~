@@ -1,0 +1,15 @@
+<div class="mensaje">
+	<div class="mensaje_encabezado">			
+		<p class="mensaje_encabezado_titulo">
+		    @mensaje_encabezado_titulo@
+		</p>
+		<p class="mensaje_encabezado_cerrar">
+		    @mensaje_encabezado_cerrar@
+		</p>
+	</div>
+	<div class="mensaje_contenido">
+        <p class="mensaje_contenido_texto">
+            @mensaje_contenido_texto@
+        </p>
+	</div>
+</div>

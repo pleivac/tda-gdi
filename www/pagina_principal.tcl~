@@ -1,0 +1,94 @@
+ad_page_contract {
+
+} {
+    
+}
+
+############ add css and javascript files...
+template::head::add_css -href "/resources/tda-gdi/css/pagina_principal.css" -order 1
+template::head::add_javascript -src "/resources/tda-gdi/js/pagina_principal.js" -order 2
+
+## variables de texto, para la i18n ---inicio---
+set page_title "Bienvenido a GDI"
+set profesor "Agustín Francesa"
+set index_texto_bienvenida "Bienvenido $profesor, esta herramienta le guiará en el proceso de creación \
+                            de su diseño instruccional."
+set tab1 "Paso 1: Bienvenida"
+set tab2 "Paso 2: Selección"
+## variables de texto, para la i18n ---fin---
+
+
+## Form#1 tab bienvenida
+ad_form \
+-name form_bienvenida \
+-has_submit 1 \
+-form {
+
+	{nombre_profesor:text,optional 
+	    {label "Nombre y apellidos: "}
+	    {value $profesor}
+    	{html {class "claseprueba"}}}
+}
+
+## Form#2 tab Selección
+ad_form \
+-name form_seleccion \
+-has_submit 1 \
+-form {
+
+	{selecionar_curso:text(select),optional {label "Nuevo DI. Seleccione el curso: "}
+	{options { 
+		   {"Bases de datos" bd}
+		   {"IA" ia}
+         }}
+    	{html {class "selectbox"}}}
+    
+         
+	{selecionar_di:text(select),optional {label "Abrir DI. Seleccione el DI: "}
+	{options { 
+		   {"DI 1" 0}
+		   {"DI 2" 1}
+         }}
+    	{html {class "selectbox"}}}
+}
+
+
+## Form#3 tab Selección buscar curso
+ad_form \
+-name form_seleccion_buscar_curso \
+-form {
+	{selecionar_sede:text(select),optional {label "Sede*: "}
+	{options { 
+		   {"Cartago" bd}
+		   {"Santa Clara" ia}
+         }}
+    	{html {class "selectbox selectbox_oculto"}}}
+    
+	{selecionar_escuela:text(select),optional {label "Escuela*: "}
+	{options { 
+		   {"Compu" bd}
+		   {"Produ" ia}
+         }}
+    	{html {class "selectbox selectbox_oculto"}}}
+    
+	{selecionar_carrera:text(select),optional {label "Carrera*: "}
+	{options { 
+		   {"Compu" bd}
+		   {"Produ" ia}
+         }}
+    	{html {class "selectbox selectbox_oculto"}}}
+    
+	{selecionar_modalidad:text(select),optional {label "Modalidad*: "}
+	{options { 
+		   {"Semestre" bd}
+		   {"Verano" ia}
+         }}
+    	{html {class "selectbox selectbox_oculto"}}}
+    
+	{selecionar_plan:text(select),optional {label "Plan*: "}
+	{options { 
+		   {"409" bd}
+		   {"219" ia}
+         }}
+    	{html {class "selectbox selectbox_oculto"}}}
+}

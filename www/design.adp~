@@ -1,0 +1,38 @@
+<master>
+<div class="yui-skin-sam">
+    <div id="marco" class="marco">
+	
+	
+	    <div id="bloqueo">
+	    </div>
+
+
+        <div id="menu">
+           <ul class="menu">
+                <li class="menu_opcion limite"><span class=" "><img class="menu_items" src="/resources/tda-gdi/images/iconos/menu.png" title="Menú"/></span>
+                    @menu;noquote@
+                </li>
+                <li><img id="guardar" class="inhabilitado"  src="/resources/tda-gdi/images/iconos/guardar_i.png" title="Guardar"/> </li>
+                <li><img class="inhabilitado"  src="/resources/tda-gdi/images/iconos/deshacer_i.png" title="Deshacer"/> </li>
+                <li><img class="inhabilitado"  src="/resources/tda-gdi/images/iconos/rehacer_i.png" title="Rehacer"/> </li>
+                <li><img class="inhabilitado"  src="/resources/tda-gdi/images/iconos/cortar_i.png" title="Cortar"/> </li>
+                <li><img class="inhabilitado"  src="/resources/tda-gdi/images/iconos/copiar_i.png" title="Copiar"/> </li>
+                <li><img class="inhabilitado"  src="/resources/tda-gdi/images/iconos/pegar_i.png" title="Pegar"/> </li>
+                <li><img id="vista_previa" class="inhabilitado limite"  src="/resources/tda-gdi/images/iconos/vista_previa_i.png" title="Vista Previa"/> </li>
+                <li><img id="compartir" class="inhabilitado"  src="/resources/tda-gdi/images/iconos/compartir_i.png" title="Compartir"/> </li>
+                <li><img class="inhabilitado limite"  src="/resources/tda-gdi/images/iconos/eliminar_i.png" title="Eliminar"/> </li>
+                <li><img id="programa_curso" class="inhabilitado"  src="/resources/tda-gdi/images/iconos/programa_del_curso_i.png" title="Programa del curso"/> </li>
+                <li><img id="contexto_di" class="inhabilitado"  src="/resources/tda-gdi/images/iconos/programa_del_curso_i.png" title="Programa del curso"/> </li>
+                <li><img class="inhabilitado"  src="/resources/tda-gdi/images/iconos/buscar_i.png" title="Buscar"/> </li>
+                <li><img id="ayuda" class="inhabilitado limite"  src="/resources/tda-gdi/images/iconos/ayuda_i.png" title="Ayuda"/> </li>
+                <li class="progress"><div id="progressbar"><span id="progresstext">0%</span></div></li>
+            </ul> 
+        </div>
+        
+        
+        <div id="contenedor">
+            <include src="di">
+        </div>
+            
+    </div>
+</div>

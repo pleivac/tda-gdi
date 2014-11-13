@@ -1,0 +1,118 @@
+ad_page_contract {
+
+} {
+
+}
+
+############ add css and javascript files...
+template::head::add_css -href "/resources/tda-gdi/css/di.css" -order 1
+template::head::add_javascript -src "/resources/tda-gdi/js/di.js" -order 9
+
+
+set programa_curso "Este es el programa del curso... aquí se despliega el programa del curso"
+##mismo proc de wizard.tcl
+set componentes {"Sesión" "Título" "Objetivos de apendizaje" "Módulos de contenidos" "Actividades de aprendizaje" "Medios-Materiales a utilizar" "Evaluación de los aprendizajes"}
+
+set sesiones 6
+
+set componentes_programa_curso {"Justificación" "Contenido" "Objetivos" "Bibliografía" "Horario" "Evaluación" "Tipo curso"}
+set contenido_programa_curso {"Justificación 2" "Contenido" "Objetivos" "Bibliografía" "Horario" "Evaluación" "Tipo curso"}
+
+set componentes_ayuda {"Introducción" "¿Cómo escribir Objetivos?" "¿Qué es un DI"}
+set contenido_ayuda {"Introducción" "¿Cómo escribir Objetivos?" "¿Qué es un DI"}
+
+set componentes_contexto {"¿Población?" "¿Género?" "¿Edades?"}
+set contenido_contexto {"¿Población?" "¿Género?" "¿Edades?"}
+
+set siguiente "Siguiente"
+set anterior "Anterior"
+
+####Genera el menú y el contenido del programa del curso
+###################################################################################################
+set ul_programa_curso "<ul>"
+for {set i 0} {$i < [llength $componentes_programa_curso]} {incr i} {
+    set ul_programa_curso "$ul_programa_curso\
+                           <li><a href=\"#programa_paso_$i\" title=\"explicación\">[lindex $componentes_programa_curso $i]</a></li>"                      
+}
+set ul_programa_curso "$ul_programa_curso</ul>"
+#################################
+set divs_programa_curso ""
+for {set i 0} {$i < [llength $componentes_programa_curso]} {incr i} {
+    set divs_programa_curso "$divs_programa_curso\
+                           <div id=\"programa_paso_$i\">[lindex $contenido_programa_curso $i]</div>"                      
+}
+###################################################################################################
+####Genera el menú y el contenido de la ayuda
+###################################################################################################
+set ul_ayuda "<ul>"
+for {set i 0} {$i < [llength $componentes_ayuda]} {incr i} {
+    set ul_ayuda "$ul_ayuda\
+                           <li><a href=\"#programa_paso_$i\">[lindex $componentes_ayuda $i]</a></li>"                      
+}
+set ul_ayuda "$ul_ayuda</ul>"
+#################################
+set divs_ayuda ""
+for {set i 0} {$i < [llength $contenido_ayuda]} {incr i} {
+    set divs_ayuda "$divs_ayuda\
+                           <div id=\"programa_paso_$i\">[lindex $contenido_ayuda $i]</div>"                      
+}
+###################################################################################################
+####Genera el menú y el contenido del contexto del DI
+###################################################################################################
+set ul_contexto "<ul>"
+for {set i 0} {$i < [llength $componentes_contexto]} {incr i} {
+    set ul_contexto "$ul_contexto\
+                           <li><a href=\"#programa_paso_$i\" title=\"explicación\">[lindex $componentes_contexto $i]</a></li>"                      
+}
+set ul_contexto "$ul_contexto</ul>"
+#################################
+set divs_contexto ""
+for {set i 0} {$i < [llength $contenido_contexto]} {incr i} {
+    set divs_contexto "$divs_contexto\
+                           <div id=\"programa_paso_$i\">[lindex $contenido_contexto $i]</div>"                      
+}
+###################################################################################################
+
+
+### Construccion de la matriz del DI.-------------------------------------------INICIO----------
+set tabla "<table id=\"instructional_design\" class=\"list-table\" cellpadding=\"3\" cellspacing=\"1\"><tbody><tr class=\"list-header\">"
+set size_componentes [llength $componentes]
+for {set i 0} {$i < $size_componentes} {incr i} {
+    set temp [lindex $componentes $i]
+    set tabla "$tabla<th class=\"list-table\" align=\"center\">$temp</th>"
+}
+## cierro la fila del encabezado
+set tabla "$tabla</tr>"
+### inicia con el contenido de la tabla
+for {set i 1} {$i <= $sesiones} {incr i} {
+##segun la fial, agrega la clase correspondiente
+    if { [expr {$i % 2} ] == 0} {
+        if { $i == $sesiones } {
+            set tabla "$tabla<tr class=\"even last\">"
+        } else {
+            set tabla "$tabla<tr class=\"even\">"
+        }
+    } else {
+        if { $i == $sesiones } {
+            set tabla "$tabla<tr class=\"odd\">"
+        } else {
+            set tabla "$tabla<tr class=\"odd\">"
+        }
+    }
+### agrega el contenido de la fila en la columna 0, ya que es especial
+    set tabla "$tabla<td class=\"list-table\" align=\"center\"><span class=\"sesion\">$i</span></td>"
+### agrega el contenido de la fila en la columna 1, ya que es especial, lleva el title para ver el título del DI.
+    set tabla "$tabla<td title=\"\"class=\"list-table\" id=\"$column\" align=\"center\"><img id=\"$i-$column\" class=\"bolita\" src=\"/resources/tda-gdi/images/iconos/bolita_vacia.png\" /></td>"
+### agrega el contenido de la fila en el resto de columnas   
+    for {set column 2} {$column < $size_componentes} {incr column} {
+        set tabla "$tabla<td class=\"list-table\" id=\"$column\" align=\"center\"><img id=\"$i-$column\" class=\"bolita\" src=\"/resources/tda-gdi/images/iconos/bolita_vacia.png\" /></td>"
+    }
+## cierro la fila
+    set tabla "$tabla</tr>"
+}
+## cierro la tabla
+set tabla "$tabla</tbody></table>"
+### Construccion de la matriz del DI.-------------------------------------------FIN----------
+
+
+

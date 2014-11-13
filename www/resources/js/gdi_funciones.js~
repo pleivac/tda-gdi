@@ -1,0 +1,31 @@
+// ---------------------------------------------funciones jquery para todo el sitio --inicio--
+/*retorna un arrey con los parámetros ej=  [hola=1 adios=0]*/
+function obtener_parametros_url(){
+    var parametros = (((window.location.href).split('?'))[1]).split('&');
+    return parametros;
+}
+/*desbloquea una pantalla cuando ha mostrado un mensaje o notificación*/
+function desbloquear(){
+	$('#bloqueo').hide();
+}
+/*bloquea una pantalla, y muestra un mensaje de notificación*/
+function bloquear(){
+	$('#bloqueo').show();
+}
+// ---------------------------------------------funciones jquery para todo el sitio --fin--
+
+
+/// hace al usuario confirmar si sale o no del sitio.
+$(document).ready(function() {
+    $(window).bind("beforeunload",function(event) {
+       return "Nota: utilice únicamente los menues de la plataforma para navegar sobre ella... Si es el caso, guarde su trabajo antes de salir.";
+    });
+});
+
+
+
+
+
+
+
+

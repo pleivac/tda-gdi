@@ -1,0 +1,721 @@
+/*------------------------------------------------------------------------------------CSS para pagina_principal---inicio--------------------------*/
+.contenidoDI{
+	height:100%;
+	width:100%;
+}
+
+.opciones{
+	height:100%;
+	width:39%;
+	float:left;
+}
+
+.opciones label{
+	font-family:"Helvetica"; 
+	font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+	text-color: #4E4E4E;
+	color: #4E4E4E;
+}
+
+
+#contenidoCONF{
+	height:100%;
+	width:61%;
+	font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+	text-color: #4E4E4E;
+	font-size:11pt;
+	float:right;
+}
+#contenidoCONF table{
+    border-collapse: collapse;
+    float: right;
+    margin-right: 21px;
+}
+#info_curso{
+	display:none;
+}
+#info_di{
+	display:none;
+}
+.select_index_otros{
+	border-top: 1px solid #777777;
+    text-align: right;
+}
+#div_buscar_otros{
+    display:none;
+}
+#div_buscar_otros .nota{
+    margin:0 0 0 10%;
+    color: #808081;
+    display: block;
+    font: 10pt HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+    font-style:italic;
+    margin: 0 0 21px 21px;
+}
+#index_botones{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 0 43%;
+    height:30px;
+    width:230px;
+}
+
+
+#index_button_func_div{
+    float:right;
+}
+	
+#index_button_func{
+	background-image: url("/resources/tda-gdi/images/iconos/btn-crear-di1.png");
+	border: none;
+	border-radius: 2px 2px 2px 2px;
+	height: 19px;
+	vertical-align: top;
+	width: 103px;
+}
+/*
+#index_button_func:hover{
+	background-image: url("/resources/tda-gdi/images/iconos/btn-crear-di2.png");
+	background-repeat: no-repeat;
+	width: 103px; 
+	height: 19px; 
+	margin: 0;
+	padding: 0;
+}
+
+#index_button_func:active{
+	background-image: url("/resources/tda-gdi/images/iconos/btn-crear-di3.png");
+	background-repeat: no-repeat;
+	width: 103px; 
+	height: 19px; 
+	margin: 0;
+	padding: 0;
+}*/
+/*------------------------tabs ---inicio---*/
+
+#tabs{
+	height:10%;
+	width:100%;
+}
+#tabs ul{
+    border-bottom: 1px solid #F2F2F2;
+}
+#tabs ul li{
+/*
+para el ul y li de tabs, los despliega en línea y bloque, con un ancho de 231px 
+*/
+    display: inline-block;
+    width: 231px;
+}
+li.ui-state-default{
+/*
+para los tabs inactivos.
+*/
+    padding: 12px 0 12px 0;
+    background-color:#FFFFFF;
+    border-top: 1px solid #F2F2F2;
+    border-left: 1px solid #F2F2F2;
+    border-right: 1px solid #F2F2F2;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    margin: 0 0 0 -5px;
+}
+li.ui-tabs-selected {
+/*
+para los tabs activos.
+*/
+    padding: 12px 0 12px 0;
+    background-color:#F2F2F2;
+    border-top: 1px solid #F2F2F2;
+    border-left: 1px solid #F2F2F2;
+    border-right: 1px solid #F2F2F2;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+}
+#tabs ul li a {
+/* 
+para las tabs de index.adp, que no muestre efectos en los links (a) y que sean gris
+centre el texto y no lo decore
+*/
+    position: relative;
+    display: block;
+    text-align: center;
+    color: #777777;
+    text-decoration: none;
+    outline: none;
+    margin: 0 15px 0 0;
+}
+.ui-tabs-hide {
+/*
+para que no muestre el contenido de los tabs inactivos.
+*/
+    display: none;
+}
+li.ui-state-default a:hover {
+/*
+para los tabs inactivos, cuando el mouse pasa sobre ellos
+*/
+    background-color:#FFFFFF;
+}
+li.ui-tabs-selected a:hover {
+/*
+para los tabs inactivos, cuando el mouse pasa sobre ellos
+*/
+    background-color:#F2F2F2;
+}
+/*------------------------tabs ---fin---*/
+
+
+
+
+#contenedor input {
+     /*background: none repeat scroll 0pt 0pt #FFFFFF;
+     border-radius: 5px 5px 5px 5px;
+     border: 1px solid #7C7C7C; */
+     padding: 2px;
+     clear:both;
+     display:block;
+     margin-top:6px;
+     margin-bottom: 36px; 
+     background-color: #FFFFFF;
+     border: 1px solid #CDCCCC;
+     border-radius: 3px 3px 3px 3px;
+     color: #808081;
+     font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+     font-size: 11pt;
+     height: 19px;
+     width:250px;
+     padding: 8px;
+     right: auto;
+     top: auto;
+     
+}
+
+#contenedor .selectbox {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     /*background: none repeat scroll 0pt 0pt #FFFFFF;*/
+     border-radius: 5px;
+     border: 1px solid #7C7C7C;
+     clear: both;
+     /*margin: 0 0 30px -2px;*/
+     margin-bottom: 20px;
+     font: 11pt "Helvetica";
+     font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif; 
+     color:#808081; 
+     background-color: #FFFFFF;
+     border: 1px solid #CDCCCC;
+     border-radius: 3px 3px 3px 3px;
+     color: #808081;
+     font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+     font-size: 11pt;
+     height: 30px;
+     width:250px;
+     padding: 3px 6px;
+     text-indent: 0.01px;
+     text-overflow: "";
+     right: auto;
+     top: auto;
+     background: url("/resources/tda-gdi/images/Dropdown.png") no-repeat scroll 220px 1px / 23px 74px rgba(0, 0, 0, 0);
+}
+button::-moz-focus-inner {border: 2px solid transparent;}
+
+#contenedor .selectbox:focus, #contenedor .selectbox:active {
+    outline: 0;
+}
+
+#contenedor .selectbox:hover { 
+    background-position: 220px -24px;
+}
+#contenedor .selectbox:active { 
+    background-position: 220px -49px;
+}
+/*	Este estilo modifica los atributos del dropdown list de las materias para hacer la diferencia de la opcion
+	periodo a la opcion normal seleccionable				*/
+.periodo  {
+	font-weight: 3px bold;
+	color: #111111;
+	font-style:italic;
+	border-top: 1px solid #D0D3CF;
+/*	border-bottom: 1px solid #D0D3CF; */
+}
+
+/* Ocultar a div "#index_div_nuevo_inexistente"*/
+#index_div_nuevo_inexistente{ 
+	display:none;
+	}
+
+/* Ocultar a div "#index_div_nuevo_inexistente"*/
+#index_div_mostrar_existente{ 
+	display:none;
+	}
+
+/* Estilos para el boton_cerrar del popup */
+.boton_cerrar_popup {
+/*    border-radius: 7px 7px 7px 7px;
+    box-shadow: none;
+    font: bold 130%;
+    padding: 0 6px 2px;
+    position: absolute;
+    right: -7px;
+    top: -7px;
+    background-color: #7C7C7C;
+    color:#F2F2F2; 
+    background-color: #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: none;
+    color: #4E4E4E;
+    font: 11pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    padding: 0 6px 2px;
+    position: absolute;
+    right: 19px;
+    top: 14px;*/
+    height:23px;
+}
+
+.boton_cerrar_popup:hover {/*background-color: #9C9C9C; color:#FFFFFF; cursor:  pointer;*/color: #CCCCCC; cursor:  pointer; }
+.boton_cerrar_popup:active {/*background-color: #9C9C9C; color:#FFFFFF; cursor:  pointer;*/color: #0764AB; cursor:  pointer; }
+/* Estilos para los popup */
+.popup {
+    background-color: #FFFFFF;
+	border: 1px solid #808080;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0 0 5px 5px #CECCCC;
+	color: #111111;
+	min-width: 350px;
+	padding: 12px 7px;
+	color: #4E4E4E;
+	font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+.popup p{
+	margin-top: -5px;
+	font: 11pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-weight:bold;
+	border-bottom-color: #808080;
+        border-bottom-style: solid;
+        border-width: 1px;
+        margin-bottom: -1px;
+        padding-bottom: 4.5px;
+}
+
+element.style {
+    display: block;
+    left: 321px;
+    top: 299px;
+}
+
+.popup .margin-form .form-item-wrapper .form-label {
+    display: block;
+    float: none;
+    text-align: left;
+    width: 16em;
+    margin-bottom: -5px;
+    margin-left:-5px;
+    margin-top:0px;
+}
+
+.popup input{ 
+/*    background-color: #FFFFFF;
+    border: 1px solid #CDCCCC;
+    border-radius: 3px 3px 3px 3px;
+    color: #808081; */
+    font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+/*    font-size: 10pt;
+    height: 13px;
+    margin-left: -21px;
+    margin-right: 17px;
+    margin-top: 7px;
+    padding: 8px;
+    right: auto;
+    top: auto;
+    width: 102%;
+*/}
+/*
+#cantidad_sesiones, #cantidad_sesiones_asignar {
+    width: 20%;
+}*/
+
+#minus, #plus, #minus_asignar, #plus_asignar{
+    border: 1px solid #D0D3CF;
+    font: 11px Arial,Helvetica,sans-serif;
+    font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+    cursor: pointer;
+    }
+/*
+#btn_crear_di_inexistente, #btn_crear_di{
+    font-size: 8pt;
+    height: 23px;
+    margin-bottom: -2px;
+    margin-left: -1px;
+    margin-right: 7px;
+    margin-top: 16px;
+    padding: 0;
+    position: static;
+}*/
+
+.txtPaso{
+	font:bold 12pt "Helvetica";
+	font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif; 
+	color: #004379;	
+	margin: 0 0 21px 21px;
+	position:relative;
+}
+
+
+
+.txtDescripcion{
+	font: 11pt "Helvetica"; 
+	font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+	color: #4E4E4E;	
+	margin: 0 0 21px 21px;
+	display:block;
+	max-width: 775px;
+}
+
+
+.txtLabelBox{
+	font: 11pt "Helvetica"; 
+	font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+	color: #4E4E4E;	
+	margin: 0 0 10px 21px;
+	position:relative;
+}
+
+
+
+.txtTitulosList{
+	font: 11pt "Helvetica"; 
+	font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+	color: #4E4E4E;
+	margin-left: 20px;	
+	
+}
+
+
+
+
+ 
+.margin-form .form-item-wrapper .form-label {
+     width:15px;
+     margin: -20px 0 0 14px;
+}
+
+.margin-form .form-item-wrapper .form-widget, .margin-form .form-button, .margin-form .form-help-text {
+    margin-left:15px;
+}
+
+/*------------------Clase para ocultar eleemntos----------------------*/
+
+.oculto {
+     display:none;
+}
+
+
+/*-------------------Botones de Atras y siguiente---*/
+
+.menuBotones{
+     list-style:none;
+     /*float:left;*/
+     margin-bottom: 30%;
+     margin-left: 618px;
+}
+
+.menuBotones div{
+     /*height: 24px; margin: auto;*/	
+     list-style:none;
+     float:left;
+     /*padding: 0.3px 65.5px;*/
+}
+.menuBotonesRight div {
+    float: right;
+    height: 15px;
+    list-style: none outside none;
+    margin-right: 21px;
+    /*width: 109px;*/
+}
+
+.textoActivo {
+/*
+cambia el color del textos de los botones cuando se le da clic. 
+*/
+     color: #1D69B2;
+}
+
+
+#progressbar {
+     color: #4E4E4E;
+     border:solid;
+     border-color:red;
+     margin-left:75%;
+}
+
+
+
+.Activo {
+/*
+para agregar la imagen del punto cuando un botón esta activo 
+*/
+     background-image: url("/resources/tda-gdi/images/circulo_activo.png");
+     display: block;
+     height: 10px;
+     margin: auto;
+     text-align: center;
+     width: 10px;
+     color: #1D69B2;
+}
+
+
+
+
+/*---------------------------------Botón de Siguiente----------------------*/
+.btnSiguiente:after {
+    content: "Siguiente";
+    line-height: 18px;
+    margin: 30%;
+    cursor:pointer;
+}
+.btnNext:after {
+    content: "Next";
+    line-height: 18px;
+    margin: 41%;
+    cursor:pointer;
+}
+/*
+.btnSiguiente:hover {
+/*
+imagen cuando el mouse está sobre el botón
+
+     background-position: -519px 59px;
+}
+
+.btnSiguiente:active {
+/*
+imagen cuando el se le da clic al botón
+
+     background-position: -648px 59px;
+} */
+
+
+/*---------------------------------Botón de Atras----------------------*/
+.btnAtras:after {
+    content: "Atrás";
+    line-height: 18px;
+    margin: 39%;
+    cursor:pointer;
+}
+.btnBack:after {
+    content: "Back";
+    line-height: 18px;
+    margin: 39%;
+    cursor:pointer;
+}
+/*
+.btnAtras {
+     background-image: url("/resources/tda-gdi/images/Botones.png");
+     background-position: -390px 40px;
+}
+
+.btnAtras:hover {
+     background-position: -519px 40px;
+}
+
+.btnAtras:active {
+     background-position: -648px 40px;
+}
+*/
+
+/*---------------------------------Botón de Crear DI----------------------*/
+/*
+.btnCrearDI {
+     background-image: url("/resources/tda-gdi/images/Botones.png");
+     background-position: -390px 78px;
+}
+
+.btnCrearDI:hover {
+     background-position: -519px 78px;
+}
+
+.btnCrearDI:active {
+     background-position: -648px 78px;
+}*/
+.btnCrearDI:after {
+     content: "Crear DI";
+     line-height: 18px;
+     margin: 29%;
+}
+.btnMakeID:after {
+     content: "Make ID";
+     line-height: 18px;
+     margin: 29%;
+}
+
+.btnBoton {
+    display: inline-block;
+    vertical-align: top;
+
+}
+/*--------------------------------Boton de Abrir DI-----------------------*/
+/*.menuBotones div div {
+	height:20px;
+}*/
+/*
+.btnAbrirDI {
+	border-radius: 3px 3px 3px 3px;
+    box-shadow: none;
+    border: 1px solid #CDCBCA;
+    height:10px;
+    width:37px;
+    color: #808081;
+    font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
+    font-size: 8pt;
+}*/
+.btnAbrirDI:after {
+     content: "Abrir DI";
+     line-height: 18px;
+     margin: 32%;
+}
+.btnOpenID:after {
+     content: "Open ID";
+     line-height: 18px;
+     margin: 33%;
+}
+ /*
+.btnAbrirDI:hover {
+     background-color: #CDCBCA;
+     color: #FFFFFF;
+}
+
+.btnAbrirDI:active {
+     background-color: #808080;
+     color: #FFFFFF;
+     border: 1px solid #808080;
+}
+*/
+.btnBoton {
+    display: inline-block;
+    vertical-align: top;
+
+}
+/*--------------------------------Tabla de carga de datos-----------------------*/
+table.list-table {
+  border: 1px solid #4D4D4D;
+}
+
+td.list-table, td.list-table-narrow, .list-table td {
+    border: 1px solid #CDCCCC;
+    background-color: #E6E5E5;
+    padding: 7px;
+}
+
+th.list-table, th.list-table-narrow, .list-table th {
+    border: 1px solid #CDCCCC;
+    padding: 7px;
+    padding: 9px 12px;
+}
+
+/* Estilos para las propiedades del documento (Propiedades del DI) */
+#form_propiedades_documento {
+    display:none;
+    background-color: #FFFFFF;
+    border: 1px solid #808080;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 5px 5px #CECCCC;
+    min-width: 350px;
+    padding: 14px 7px;
+    color: #4E4E4E;
+    font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+
+#form_propiedades_documento input {
+    background-color: #FFFFFF;
+    border: 0px solid #808080;
+    color: #4E4E4E;
+    font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}/*
+#form_propiedades_documento div {
+    margin-top: 10px;
+}*/
+#form_propiedades_documento #h2 {
+    border-bottom: 1px solid #808080;
+    border-width: 1px;
+    font: bold 11pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    margin-bottom: -11px;
+    margin-top: -10px;
+    padding-bottom: 4.5px;
+    width: inherit;
+}
+#form_propiedades_documento #txt_explicativo_propiedades {
+    /* color: #888888; */
+    color: #915757;
+    margin-left: 10px;
+    margin-top: 5px;
+    visibility: hidden; 
+    font: 9pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+form_propiedades_documento div {
+	margin-top: -10px;
+}
+#tbl_propiedades_asociar, #tbl_propiedades_asociar th, #tbl_propiedades_asociar td
+{
+	border: 0px solid #CDCBCA;
+    border-collapse: collapse;
+    margin-left: -10px;
+    margin-top: -4px;
+    padding: 2px 10px;
+}
+.btn {
+	margin: 5px 0.5%;
+	background-color: #FFFFFF;
+    border: 1px solid #CDCBCA;
+    border-radius: 3px 3px 3px 3px;
+    color: #808081;
+    font: 9pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    height: 19px;
+    margin: 5px 10px;
+    height: 19px;
+    width: 129px;
+    padding: 0.5% 2.5%;
+    width: 10.7em;
+    cursor:pointer;
+}
+
+
+.btn:hover	{ border-color: #CCCCCC; background-color: #CCCCCC; color: #ffffff; }
+.btn:active { border-color: #808080; background-color: #808080; color: #ffffff; }
+.propiedades_btn_cerrar {
+	/*margin-bottom: -10px;
+    margin-top: -7px;*/
+    float: right;
+    height: 25px;
+    margin: 15px 1px -6px auto;	
+}
+#propiedades_space { /*Sirve para dar espacio en el texto de las propiedades */
+    background-color: white;
+    height: 4px;
+}
+/* Estilos para las propiedades */
+.mas_detalles{ 
+	cursor:pointer;
+	font-style:oblique;
+	text-decoration: underline; 
+}
+
+.btns_popup button{
+    float: right;
+    height: 23px;
+    margin: 15px 1.5px -5px 0;
+}
+ 
+#main-content div.main-content-padding{
+    padding: 0px;
+}
+
+@-moz-document url-prefix() {
+    div.tds-lib_form_spinner > .input-group-btn-vertical > button.tds-lib-icon-display:before {
+        margin-left: -1px;
+    }
+}
+
+/*------------------------------------------------------------------------------------CSS para pagina_principal---fin--------------------------*/

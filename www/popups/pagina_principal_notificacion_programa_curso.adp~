@@ -1,0 +1,49 @@
+<div id="mensaje" class="ui-dialog ui-widget ui-widget-content ui-corner-all undefined ui-draggable ui-resizable">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+
+    </div>
+    <div class="ui-dialog-content ui-widget-content" id="dialog">
+        <p>
+            @mensaje_contenido_texto@
+        </p>
+    </div>
+</div>
+
+
+
+
+
+<div aria-labelledby="ui-dialog-title-mensaje" role="dialog" tabindex="-1" class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable ui-resizable" style="display: block; z-index: 2002; outline: 0px none; position: relative; height: auto; width: 300px; top: -256px; left: 468px;">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+        <span id="ui-dialog-title-mensaje" class="ui-dialog-title">&nbsp;</span>
+        <a role="button" class="ui-dialog-titlebar-close ui-corner-all" href="#">
+            <span class="ui-icon ui-icon-closethick">X</span>
+        </a>
+    </div>
+    <div style="width: auto; min-height: 103px; height: auto;" id="mensaje" class="ui-dialog ui-widget ui-widget-content ui-corner-all undefined ui-draggable ui-resizable ui-dialog-content">
+        <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"></div>
+        <div class="ui-dialog-content ui-widget-content" id="dialog">
+            <p>
+                Se ha habilitado el botón con el programa del curso. Se recomienda revisarlo antes y durante del diseño instruccional, ¿desea revisarlo ahora?
+            </p>
+        </div>
+    </div>
+    <div class="ui-resizable-handle ui-resizable-n"></div>
+    <div class="ui-resizable-handle ui-resizable-e"></div>
+    <div class="ui-resizable-handle ui-resizable-s"></div>
+    <div class="ui-resizable-handle ui-resizable-w"></div>
+    <div style="z-index: 1001;" class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se"></div>
+    <div style="z-index: 1002;" class="ui-resizable-handle ui-resizable-sw"></div>
+    <div style="z-index: 1003;" class="ui-resizable-handle ui-resizable-ne"></div>
+    <div style="z-index: 1004;" class="ui-resizable-handle ui-resizable-nw"></div>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+        <div class="ui-dialog-buttonset">
+            <button aria-disabled="false" role="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="button">
+                <span class="ui-button-text">Si</span>
+            </button>
+            <button aria-disabled="false" role="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" type="button">
+                <span class="ui-button-text">No</span>
+            </button>
+        </div>
+    </div>
+</div>

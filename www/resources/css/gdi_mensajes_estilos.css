@@ -1,0 +1,543 @@
+/*------------------------------------------------------------------------------------CSS para los mensajes---inicio--------------------------*/
+
+/*---------------------------guardar---inicio---*/
+.ui-dialog {
+     background-color: #FFFFFF;
+     border: 1px solid #777777;
+     position: absolute;
+     color: #4E4E4E;
+     font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+     border: 1px solid #808080;
+     border-radius: 5px 5px 5px 5px;
+     box-shadow: 0 0 5px 5px #CECCCC;
+     padding: 12px 7px;
+}
+.ui-dialog .ui-dialog-titlebar {
+/*     background-color: #777777;
+     color: #FFFFFF;*/
+     padding: 5px 0 4.5px;
+     position: relative;
+     font: 11pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+     margin-top: -5px;
+     font-weight:bold;
+     border-bottom-color: #808080;
+     border-bottom-style: solid;
+     border-width: 1px;
+     margin-bottom: -1px;
+     padding-bottom: 4.5px;
+     /*
+     margin-top: -5px;
+     font: 11pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	font-weight:bold;
+	border-bottom-color: #808080;
+        border-bottom-style: solid;
+        border-width: 1px;
+        margin-bottom: -1px;
+        padding-bottom: 4.5px;
+     */
+}
+.ui-dialog .ui-dialog-titlebar-close {
+     position: absolute;
+     right: 3px;
+     border: medium none;
+     background-color: #FFFFFF;
+}
+.ui-dialog .ui-dialog-titlebar-close:active {
+     color: #FFFFFF;
+}
+
+.ui-dialog .ui-dialog-titlebar-close span {
+     color: #FFFFFF;
+}
+.ui-dialog .ui-dialog-titlebar-close:hover {
+     background-color: #FFFFFF;
+     text-decoration: none;
+}
+.ui-dialog .ui-dialog-content {
+     /*margin-left: -95px;*/
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+     float: right;
+}
+.ui-dialog .ui-dialog-buttonpane button {
+     cursor: pointer;
+     margin: 0.4em;
+}
+.ui-draggable .ui-dialog-titlebar {
+     cursor: move;
+}
+.ui-dialog input{
+	 border: 1px solid #CDCCCC;
+     border-radius: 2px 2px 2px 2px;
+     color: #808081;
+     font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+     font-size: 10pt;
+     height: 26px;
+     margin: 7px -8px 9px -5px;
+     /*margin: -2px -2px -2px 10px;*/
+     padding: 2px;
+     right: auto;
+     top: auto;
+     width: 78%;
+}
+
+.margin-form .form-item-wrapper .form-label {
+    display: block;
+    float: left;
+    text-align: left;
+}
+
+.margin-form .form-item-wrapper .form-label {
+    display: block;
+    float: left;
+    margin-left: -5px;
+    margin-right: -85px;
+    margin-top: 10px;
+    width: auto;
+    text-align: left;
+}
+.margin-form .form-item-wrapper .form-widget, .margin-form .form-button, .margin-form .form-help-text {
+    display: inline;
+    margin-left: 0;
+}
+
+.ui-dialog label span{
+	 margin: 0px 7px;
+}
+.margin-form .form-item-wrapper {
+    clear: left;
+    display: block;
+    padding: 5px;
+}
+/*---------------------------guardar---fin---*/
+
+
+
+/*------------------------wizard ---fin---*/
+/*no usa esqueleto*/
+#wizard{
+    position:absolute;
+    min-height:250px;
+    width:800px;
+	border: 1px solid #808080;
+	z-index:3500;
+	background-color:#ffffff;
+	display:none;
+    background-color:#f2f2f2;
+    cursor:default;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 5px 5px #CECCCC;
+    border-radius: 10px 10px 10px 10px;
+    background-color:white;
+}
+#arrow{
+    position:absolute;
+	z-index:3500;
+	display:none;
+}
+#menu_wizard{
+    /*border-right: 1px solid #777777;*/
+    float: left;
+    font-size: 13px;
+    margin-right: -1px;
+    width: 250px;
+}
+#menu_opciones{
+	padding-top:30px;
+	padding-bottom:20px;
+	margin-top:0px;
+	margin-bottom:50px;
+        color: #4E4E4E; 
+        font: 11pt "Helvetica";
+        font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif; 
+        color: #4E4E4E; 
+}
+#menu_opciones li{
+    cursor: pointer;
+    display: block;
+    margin-left: -40px;
+    padding-bottom: 7px;
+    padding-left: 17px;
+    padding-top: 7px;
+}
+#menu_opciones li:hover {
+    background-color: #CECCCC;
+    outline: medium none;
+    text-decoration: none;
+    color: #4E4E4E; 
+}
+#menu_opciones li:active {
+    background-color: #CECCCC;
+    outline: medium none;
+    text-decoration: none;
+    color: #004379; 
+}
+
+.seleccionado{
+	margin-right:-1px;
+    background-color:#ffffff;
+	border-top: 1px solid #777777;
+	border-bottom: 1px solid #777777;
+    border-right: 1px solid #f2f2f2;
+}
+#menu_opciones li:hover {
+    background-color: #CECCCC;
+    outline: medium none;
+    text-decoration: none;
+    color: #4E4E4E; 
+}
+#menu_opciones li:active {
+    background-color: #CECCCC;
+    outline: medium none;
+    text-decoration: none;
+    color: #004379; 
+}
+
+.seleccionado{
+    background-color: #808080;
+    border-bottom: 1px solid #808080;
+    border-right: 1px solid #808080;
+    border-top: 1px solid #808080;
+    color: white;
+    margin-right: -1px;
+}
+
+#contenido_wizard{
+    float:right;
+    width:549px;
+    min-height:250px;
+    border-left: 1px solid #777777;
+}
+.wizard_observaciones{
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #CDCCCC;
+    color: #808081;
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 11pt;
+    margin-left: 20px;
+    margin-right: 17px;
+    margin-top: 7px;
+    padding: 8px;
+    right: auto;
+    top: auto;
+    width: 80%;
+    min-height: 36px;
+   /* transition: height 0.2s ease 0s; */
+    -webkit-transition: height 0.2s; /* Safari */ 
+}
+#encabezado{
+    text-align:center;
+    width:inherit;
+    padding-bottom: 17px;
+    padding-top: 17px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    color: #4E4E4E;
+    border-bottom: 1px solid #808080;   
+}
+
+#encabezado #encabezado_sesion{
+    font-size:12pt;
+    font-weight:bold;
+}
+#encabezado #encabezado_num_sesion{
+    font-size:12pt;
+    font-weight:bold;
+}
+#encabezado #encabezado_act_sesion{
+    font-size:12pt;
+    font-weight:bold;
+}
+#encabezado .anterior{
+    position:absolute;
+    top:9px;
+    left:7px;
+    font-size:24px;
+    background-image:url("/resources/tda-gdi/images/iconos/Iconos.png");
+    background-position: -2467px 0;
+    width:36.66px;
+    height:35px;
+    position:absolute;
+    right:50px;
+    font-size:24px;
+}
+#encabezado .anterior:hover{
+    background-position: -2467px 73.66px;
+}
+#encabezado .anterior:active{
+    background-position: -2467px 36.66px;
+}
+#encabezado .siguiente{
+    background-image:url("/resources/tda-gdi/images/iconos/Iconos.png");
+    background-position: -2505px 0;
+    width:36.66px;
+    height:35px;
+    position:absolute;
+    top:9px;
+    right:7px;
+    font-size:24px;
+    
+}
+#encabezado .siguiente:hover{
+    background-position: -2505px 73.66px;
+}
+#encabezado .siguiente:active{
+    background-position: -2505px 36.66px;
+}
+#encabezado .siguiente:hover, #encabezado .anterior:hover {
+    cursor:pointer;
+    text-decoration:none;
+    outline:none;
+    background-color:#ffffff;
+}
+#info{
+    color: #4E4E4E;
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 11pt;
+    margin-left: 20px;
+    margin-right: 27px;
+    margin-top: 21px;
+    text-align: left;
+}
+#area_trabajo_widget .form-item-wrapper{
+    position:relative;
+    left:-120px;
+    top:auto;
+    right:auto;
+}
+#agregar {
+    background-image: url("/resources/tda-gdi/images/iconos/Iconos.png");
+    background-position: -2655px 0;
+    height: 36.66px;
+    width: 36.66px;
+}
+#agregar_texto{
+    color: #4E4E4E;
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 7pt;
+    margin-left: -4px;
+}
+#contenedor_agregar{
+    margin-left: 20px;
+    margin-top: 17px;
+    height: 46.66px;
+    width: 36.66px;
+    text-align:center;
+}
+#contenedor_agregar:hover div{
+    background-position: -2655px 74.8px;
+}
+#contenedor_agregar:hover label{
+    color: #CCCCCC;
+}
+
+#contenedor_agregar:active div{
+    background-position: -2655px 37.5px;
+}
+#contenedor_agregar:active label{
+    color: #004379;
+}
+#estado_seccion{
+    color: #4E4E4E;
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 11pt;
+    margin: 7px 20px 6px 17px;  
+}
+	
+#img_completo{
+    background-image: url("/resources/tda-gdi/images/iconos/Iconos.png");
+    background-position: -2764px 70px;
+    height: 36.66px;
+    width: 36.66px;
+    cursor:pointer;
+}
+#img_completo:hover{
+    background-position: -2764px -4px;
+}
+#img_completo:active{
+    background-position: -2764px 32.5px;
+}
+
+#img_incompleto{
+    background-image: url("/resources/tda-gdi/images/iconos/Iconos.png");
+    background-position: -2764px 70px;
+    height: 36.66px;
+    width: 36.66px;
+    cursor:pointer;
+}
+#img_incompleto:hover{
+    background-position: -2764px -4px;
+}
+#img_incompleto:active{
+    background-position: -2764px 32.5px;
+}
+.inline {
+    height: 36.66px;
+    width: 36.66px; 
+    float:left; 
+}
+.inline_text {
+    padding: 4px;
+}
+
+#contenido_wizard #cerrar{
+ /*   background-image: url("/resources/tda-gdi/images/Botones.png");
+    background-position: -1px -304px;
+    height: 21px;
+    margin: 50px 17px 17px 400px;
+    width: 129.5px;*/
+    line-height: 23px;
+    margin: 49px 31px 9px 344px;
+    text-align: center;
+} /*
+#contenido_wizard #cerrar:hover{
+	background-position: -130px -305px;
+}
+#contenido_wizard #cerrar:active{
+	background-position: 130px -305px;
+}*/
+/*------------------------wizard ---fin---*/
+
+
+
+/*---------------------------di__propiedades_documento---inicio---*/
+#propiedades_documento li h4{
+    display:inline-block;
+    margin: 5px 0px 5px -15px;
+}
+#propiedades_documento li{
+    display:inline-block;
+    list-style:none;
+    cursor:default;
+}
+/*---------------------------di__propiedades_documento---fin---*/
+
+
+
+/*---------------------------compartir---inicio---
+#compartir-pop_up{
+	position:absolute;
+	border-right: 1px solid #777777;
+	border-left: 1px solid #777777;
+	border-bottom: 1px solid #777777;
+	display:none;
+    cursor:default;
+	top:30%;
+	left:15%;
+	background-color:#ffffff;
+    width: 900px;
+    height:388px;
+    z-index: 3500;
+}
+#paso_1 #contenido, #paso_2 #contenido{
+    padding:0;
+    margin:0;
+    height:350px;
+    //border: 1px solid red;
+}
+#compartir-pop_up #paso_1 #contenido #contenido_izquierda{
+    float:left;
+    width:449px;
+    border-right: 1px solid #cccccc;
+    height:100%;
+    //border: 1px solid blue;
+}
+#compartir-pop_up #paso_1 #contenido #contenido_derecha{
+    float:right;
+    width:440px;
+    //border: 1px solid green;
+    height:100%;
+}
+#compartir-pop_up #tabs{
+	height:10%;
+	width:100%;
+}
+#compartir-pop_up #tabs ul{
+    position:relative;
+    padding:0 0 0 5px;
+    margin:-8px -1px 0 -1px;
+}
+#compartir-pop_up #tabs ul li{
+
+//para el ul y li de tabs, los despliega en línea y bloque
+
+    display: inline-block;
+    width: 450px;
+    text-align:center;
+}
+#compartir-pop_up #tabs li a{
+
+//para el texto de los li, parque que estén centrados 
+
+    padding: 0 15px 0 15px;
+}
+#compartir-pop_up li.ui-state-default{
+
+//para los tabs inactivos.
+
+    padding: 12px 0 12px 0;
+    background-color:#FFFFFF;
+    border-top: 1px solid #777777;
+    border-left: 1px solid #777777;
+    border-right: 1px solid #777777;
+    -moz-border-radius: 5px 5px 0 0;
+    -webkit-border-radius: 5px 5px 0 0;
+    margin: 0 0 0 -5px;
+    border-bottom: 1px solid #F2F2F2;
+}
+#compartir-pop_up li.ui-tabs-selected {
+
+//para los tabs activos.
+
+    padding: 12px 0 12px 0;
+    background-color:#F2F2F2;
+    border-top: 1px solid #777777;
+    border-left: 1px solid #777777;
+    border-right: 1px solid #777777;
+    -webkit-border-radius: 5px 5px 0 0;
+    -moz-border-radius: 5px 5px 0 0;
+}
+#compartir-pop_up li.ui-state-default a {
+ 
+//para las tabs de index.adp, que no muestre efectos en los links (a) y que sean gris
+//centre el texto y no lo decore
+
+    position: relative;
+    display: block;
+    text-align: center;
+    color: #777777;
+    text-decoration: none;
+    outline: none;
+    margin: 0 15px 0 0;
+}
+#compartir-pop_up .ui-tabs-hide {
+
+//para que no muestre el contenido de los tabs inactivos.
+
+    display: none;
+}
+#compartir-pop_up li.ui-state-default a:hover {
+
+//para los tabs inactivos, cuando el mouse pasa sobre ellos
+
+    background-color:#FFFFFF;
+}
+#compartir-pop_up li.ui-tabs-selected a:hover {
+
+//para los tabs inactivos, cuando el mouse pasa sobre ellos
+
+    background-color:#F2F2F2;
+}
+#buscar_otras_personas{
+    display:none;
+}
+.select_index_otros{
+	border-top: 1px solid #777777;
+    text-align: right;
+}
+---------------------------compartir---fin---*/
+
+
+
+/*------------------------------------------------------------------------------------CSS para los mensajes---fin--------------------------*/
+
+

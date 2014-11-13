@@ -1,0 +1,171 @@
+/*------------------------------------------------------------------------------------CSS para index---inicio--------------------------*/
+/*-------------------------------------- index ---inicio---*/
+.marco{
+	height:100%;
+	width:100%;
+	font-color:#777777;
+    font-size: 11px;
+    font-family:Arial,Helvetica,sans-serif;
+    /*margin: 0 0 0 -60px;*/
+}
+#menu{
+    margin: 0 0 0 0;
+	padding:0 0 30px 0;
+	height:51px;
+	width:100%;
+}
+.menu {
+    border-top: 1px solid #777777;
+    border-bottom: 1px solid #777777;
+}
+#contenedor{
+	width:100%;
+    margin: 0 0 0 0;
+    overflow-x: hidden;
+    overflow-y: hidden; 
+    border: 0;
+}
+.clear{
+	clear:both;
+}
+.menu_items:hover{
+    cursor:pointer;
+}
+.selectbox {
+	height:20px;
+	width:218px;
+	font-size: 10px;
+}
+.boton{
+	height:auto;
+	width:auto;
+}
+h1{
+    font-family:Arial,Helvetica,sans-serif;
+    font-size: 14px;
+}
+#bloqueo {
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	height:100%;
+	width:100%;
+	z-index: 2000;
+	background-image: url("/resources/tda-gdi/images/transparente.png");
+}
+/*-------------------------------------- estructura general ---inicio---*/
+
+/*-------------------------------------- menú ---inicio---*/
+ul.menu li {
+/*
+para acomodar en línea los li del ul menú
+además para ponerlos sobre lo que está en el mismo lugar (sobreponerlos)
+*/
+    display: inline-block;
+	position: relative;
+    z-index:1000; 
+}
+ul.menu li a{
+/*
+para los links <a> de los li del menú
+*/
+	color: #777777;
+	display: block;
+	text-decoration: none;
+	float: left;
+}
+ul.menu_items_menu {
+/*
+para el ul, de menu_items_menu, (menu desplegable) le dice que
+no se muestre y le edita el estilo.
+*/
+	display: none;
+	position: absolute;
+	background: #F2F2F2;
+	width: 120px;
+	border: 1px solid #777777;
+	border-top: 1px solid #cccccc;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	padding-left:0;
+}
+ul.menu li ul.menu_items_menu li a:focus {
+/* para que no muestre que está seleccionado
+*/
+    outline: none;
+}
+ul.menu_items_menu .limite{
+/*
+para los li (elementos del menú deplegable)
+*/
+	width: 120px;
+	border-bottom: 1px solid #cccccc;
+}
+ul.menu_items_menu li{
+/*
+para el menú desplegable
+*/
+	width: 120px;
+}
+ul.menu_items_menu li a {
+/*
+para los links del menú desplegable
+*/
+	padding-left: 15px;
+}
+ul.menu_items_menu li a:hover {
+/*
+para los links del menú desplegable cuando tiene el mouse sobre ellos
+*/
+	color: #000000;
+	background-color: #F2F2F2;
+	cursor:pointer;
+}
+.inhabilitados:hover {
+/*
+para los links del menú desplegable cuando tiene el mouse sobre ellos
+*/
+	cursor:default;
+}
+ul.menu_items_menu li a.deshabilitados:hover{
+/*
+para los links del menú desplegable cuando tiene el mouse sobre ellos
+*/
+	color: #777777;
+    cursor:default;
+}
+.limite, .limite{
+    margin-right: 75px;
+}
+/*-------------------------------------- menú ---fin---*/
+
+
+.progress{
+    position:absolute;
+    top: -10px;
+    height: 20px;
+    width: 200px;
+	border: 2px solid #777777;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    text-align:center;
+}
+.ui-progressbar-value { 
+    background-image: url(/resources/tda-gdi/images/pbar-ani.gif); 
+}
+.ui-progressbar { 
+    height:100% 
+}
+.ui-progressbar .ui-progressbar-value {
+    height:100%; 
+}
+#progresstext{
+    position:absolute;
+}
+/*------------------------------------------------------------------------------------CSS para index---fin--------------------------*/
+
+
+

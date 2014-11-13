@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="tda-gdi" locale="es_ES" charset="ISO-8859-1">
+
+  <msg key="apcerrormsj">No hay un Programa de Curso asociado al curso actual</msg>
+  <msg key="btnadd">Agregar</msg>
+  <msg key="btnback">Atrás</msg>
+  <msg key="btncancel">Cancelar</msg>
+  <msg key="btnClose">Cerrar</msg>
+  <msg key="btncreateid">Crear DI</msg>
+  <msg key="btnnext">Siguiente</msg>
+  <msg key="btnsave">Guardar</msg>
+  <msg key="compactivities">Actividades de Aprendizaje</msg>
+  <msg key="compevaluation">Evaluación de Aprendizajes</msg>
+  <msg key="compmaterials">Media/Materiales a utilizar</msg>
+  <msg key="compobjectives">Objetivos de Aprendizaje</msg>
+  <msg key="compsession">Sesión</msg>
+  <msg key="compsubject">Módulos de Contenidos</msg>
+  <msg key="comptitle">Título</msg>
+  <msg key="h2courseprogram">Programa de Curso</msg>
+  <msg key="h2help">Ayuda</msg>
+  <msg key="h2idcontext">Contexto del DI</msg>
+  <msg key="hdcodecourse">Código del Curso</msg>
+  <msg key="hdschedule">Horario</msg>
+  <msg key="hdteachers">Profesor(es)</msg>
+  <msg key="infnoapply">No aplica</msg>
+  <msg key="int_btnCancelar">Cancelar</msg>
+  <msg key="int_btnClonar">Clonar</msg>
+  <msg key="int_btnClonarAbrir">Clonar y Abrir</msg>
+  <msg key="int_btnEliminar">Eliminar</msg>
+  <msg key="int_btnGuardar">Guardar</msg>
+  <msg key="int_msjClonarDi">Clonar Diseño Instruccional</msg>
+  <msg key="int_msjDialogGuardar">Guardar Diseño Instruccional</msg>
+  <msg key="int_msjEliminarDi">Eliminar Diseño Instruccional</msg>
+  <msg key="int_msjErrorAgregarTxtArea">No puede agregar más secciones sin haber ingresado la información correspondiente en la última agregada.</msg>
+  <msg key="int_msjErrorCompletarInfo">No puede completar esta sección sin haber ingresado la información correspondiente.</msg>
+  <msg key="int_msjErrorDiNoGuardado">El Diseño Instruccional no se ha guardado.&lt;br&gt;No se pueden guardar los cambios.</msg>
+  <msg key="int_msjErrorDiNoGuardadoNoEliminar">El Diseño Instruccional no se ha guardado. No se puede eliminar</msg>
+  <msg key="int_msjErrorEscritura">Usted ha introducido el carácter &quot;  [str] &quot;.&lt;br&gt;&lt;br&gt;Este es un carácter inválido para esta área de texto.&lt;br&gt;Los caracteres inválidos son \&quot;\^ \\ `\&quot;.\n</msg>
+  <msg key="int_msjErrorNingunCursoSeleccionado">Debe seleccionar un curso en donde clonar el DI</msg>
+  <msg key="int_msjExitoGuardado">El diseño instruccional: [nombreDI] ha sido guardado exitosamente.</msg>
+  <msg key="int_msjFinalizacionDi">¡Buen trabajo! Usted ha finalizado el diseño instruccional. &lt;br&gt; Más opciones están siendo desarrolladas para la siguiente versión.</msg>
+  <msg key="int_msjNoAplica">NO APLICA</msg>
+  <msg key="int_msjSinCursosAsociados">No posee cursos asignados</msg>
+  <msg key="lbAssociatedCourses">Cursos asociados al Diseño Instruccional</msg>
+  <msg key="lbCourseName">Nombre del Curso</msg>
+  <msg key="lbcoursename">Nombre del curso</msg>
+  <msg key="lbcoursesassociated">Cursos asociados al Diseño Instruccional actual</msg>
+  <msg key="lbCreateDate">Fecha de Creación</msg>
+  <msg key="lbenglishspanish">1</msg>
+  <msg key="lbIdName">Nombre del DI</msg>
+  <msg key="lbModifiedDate">Fecha de alteración</msg>
+  <msg key="lbmoredetails">Más detalles</msg>
+  <msg key="lbnew">Nuevo</msg>
+  <msg key="lbopen">Abrir</msg>
+  <msg key="lbperiod">Período</msg>
+  <msg key="lbsaveid">Introduzca el nombre del nuevo Diseño instruccional:</msg>
+  <msg key="lbsesionquantity">Numero de sesiones del DI</msg>
+  <msg key="lbslectdepartment">Escuela</msg>
+  <msg key="lbslectplan">Plan</msg>
+  <msg key="lbslectterm">Materia</msg>
+  <msg key="lbstep1">Paso 1: Bienvenida</msg>
+  <msg key="lbstep2">Paso 2: Selección</msg>
+  <msg key="lbstep3">Step 3: Edición del DI</msg>
+  <msg key="lbUser">Creador</msg>
+  <msg key="lbwelcome4">Nombre y Apellidos</msg>
+  <msg key="lbyear">Año</msg>
+  <msg key="massociate">Asociar</msg>
+  <msg key="mclone">Clonar</msg>
+  <msg key="mcontext">Contexto</msg>
+  <msg key="mdelete">Eliminar</msg>
+  <msg key="mexit">Salir</msg>
+  <msg key="mexport">Exportar</msg>
+  <msg key="mgenerate">Generar Portal</msg>
+  <msg key="mhelp">Ayuda</msg>
+  <msg key="mmatrix">Matriz</msg>
+  <msg key="mmenu">Menú</msg>
+  <msg key="mnew">Nuevo</msg>
+  <msg key="mope">Abrir</msg>
+  <msg key="mprogram">Programa</msg>
+  <msg key="mproperties">Propiedades</msg>
+  <msg key="msave">Guardar</msg>
+  <msg key="msaveas">Guardar como</msg>
+  <msg key="optselectanoption">Seleccione una opción</msg>
+  <msg key="optwithoutcourses">No posee cursos asociados actualmente.</msg>
+  <msg key="placeholderdesc">Ingrese la información solicitada</msg>
+  <msg key="tbmoredetails">Ver mas detalles</msg>
+  <msg key="tbwithoutdata">Sin información disponible.</msg>
+  <msg key="td_di_preguntas_contexto-coursestyle">¿El curso es impartido de forma presencial o a través de sesiones virtuales, laboratorios o trabajo de campo?</msg>
+  <msg key="td_di_preguntas_contexto-coursestyle-help">Coloque los detalles específicos de la modalidad del curso.</msg>
+  <msg key="td_di_preguntas_contexto-groupdetails">Defina su grupo de destino (incluyendo edad, sexo, conocimientos habilidades, entre otros).</msg>
+  <msg key="td_di_preguntas_contexto-groupdetails-help">Coloque los datos relacionados con las personas que deberían participar en el curso.</msg>
+  <msg key="td_di_preguntas_contexto-participants">¿Cuántos participantes deberían participar en el curso (mínimo/máximo)?</msg>
+  <msg key="td_di_preguntas_contexto-participants-help">Coloque la cantidad de personas (mínimo/máximo) que deberían de participar en el curso.</msg>
+  <msg key="td_di_preguntas_contexto-requirements">Describa los requisitos para la participación</msg>
+  <msg key="td_di_preguntas_contexto-requirements-help">Describa los requisitos que las personas participantes del curso deben cumplir.</msg>
+  <msg key="td_di_preguntas_contexto-tutors">¿Es un curso de autoaprendizaje o hay tutores que apoyan a los participantes?</msg>
+  <msg key="td_di_preguntas_contexto-tutors-help">Coloque los detalles posibles de la manera más comprensible.</msg>
+  <msg key="td_material_apoyo-achievements">Describe los logros pretendidos por el estudiante en cada sesión, incluye instrumentos, rúbricas y técnicas</msg>
+  <msg key="td_material_apoyo-activities">Describir las actividades a desarrollar, con el fin de evidenciar los logros de los propósitos y dominio de contenidos</msg>
+  <msg key="td_material_apoyo-contents">Indicar medios, recursos y elementos a emplear según las actividades a ejecutar</msg>
+  <msg key="td_material_apoyo-contentshelp">Después de definir el objetivo general del curso, es preciso seleccionar qué es lo que los estudiantes van a aprender; qué contenidos van a ser organizados de manera didáctica para que construyan su propio conocimiento a partir de los saberes previos que poseen y de la relación y asimilación de los nuevos conocimientos. P. 99
+? los conocimientos representan la información, los saberes necesarios para el desempeño de la materia, ya sean saberes teóricos, de procedimientos, de reconocimiento de técnicas, terminología, en general los datos que son requeridos para operar sobre una realidad determinada. Chan y Tiburcio, 2000, citado por Gil 2005.
+Los contenidos no solo hacen referencia a la información sobre un objeto, sino a hechos, conceptos, principios, habilidades, valores, creencias, actitudes, destrezas, hábitos, pautas de comportamiento, etc.; son el recorte deliberado de la realidad para ser asimilado por el estudiante. p.100
+Los contenidos se clasifican en tres grandes rubros: conceptuales, procedimentales y actitudinales. Molina, Z. 1997.
+Contenidos conceptuales (saberes)
+Hechos: sucesos particulares o precisos.
+Conceptos: conjunto de objetos, sucesos o símbolos que tienen ciertas características comunes y que sirven para explicar o definir los hechos o para interpretar la realidad. Parten de la identificación de las características que los definen o de las reglas que los componen.
+Principios: conceptos generales de gran nivel de abstracción. Pueden describir relaciones de causa-efecto. Explican los cambios que se producen en un objeto, una situación, un suceso o un símbolo.
+Contenidos procedimentales (saber hacer)
+Conjunto de acciones o formas de actuar para resolver problemas. Están referidos a hacer cosas, es decir, acciones para lograr objetivos, satisfacer propósitos y conseguir nuevos aprendizajes.
+Habilidades: capacidad, inteligencia y disposición para realizar algo.
+Técnicas: habilidad para hacer uso de procedimientos.
+Estrategias: Conjunto de actividades destinadas a conseguir un objetivo. Suponen la asimilación de las anteriores.
+
+Contenidos actitudinales (saber ser)
+Especifican los patrones y principios de conducta que permiten a los seres humanos desenvolverse de manera armónica dentro de una sociedad.
+Actitudes: expresan una forma de conducirse habitualmente ante determinadas situaciones- objetos- sucesos- personas. 
+Valores: constituyen la expresión de las aspiraciones que influyen y orientan el comportamiento y la vida humana.
+Normas: cumplimiento de normas establecidas en una disciplina o en la sociedad.
+
+Los diferentes tipos de contenidos deben estar balanceados en los diferentes programas.</msg>
+  <msg key="td_material_apoyo-design">La palabra diseño hace referencia al ?boceto? de lo que será la instrucción, entendida como un conjunto de métodos afines al proceso de enseñanza-aprendizaje y a los hechos, principios y valores que rigen la educación (Gutiérrez, 1999; citado por Carmen Gil, 2005)? se establece el dónde, el cuándo,  el cómo y con qué se llevará a cabo la instrucción. Gil, 2005 pp. 94-95</msg>
+  <msg key="td_material_apoyo-generalobjectives">La redacción del objetivo general señala las capacidades y competencias que desarrollarán los estudiantes al finalizar el programa educativo. Son el punto de partida y de llegada pues todo lo demás: objetivos de aprendizaje, selección de contenidos, situaciones de aprendizaje y de evaluación son diseñadas para alcanzar ese objetivo. Gil, 2005, p.99.</msg>
+  <msg key="td_material_apoyo-id">El diseño instruccional es el esquema que ubica a los diferentes procesos involucrados en la elaboración de programas educativos como son la identificación de la infraestructura tecnológica requerida, el método o métodos necesarios para que se realice la instrucción a partir de determinadas necesidades educativas, de selección y organización de contenidos, y el diseño de situaciones de aprendizaje y evaluación que satisfagan dichas necesidades, tomando en cuenta siempre las características del que aprende y los resultados esperados del aprendiz. Gil, 2005, p.96</msg>
+  <msg key="td_material_apoyo-learningbjectives">En los objetivos de aprendizaje se describen y especifican con mayor precisión los conocimientos, habilidades y actitudes que se espera que el estudiante alcance al término del módulo, unidad o tema.
+Los objetivos de aprendizaje se elaboran para los diferentes tipos de contenido:
+Objetivos de aprendizaje de concepto
+Aprender hechos, conceptos y principios significa tener la capacidad de identificar, reconocer, describir y comparar objetos, sucesos o ideas.
+Aprender un principio significa que es apto para identificar, reconocer, describir, clarificar y comparar las relaciones entre los conceptos o hechos a que se refiere el principio.
+Ejemplo de verbos: Identificar, analizar, distinguir, señalar, clasificar, enumerar, explicar, comparar, interpretar, conocer? etc.
+Objetivos de aprendizaje de procedimiento
+Aprender un procedimiento significa que se tiene la capacidad de utilizarlo en diversas situaciones y de diferentes maneras, con el fin de resolver los problemas planteados y alcanzar las metas fijadas.
+Ejemplos de verbos: Realizar, manejar, operar, probar, elaborar, construir, reconstruir, utilizar, aplicar, etc.
+Objetivos de aprendizaje de actitud
+Aprender un valor significa tener la capacidad de regular el propio comportamiento de acuerdo con el principio normativo que dicho valor estipula.
+Aprender una norma significa que es apto para comportarse de acuerdo con ella.
+Aprender una actitud significa mostrar una tendencia consistente y tenaz a comportarse de una particular manera ante determinadas situaciones.
+Ejemplos de verbos: Comportarse, reaccionar, tolerar, respetar, aceptar, interesarse, poner atención, ser consciente de, valorar, etc. pp. 101-102
+
+Se debe considerar que los verbos utilizados en los objetivos de aprendizaje:
+?	Deben hacer referencia a un comportamiento que se evidencie de manera amplia y diversa y no  como ?conducta observable predeterminada?.
+?	No existen verbos exclusivos para cada categoría.
+?	Un objetivo puede hacer referencia a varios contenidos.
+?	Un mismo contenido puede encontrarse en varios objetivos, en la medida que puede ser objeto de diferentes tipos de aprendizaje. P. 101
+?	Deben estar balanceados en las tres categorías y deben realmente contribuir al logro del objetivo general.</msg>
+  <msg key="td_material_apoyo-objectives">Indicar el objetivo de aprendizaje para evidenciar el nivel de dominio cognitivo</msg>
+  <msg key="td_material_apoyo-resources">Indicar medios, recursos y elementos a emplear según las actividades a ejecutar</msg>
+  <msg key="td_material_apoyo-students">Los estudiantes son el elemento principal pues son los destinatarios de todo programa educativo. Se debe conocer o anticipar la edad promedio, jóvenes- adultos- los conocimientos previos tanto de la disciplina como de las habilidades tecnológicas; su historia académica, su ubicación geográfica, etc.</msg>
+  <msg key="td_material_apoyo-title">Colocar el título o nombre de la unidad, que indica la generalidad a desarrollar en la sesión</msg>
+  <msg key="td_material_apoyo-title-contents">Contenidos</msg>
+  <msg key="td_material_apoyo-title-design">Diseño</msg>
+  <msg key="td_material_apoyo-title-generalobjectives">Objetivos Generales</msg>
+  <msg key="td_material_apoyo-title-id">Diseño Instruccional</msg>
+  <msg key="td_material_apoyo-title-learningbjectives">Objetivos de Aprendizaje</msg>
+  <msg key="td_material_apoyo-title-students">Estudiantes</msg>
+  <msg key="tda-gdi.btncancel">Cancelar</msg>
+  <msg key="tda-gdi.btnsave">Guardar</msg>
+  <msg key="tda-gdi.infnoapply">No aplica</msg>
+  <msg key="txtassociatedi">Asociar Curso al Diseño Instruccional</msg>
+  <msg key="txtassociateexplanation">Seleccione el curso que desea asociar al Diseño Instruccional actual </msg>
+  <msg key="txtclonedi">Clonar el Diseño Instruccional en otro curso</msg>
+  <msg key="txtcloneexplanation">Seleccione un curso en el que desea clonar el Diseño Instruccional actual</msg>
+  <msg key="txtestadoseccion">¿Ya finalizó este paso?</msg>
+  <msg key="txtestadoseccionno">No</msg>
+  <msg key="txtestadoseccionyes">Si</msg>
+  <msg key="txtexplaination">El DI no se ha guardado, algunos datos no pueden obtenerse</msg>
+  <msg key="txtIdProperties">Propiedades del Diseño Instruccional</msg>
+  <msg key="txtnew">Nuevo Diseño Instruccional (DI)</msg>
+  <msg key="txtopen">Abrir Diseño Instruccional (DI)</msg>
+  <msg key="txtpopuptitleexistingcourse">Curso Existente</msg>
+  <msg key="txtpopuptitlenewcourse">Curso Nuevo</msg>
+  <msg key="txtwelcome1">Bienvenido</msg>
+  <msg key="txtwelcome2">esta herramienta le guiará en el proceso de creación de su diseño instruccional.</msg>
+  <msg key="txtwelcome3">Seleccione la informacion respectiva.</msg>
+</message_catalog>

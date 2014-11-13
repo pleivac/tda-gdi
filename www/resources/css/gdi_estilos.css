@@ -1,0 +1,478 @@
+/*-----------------------------------------------------CSS para index---inicio--------------------------*/
+
+/*-------------------------------------- index ---inicio---*/
+#agregar_sesiones_form span, #eliminar_sesiones_form span{
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.marco {
+     font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+     font-size: 11px;
+     height: 100%;
+     margin: 0px 0px 30px 10px;
+     width: 100%;
+}
+
+#dialog-confirm-eliminar{
+    display:none;
+}
+#dialog-confirm p {
+    padding: 0 20px;
+}
+.ui-icon-alert{
+    background-image: url("/resources/tda-gdi/images/ui-icons_222222_256x240.png");
+    float: left;
+    margin: 0 7px 20px 0;
+    background-position: 0 -144px;
+}
+#menu {
+     height: 18px;
+     /*margin: 0px 0px 0px -40px;*/
+     margin: 0px 0px 0px 0px;
+     padding: 0px 0px 20px;
+     width: 100%;
+}
+
+#contenedor {
+     border: 0px none;
+     margin: 0px;
+     overflow: hidden;
+     width: 100%;
+}
+
+.clear {
+     clear: both;
+}
+
+.menu_items:hover {
+     cursor: pointer;
+}
+
+.selectbox {
+     font-size: 10px;
+     height: 20px;
+     width: 218px;
+}
+
+.boton {
+     height: auto;
+     width: auto;
+}
+
+h1 {
+     font-family: Arial,Helvetica,sans-serif;
+     font-size: 14px;
+}
+
+#bloqueo {
+     background-image: url("/resources/tda-gdi/images/transparente.png");
+     display: none;
+     height: 100%;
+     left: 0px;
+     position: fixed;
+     top: 0px;
+     width: 100%;
+     z-index: 2000;
+}
+
+/*-------------------------------------- Estructura general ---inicio---*/
+
+/*-------------------------------------- menú ---inicio---*/
+ul.menu li {
+/*
+para acomodar en línea los li del ul menú
+además para ponerlos sobre lo que está en el mismo lugar (sobreponerlos)
+*/
+     float: left;
+     list-style: none outside none;
+     margin: 0px 8px;
+     text-align: center;
+     cursor:pointer;
+}
+
+
+
+ul.menu li a {
+/*
+para los links <a> de los li del menú
+*/
+     color: #777777;
+     display: block;
+     float: left;
+     text-decoration: none;
+}
+
+ul.menu_items_menu {
+/*
+para el ul, de menu_items_menu, (menu desplegable) le dice que
+no se muestre y le edita el estilo.
+*/
+     -moz-border-bottom-colors: none;
+     -moz-border-left-colors: none;
+     -moz-border-right-colors: none;
+     -moz-border-top-colors: none;
+     background: none repeat scroll 0% 0% #FFFFFF;
+     /*border-color: #CCCCCC #777777 #777777;*/
+     border-color: #777777;
+     border-image: none;
+     border-radius: 3px 3px 3px 3px;
+     border-style: solid;
+     border-width: 1px;
+     display: none;
+     margin-top: 15px;
+     padding-left: 0px;
+     position: absolute;
+     width: 150px;
+     z-index:1000;
+}
+
+ul.menu_items_menu:after {
+     content: '';
+     position: absolute;
+     border-style: solid;
+     border-width: 0 7px 14px;
+     border-color: #FFFFFF transparent;
+     display: block;
+     width: 0;
+     z-index: 1;
+     top: -14px;
+     width: 2px;
+     left: 7px;
+}
+
+ul.menu_items_menu:before 
+{
+    border-color: #7F7F7F rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 0 7px 14px;
+    content: "";
+    display: block;
+    left: 6px;
+    position: absolute;
+    top: -15px;
+    width: 4px;
+    z-index: 0;
+    left: 6px;
+}
+ul.menu li ul.menu_items_menu li a:focus {
+/* para que no muestre que está seleccionado
+*/
+     outline: medium none;
+}
+/*
+ul.menu_items_menu .limite {
+
+para los li (elementos del menú deplegable)
+
+	 margin-left: 0;
+     width: 127px;
+}*/
+
+ul.menu_items_menu li {
+/*
+para el menú desplegable
+*/
+     font-size: 10pt;
+     width: 120px;
+     margin-left: 0;
+     width: 119px;
+}
+
+ul.menu_items_menu li a {
+     padding-left: 9px;
+}
+
+ul.menu_items_menu li a:hover {
+/*
+para los links del menú desplegable cuando tiene el mouse sobre ellos
+*/
+     background-color: #F2F2F2;
+     color: #000000;
+     cursor: pointer;
+     text-align: left;
+     width: 118%;
+}
+.inhabilitados:hover {
+/*
+para los links del menú desplegable cuando tiene el mouse sobre ellos
+*/
+     cursor: default;
+}
+
+ul.menu_items_menu li a.deshabilitados:hover {
+/*
+para los links del menú desplegable cuando tiene el mouse sobre ellos
+*/
+     color: #777777;
+     cursor: default;
+}
+
+/*-------------------------------------- menú ---fin---*/
+
+
+/*-------------------------------------- progressbar ---inicio---*/
+#progressbar_div{
+     position:absolute;
+     right:45px;
+     margin-top:inherit;
+     color: #9A9999;
+     font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+}
+#guardando{
+     font-style: italic;
+     margin-left: 10px;
+     margin-bottom:3px;
+     visibility:hidden;
+}
+
+.progress{
+    /*positilon:absolute;*/
+    top: -10px;
+    height: 20px;
+    width: 200px;
+    border: 1px solid #9A9999;
+    border-radius: 5px 5px 5px 5px;
+    text-align:center;
+}
+.ui-progressbar-value { 
+    background-image: url(/resources/tda-gdi/images/pbar-ani.gif); 
+}
+
+.ui-progressbar {
+	 cursor: auto;
+     height: 100%;
+}
+
+.ui-progressbar .ui-progressbar-value {
+     height: 100%;
+}
+
+#progresstext {
+     position: absolute;
+}
+/*-------------------------------------- progressbar ---fin---*/
+
+
+/*-------------------------------------- Botones ---inicio---*/
+
+/*------------------Estilos generales------Inicio----------------*/
+.menuPrincipal li {
+/*
+para cada uno de los elementos li (incluye: botón, texto y punto) 
+*/
+     margin-right: 50px;
+     text-align: center;
+}
+
+.menuPrincipal:hover {
+     color: #808081;
+}
+
+li:active .menuPrincipal {
+     color: #1D69B2;
+}
+
+.menuPrincipal div {
+/*
+sobre las imágenes específicas de cada botón
+*/
+     height: 35px;
+     margin: auto;
+     width: 32px;
+}
+
+li:hover label {
+/*
+cambia el color de todos los textos de los botones cuando el mouse está sobre la imagen o el mismo texto. 
+*/
+     color: #CCCCCC;
+}
+
+
+.txtBoton {
+/*
+formato de todos los textos de los botones
+*/
+     color: #808081;
+     font-family: Helvetica,Futura,Arial,Verdana,sans-serif;
+     margin-bottom: 20px;
+     font-size: 7pt;
+}
+
+
+.textoActivo {
+/*
+cambia el color del textos de los botones cuando se le da clic. 
+*/
+     color: #1D69B2;
+}
+
+
+.Activo {
+/*
+para agregar la imagen del punto cuando un botón esta activo 
+*/
+     background-image: url("/resources/tda-gdi/images/circulo_activo.png");
+     display: block;
+     height: 10px;
+     margin: auto;
+     text-align: center;
+     width: 10px;
+}
+/*------------------Estilos generales------fin----------------*/
+
+
+
+
+/*---------------------------------Botón de Menu----------------------*/
+
+/*
+Repite mismo comportamiento en todos los demás botones. 
+*/
+
+.btnMenu {
+/*
+imagen cuando el botón está inactivo
+*/
+     background-image: url("/resources/tda-gdi/images/iconos_.png");
+     background-position: -675px 0px;
+}
+
+li:hover .btnMenu {
+/*
+imagen cuando el mouse está sobre el botón
+*/
+     background-position: -675px -37px;
+}
+
+li:active .btnMenu {
+/*
+imagen cuando el se le da clic al botón
+*/
+     background-position: -675px -75px;
+}
+
+.btnMenu_activo {
+
+/*
+imagen cuando el botón está activo
+*/
+     background-position: -675px -75px;
+     color: #1D69B2;
+}
+
+
+/*------------------Botón de Ayuda----------------------*/
+
+.btnAyuda {
+     background-image: url("/resources/tda-gdi/images/iconos_.png");
+     background-position: -1050px 0px;
+}
+
+li:hover .btnAyuda {
+     background-position: -1050px -37px;
+}
+
+li:active .btnAyuda {
+     background-position: -1050px -75px;
+}
+
+.btnAyuda_activo {
+     background-position: -1050px -75px;
+     color: #1D69B2;
+}
+
+
+
+
+/*------------------Botón de Nuevo ----------------------*/
+
+.btnNuevo {
+     background-image: url("/resources/tda-gdi/images/iconos_.png");
+     background-position: -974px 0px;
+}
+
+li:hover  .btnNuevo {
+     background-position: -974px -37px;
+}
+
+li:active .btnNuevo {
+     background-position: -974px -75px;
+}
+
+.btnNuevo_activo {
+     background-position: -974px -75px;
+     color: #1D69B2;
+}
+
+/*------------------Botón de Abrir----------------------*/
+
+.btnAbrir {
+     background-image: url("/resources/tda-gdi/images/iconos_.png");
+     background-position: -526px 0px;
+}
+
+li:hover .btnAbrir {
+     background-position: -526px -37px;
+}
+
+
+li:active .btnAbrir {
+     background-position: -526px -75px;
+}
+
+li:active label {
+     color: #1D69B2;
+}
+
+.btnAbrir_activo {
+     background-position: -526px -75px;
+     color: #1D69B2;
+}
+
+
+/*------------------Clase para ocultar botones----------------------*/
+
+
+.oculto {
+     display:none;
+}
+
+/*Estilos para formularios*/
+.sesiones_popup {
+    background-color: #ffffff;
+    border: 1px solid #808080;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 5px #cecccc;
+    color: #4e4e4e;
+    display: none;
+    font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    min-width: 430px;
+    padding: 25px;
+}
+.sesiones_popup h2 {
+    border-bottom: 2px solid #808080;
+    border-width: 2px;
+    font: bold 11pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    margin-top: -10px;
+    padding-bottom: 5.5px;
+    width: inherit;
+}
+
+.sesiones_popup > div:last-child  > *{
+    display: inline-block;
+    float: right;
+    margin-bottom:-5px;
+    margin-top:25px;
+    vertical-align: top;
+}
+
+.sesiones_popup > div > span {
+    margin-left: 0;  
+}
+
+.sesiones_popup > div > span > input {
+    outline: none;
+}

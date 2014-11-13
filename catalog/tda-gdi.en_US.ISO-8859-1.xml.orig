@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="tda-gdi" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="apcerrormsj">There is no Course Program for the requested material</msg>
+  <msg key="btnadd">Add</msg>
+  <msg key="btnback">Back</msg>
+  <msg key="btncancel">Cancel</msg>
+  <msg key="btnClose">Close</msg>
+  <msg key="btncreateid">Create ID</msg>
+  <msg key="btnnext">Next</msg>
+  <msg key="btnsave">Save</msg>
+  <msg key="compactivities">Learning activities</msg>
+  <msg key="compevaluation">Learning evaluation</msg>
+  <msg key="compmaterials">Media or materials to use</msg>
+  <msg key="compobjectives">Learning objectives</msg>
+  <msg key="compsession">Session</msg>
+  <msg key="compsubject">Content modules</msg>
+  <msg key="comptitle">Title</msg>
+  <msg key="h2courseprogram">Course Program</msg>
+  <msg key="h2help">Help</msg>
+  <msg key="h2idcontext">ID Context</msg>
+  <msg key="hdcodecourse">Course Code</msg>
+  <msg key="hdschedule">Schedule</msg>
+  <msg key="hdteachers">Teacher</msg>
+  <msg key="infnoapply">No apply</msg>
+  <msg key="int_btnCancelar">Cancel</msg>
+  <msg key="int_btnClonar">Clone</msg>
+  <msg key="int_btnClonarAbrir">Clone and Open</msg>
+  <msg key="int_btnEliminar">Delete</msg>
+  <msg key="int_btnGuardar">Save</msg>
+  <msg key="int_msjClonarDi">Clone the Instructional Design</msg>
+  <msg key="int_msjDialogGuardar">Save the Instructional Design</msg>
+  <msg key="int_msjEliminarDi">Delete the Instructional Design</msg>
+  <msg key="int_msjErrorAgregarTxtArea">You can not add more sections without having entered the appropriate information in the final aggregate.</msg>
+  <msg key="int_msjErrorCompletarInfo">No puede completar esta sección sin haber ingresado la información correspondiente.</msg>
+  <msg key="int_msjErrorDiNoGuardado">Instructional Design is not saved.\n You can save the changes.</msg>
+  <msg key="int_msjErrorDiNoGuardadoNoEliminar">Instructional Design is not saved. Can not delete</msg>
+  <msg key="int_msjErrorEscritura">You've introduced the character &quot;[str].&quot; \n\nThis is an invalid character for this text area.\nInvalid characters are \&quot;\^ \\ `\&quot;.\n'</msg>
+  <msg key="int_msjErrorNingunCursoSeleccionado">You must select a course where DI clone</msg>
+  <msg key="int_msjExitoGuardado">Instructional design: [nombreDI] has been saved successfully.</msg>
+  <msg key="int_msjFinalizacionDi">Good job! You have finished the instructional design. \n (more options are being developed for the next version.)</msg>
+  <msg key="int_msjNoAplica">NO APPLY</msg>
+  <msg key="int_msjSinCursosAsociados">It has no assigned courses</msg>
+  <msg key="lbAssociatedCourses">Associated Courses</msg>
+  <msg key="lbCourseName">Course Name</msg>
+  <msg key="lbcoursename">Course name</msg>
+  <msg key="lbcoursesassociated">Associated courses to the current Instructional Design</msg>
+  <msg key="lbCreateDate">Creation Date</msg>
+  <msg key="lbenglishspanish">0</msg>
+  <msg key="lbIdName">ID Name</msg>
+  <msg key="lbModifiedDate">Modified Date</msg>
+  <msg key="lbmoredetails">More details</msg>
+  <msg key="lbnew">New</msg>
+  <msg key="lbopen">Open</msg>
+  <msg key="lbperiod">Term</msg>
+  <msg key="lbsaveid">Enter the name of the new Instructional Design:</msg>
+  <msg key="lbsesionquantity">Number of ID sessions</msg>
+  <msg key="lbslectdepartment">Department</msg>
+  <msg key="lbslectplan">Plan</msg>
+  <msg key="lbslectterm">Course</msg>
+  <msg key="lbstep1">Step 1: Welcome</msg>
+  <msg key="lbstep2">Step 2: Selection</msg>
+  <msg key="lbstep3">Step 3: ID Edition</msg>
+  <msg key="lbUser">Owner</msg>
+  <msg key="lbwelcome4">Your name</msg>
+  <msg key="lbyear">Year</msg>
+  <msg key="massociate">Associate</msg>
+  <msg key="mclone">Clone</msg>
+  <msg key="mcontext">Context</msg>
+  <msg key="mdelete">Delete</msg>
+  <msg key="mexit">Exit</msg>
+  <msg key="mexport">Export</msg>
+  <msg key="mhelp">Help</msg>
+  <msg key="mmatrix">Matrix</msg>
+  <msg key="mmenu">Menu</msg>
+  <msg key="mnew">New</msg>
+  <msg key="mope">Open</msg>
+  <msg key="mprogram">Course Program</msg>
+  <msg key="mproperties">Properties</msg>
+  <msg key="msave">Save</msg>
+  <msg key="msaveas">Save as</msg>
+  <msg key="optselectanoption">Select an option</msg>
+  <msg key="optwithoutcourses">Without courses associated at this time.</msg>
+  <msg key="placeholderdesc">Enter the required information</msg>
+  <msg key="tbmoredetails">See more details</msg>
+  <msg key="tbwithoutdata">No information available.</msg>
+  <msg key="td_di_preguntas_contexto-coursestyle">The course is imparted in a classroom or is through virtual sessions, laboratories or fieldwork?</msg>
+  <msg key="td_di_preguntas_contexto-coursestyle-help">Write the specifics of treatment course.</msg>
+  <msg key="td_di_preguntas_contexto-groupdetails">Define your target group (including age, sex, knowledge, skills, etc.).</msg>
+  <msg key="td_di_preguntas_contexto-groupdetails-help">Write the data related to people who should participate in the course.</msg>
+  <msg key="td_di_preguntas_contexto-participants">How many people should participate in the course (minimum / maximum)?</msg>
+  <msg key="td_di_preguntas_contexto-participants-help">Place the number of people (minimum / maximum) that should participate in the course.</msg>
+  <msg key="td_di_preguntas_contexto-requirements">Describe the requirements for participation</msg>
+  <msg key="td_di_preguntas_contexto-requirements-help">Describe the requirements of the course the participants must meet.</msg>
+  <msg key="td_di_preguntas_contexto-tutors">Is it a self-study course or are tutors who support participants?</msg>
+  <msg key="td_di_preguntas_contexto-tutors-help">Write the mode of course as widely as possible.</msg>
+  <msg key="td_material_apoyo-achievements">Describes the achievements intended by the student for each session, includes tools, rubrics and techniques</msg>
+  <msg key="td_material_apoyo-activities">Describe the activities to be developed, in order to demonstrate achievement of the purposes and content domain</msg>
+  <msg key="td_material_apoyo-contents">Indicate the content or thematic unit are developed for each session</msg>
+  <msg key="td_material_apoyo-contentshelp">After defining the objective of the course , you must select what students will learn , what content will be organized in a didactic way to construct their own knowledge from previous knowledge they possess and the relationship and assimilation of new knowledge . P. 99
+Represent knowledge ... information , knowledge necessary for the performance of the subject , whether theoretical knowledge , procedures, recognition techniques , terminology, in general the data that are required to operate on a certain reality . Chan and Tiburcio , 2000 , quoted by Gil 2005 .
+The contents do not only refer to the information about an object , but to facts, concepts , principles , skills, values ??, beliefs , attitudes , skills, habits , behavior patterns , etc. . , Are deliberate cutting of reality to be assimilated by the student. p.100
+The contents are classified into three major categories : conceptual , procedural and attitudinal . Molina , Z. 1997.
+Conceptual content ( knowledge)
+Facts: particular events or accurate .
+Concepts : set of objects , events or symbols that have common characteristics and serving to explain or define or interpret the facts of reality. They start from the identification of the characteristics that define or rules that compose them.
+Principles : general concepts of high level of abstraction. Can you describe cause-effect relationships . Explain the changes that occur in an object , a situation, an event or a symbol.
+Contents procedural (know-how )
+Set of actions or ways of acting to solve problems. They relate to doing things , ie actions to achieve objectives , meet and get new learning purposes .
+Skills: ability , intelligence and willingness to do something .
+Techniques : ability to make use of procedures.
+Strategies : Set of activities to achieve a goal . They assume the assimilation of the above.
+
+Attitudinal content ( how to be)
+Specifies the patterns and principles of behavior that enable humans cope harmoniously within a society .
+Attitudes: express a way of behaving normally in certain situations - objects - events - people.
+Values: are the expression of the aspirations that influence and guide the behavior and human life .
+Standards : Compliance with provisions of a discipline or society .
+
+The different types of content should be balanced in the various programs .</msg>
+  <msg key="td_material_apoyo-design">The word design refers to &quot;sketch&quot; of what will be the instruction, understood as a set of methods related to the teaching-learning process and the facts, principles and values ??that govern education (Gutiérrez, 1999, quoted by Carmen Gil, 2005) ... is established where, when, how and with what will take place instruction. Gil, 2005 p. 94-95</msg>
+  <msg key="td_material_apoyo-generalobjectives">The wording indicates the overall objective to develop skills and competencies students at the end of the educational program. They are the point of departure and arrival for everything else: learning objectives, content selection, learning situations and evaluation are designed to achieve that goal. Gil, 2005, p.99.</msg>
+  <msg key="td_material_apoyo-id">Instructional design is the scheme that places the various processes involved in the development of educational programs such as the identification of the technological infrastructure required, the method required for the undertaking instruction from certain educational requirements, selection and content organization, and the design of learning and evaluation situations that meet those needs, always taking into account the characteristics of the learner and learner outcomes. Gil, 2005, p.96</msg>
+  <msg key="td_material_apoyo-learningbjectives">In the learning objectives are described and more precisely specify the knowledge, skills and attitudes that students are expected to reach the end of the module , unit or topic.
+The learning objectives are developed for different types of content:
+Concept Learning Objectives
+Learning facts , concepts and principles means having the ability to identify, recognize, describe and compare objects , events or ideas.
+Learning a principle means it is suitable to identify, recognize, describe , clarify and compare the relationships between concepts or facts referred to the beginning.
+Example of verbs : Identify, analyze, distinguish , identify , classify , list, explain , compare, interpret , meet ... etc. .
+Procedural Learning Objectives
+Learning a procedure means you have the ability to use in different situations and in different ways , in order to solve the problems and achieve goals.
+Examples of verbs : Conduct , manage, operate, test , develop , construct, reconstruct , use , apply, etc. .
+Learning Objectives attitude
+Learning a value means having the ability to regulate their own behavior according to the normative principle stipulates that value .
+Learn a standard means it is apt to behave in accordance with it .
+Learn an attitude means show a trend consistent and tenacious to behave in a peculiar way in certain situations .
+Examples of verbs behave , react, tolerate , respect , acceptance, interest , pay attention, be aware of , value, etc. . pp . 101-102
+
+You should consider the verbs used in the learning objectives :
+? Must refer to behavior that is evidenced in a broad and diverse and not as &quot; default observable behavior &quot; .
+? There are no unique verbs for each category.
+? An object can refer to various contents .
+? The same content may be in various purposes, as it can be subjected to different types of learning . P. 101
+? Must be balanced in all three categories and should really help achieve the overall goal.</msg>
+  <msg key="td_material_apoyo-objectives">Write the learning objective to demonstrate the level of cognitive domain</msg>
+  <msg key="td_material_apoyo-resources">Indicate means, resources and elements to be used according to the activities run</msg>
+  <msg key="td_material_apoyo-students">Students are the backbone they are the recipients of any educational program. One must know or anticipate the average age young adults-both prior knowledge of the discipline as technology skills, your academic history, geographical location, etc..</msg>
+  <msg key="td_material_apoyo-title">Write the title or name of the unit, which indicates the generality to develop in the session</msg>
+  <msg key="td_material_apoyo-title-contents">Contents</msg>
+  <msg key="td_material_apoyo-title-design">Design</msg>
+  <msg key="td_material_apoyo-title-generalobjectives">General Objectives</msg>
+  <msg key="td_material_apoyo-title-id">Instructional Design</msg>
+  <msg key="td_material_apoyo-title-learningbjectives">Learning Objectives</msg>
+  <msg key="td_material_apoyo-title-students">Students</msg>
+  <msg key="tda-gdi.btncancel">Cancel</msg>
+  <msg key="tda-gdi.btnsave">Save</msg>
+  <msg key="tda-gdi.infnoapply">No apply</msg>
+  <msg key="txtassociatedi">Associate Course</msg>
+  <msg key="txtassociateexplanation">Select the course you want to associate with the current Instructional Design </msg>
+  <msg key="txtclonedi">Clone Instructional Design in another course</msg>
+  <msg key="txtcloneexplanation">Select a course where you want to clone the Instructional Design </msg>
+  <msg key="txtestadoseccion">You already completed this step?</msg>
+  <msg key="txtestadoseccionno">No</msg>
+  <msg key="txtestadoseccionyes">Yes</msg>
+  <msg key="txtexplaination">The DI has not been saved, some data can not be obtained</msg>
+  <msg key="txtIdProperties">ID Properties</msg>
+  <msg key="txtnew">New Instructional Design (ID)</msg>
+  <msg key="txtopen">Open Instructional Design (ID)</msg>
+  <msg key="txtpopuptitleexistingcourse">Existing Course</msg>
+  <msg key="txtpopuptitlenewcourse">New Course</msg>
+  <msg key="txtwelcome1">Welcome</msg>
+  <msg key="txtwelcome2">this tool guides you through the process of creating your instructional design.</msg>
+  <msg key="txtwelcome3">Select one valid option.</msg>
+</message_catalog>
