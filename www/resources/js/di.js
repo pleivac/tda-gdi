@@ -315,7 +315,7 @@ $(document).ready(function(){
             $('#img_incompleto').css('background-position','-2764px 32.5px');
             $('#img_completo').css('background-position','-2764px 70px');
         }
-        actualizar_contenido(id);
+        
         //Funcionalidad para quitar las flechas si se seleccionan las opciones del inicio o el final
         var id = parseInt($('#menu_opciones .seleccionado').attr('id'));
         var total = $('#menu_opciones li').length;
@@ -335,6 +335,7 @@ $(document).ready(function(){
         $('#wizard').addClass('visible');   
         //esconde el scroll para que no se desubique el wizard
         $('#di').css("overflow", "hidden");
+        actualizar_contenido(id);
     });
 /*mueve el wizar y la flecha que señala la sesión que se está editando ------- fin ---*/
 
@@ -1396,6 +1397,7 @@ $('#menuExportar').click(function(){
     
 }); // FINALIZA EL READY
 
+
 $(document).delegate('textarea','keyup',function() {
     // 
         var $th = $(this);
@@ -1585,9 +1587,15 @@ function actualizar_contenido(){
     $('#observaciones textarea').after('<div id="btn_borrar_'+btnBorrar+'" class="img_borrar_observaciones" onclick="borrarAreaTexto('+btnBorrar+')"></div>');
     for (posicion = 1; posicion < cantidadElementos; posicion++) {
         btnBorrar++;
-        $('#area_trabajo  #observaciones > div:last').after("<div class=\"clear\"></div><div><textarea id='wizard_observaciones_"+(btnBorrar)+"' type=\"text\" class=\"wizard_observaciones\" rows=\"1\" name=\"txt_observaciones\" maxlength=1000>"+elementos[posicion]+"</textarea><div id='btn_borrar_"+btnBorrar+"' class='img_borrar_observaciones' onclick='borrarAreaTexto("+btnBorrar+")'></div></div>");
-        //$("#area_trabajo #observaciones textarea:last").css('overflow', 'hidden').autogrow();
-        $("#area_trabajo #observaciones textarea:last").css('overflow', 'hidden').autosize();
+        var text_area = $('#area_trabajo  #observaciones > div:last');
+        text_area.after("<div class=\"clear\"></div><div><textarea id='wizard_observaciones_"+(btnBorrar)+"' type=\"text\" class=\"wizard_observaciones\" rows=\"1\" name=\"txt_observaciones\" maxlength=1000>"+elementos[posicion]+"</textarea><div id='btn_borrar_"+btnBorrar+"' class='img_borrar_observaciones' onclick='borrarAreaTexto("+btnBorrar+")'></div></div>");
+
+        $('#observaciones').on( 'change', 'textarea.wizard_observaciones:last', function (){
+            $(this).height(0).height(this.scrollHeight);
+        }).find( 'textarea' ).change().autosize();
+        
+        //text_area.autosize();
+        //$("#area_trabajo #observaciones .wizard_observaciones:last").
     }
 }
 /*
