@@ -23,7 +23,7 @@ function alertDialog(message){
 						<p> Mensaje </p> \
 						<span>'+message+'</span> \
 					  	<div class="btns_popup">\
-					  		<button class="boton_cerrar_popup btn" type="button">Aceptar</button>\
+					  		<button class="tds-lib_form boton_cerrar_popup btn" type="button">Aceptar</button>\
 						</div> </div>');
 						
 

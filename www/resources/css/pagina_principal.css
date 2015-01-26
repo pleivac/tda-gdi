@@ -4,10 +4,15 @@
 	width:100%;
 }
 
-.opciones{
-	height:100%;
-	width:39%;
-	float:left;
+.opciones {
+    float: left;
+    height: 100%;
+    margin-left: 21px;
+    max-width: 35em;
+}
+
+.opciones>div  {
+    width: 35em;
 }
 
 .opciones label{
@@ -169,26 +174,29 @@ para los tabs inactivos, cuando el mouse pasa sobre ellos
 
 
 #contenedor input {
-     /*background: none repeat scroll 0pt 0pt #FFFFFF;
-     border-radius: 5px 5px 5px 5px;
-     border: 1px solid #7C7C7C; */
-     padding: 2px;
-     clear:both;
-     display:block;
-     margin-top:6px;
-     margin-bottom: 36px; 
-     background-color: #FFFFFF;
-     border: 1px solid #CDCCCC;
-     border-radius: 3px 3px 3px 3px;
-     color: #808081;
-     font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
-     font-size: 11pt;
-     height: 19px;
-     width:250px;
-     padding: 8px;
-     right: auto;
-     top: auto;
-     
+    display: block;
+    font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 11pt;
+    /*margin-bottom: 36px;*/
+    width: 300px;
+/*
+#contenedor input {
+    background-color: #ffffff;
+    border: 1px solid #cdcccc;
+    border-radius: 3px;
+    clear: both;
+    color: #808081;
+    display: block;
+    font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+    font-size: 11pt;
+    height: 19px;
+    margin-bottom: 36px;
+    margin-top: 6px;
+    padding: 8px;
+    right: auto;
+    top: auto;
+    width: 300px;
+}*/
 }
 
 #contenedor .selectbox {
@@ -233,12 +241,12 @@ button::-moz-focus-inner {border: 2px solid transparent;}
 }
 /*	Este estilo modifica los atributos del dropdown list de las materias para hacer la diferencia de la opcion
 	periodo a la opcion normal seleccionable				*/
-.periodo  {
-	font-weight: 3px bold;
-	color: #111111;
-	font-style:italic;
-	border-top: 1px solid #D0D3CF;
-/*	border-bottom: 1px solid #D0D3CF; */
+.periodo {
+    border-top: 1px solid #f0f3ef;
+    border-bottom: 1px solid #f0f3ef;
+    color: #b0b0b0;
+    font-size: 0.9em;
+    font-style: italic;
 }
 
 /* Ocultar a div "#index_div_nuevo_inexistente"*/
@@ -279,13 +287,12 @@ button::-moz-focus-inner {border: 2px solid transparent;}
 /* Estilos para los popup */
 .popup {
     background-color: #FFFFFF;
-	border: 1px solid #808080;
+	border: 2px solid #cdcccc;
 	border-radius: 5px 5px 5px 5px;
-	box-shadow: 0 0 5px 5px #CECCCC;
 	color: #111111;
 	min-width: 350px;
 	padding: 12px 7px;
-	color: #4E4E4E;
+	color: #808080;
 	font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
@@ -389,8 +396,6 @@ element.style {
 	font: 11pt "Helvetica"; 
 	font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
 	color: #4E4E4E;
-	margin-left: 20px;	
-	
 }
 
 
@@ -416,24 +421,20 @@ element.style {
 /*-------------------Botones de Atras y siguiente---*/
 
 .menuBotones{
-     list-style:none;
-     /*float:left;*/
      margin-bottom: 30%;
      margin-left: 618px;
 }
 
 .menuBotones div{
-     /*height: 24px; margin: auto;*/	
      list-style:none;
      float:left;
-     /*padding: 0.3px 65.5px;*/
 }
-.menuBotonesRight div {
+.menuBotonesRight > button {
     float: right;
-    height: 15px;
-    list-style: none outside none;
     margin-right: 21px;
-    /*width: 109px;*/
+}
+.menuBotonesRight {
+    margin-bottom: 30%;
 }
 
 .textoActivo {
@@ -472,14 +473,10 @@ para agregar la imagen del punto cuando un botón esta activo
 /*---------------------------------Botón de Siguiente----------------------*/
 .btnSiguiente:after {
     content: "Siguiente";
-    line-height: 18px;
-    margin: 30%;
-    cursor:pointer;
 }
 .btnNext:after {
     content: "Next";
     line-height: 18px;
-    margin: 41%;
     cursor:pointer;
 }
 /*
@@ -502,13 +499,11 @@ imagen cuando el se le da clic al botón
 .btnAtras:after {
     content: "Atrás";
     line-height: 18px;
-    margin: 39%;
     cursor:pointer;
 }
 .btnBack:after {
     content: "Back";
     line-height: 18px;
-    margin: 39%;
     cursor:pointer;
 }
 /*
@@ -543,12 +538,10 @@ imagen cuando el se le da clic al botón
 .btnCrearDI:after {
      content: "Crear DI";
      line-height: 18px;
-     margin: 29%;
 }
 .btnMakeID:after {
      content: "Make ID";
      line-height: 18px;
-     margin: 29%;
 }
 
 .btnBoton {
@@ -573,31 +566,12 @@ imagen cuando el se le da clic al botón
 }*/
 .btnAbrirDI:after {
      content: "Abrir DI";
-     line-height: 18px;
-     margin: 32%;
 }
 .btnOpenID:after {
      content: "Open ID";
      line-height: 18px;
-     margin: 33%;
-}
- /*
-.btnAbrirDI:hover {
-     background-color: #CDCBCA;
-     color: #FFFFFF;
 }
 
-.btnAbrirDI:active {
-     background-color: #808080;
-     color: #FFFFFF;
-     border: 1px solid #808080;
-}
-*/
-.btnBoton {
-    display: inline-block;
-    vertical-align: top;
-
-}
 /*--------------------------------Tabla de carga de datos-----------------------*/
 table.list-table {
   border: 1px solid #4D4D4D;
@@ -619,12 +593,12 @@ th.list-table, th.list-table-narrow, .list-table th {
 #form_propiedades_documento {
     display:none;
     background-color: #FFFFFF;
-    border: 1px solid #808080;
+    border: 2px solid #cdcccc;
     border-radius: 5px 5px 5px 5px;
-    box-shadow: 0 0 5px 5px #CECCCC;
+    /*box-shadow: 0 0 5px 5px #CECCCC;*/
     min-width: 350px;
     padding: 14px 7px;
-    color: #4E4E4E;
+    color: #808080;
     font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
@@ -665,25 +639,12 @@ form_propiedades_documento div {
     margin-top: -4px;
     padding: 2px 10px;
 }
-.btn {
-	margin: 5px 0.5%;
-	background-color: #FFFFFF;
-    border: 1px solid #CDCBCA;
-    border-radius: 3px 3px 3px 3px;
-    color: #808081;
-    font: 9pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-    height: 19px;
-    margin: 5px 10px;
-    height: 19px;
-    width: 129px;
-    padding: 0.5% 2.5%;
-    width: 10.7em;
-    cursor:pointer;
+
+.btnStyle {
+    font: 10pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
 }
 
 
-.btn:hover	{ border-color: #CCCCCC; background-color: #CCCCCC; color: #ffffff; }
-.btn:active { border-color: #808080; background-color: #808080; color: #ffffff; }
 .propiedades_btn_cerrar {
 	/*margin-bottom: -10px;
     margin-top: -7px;*/
@@ -704,8 +665,11 @@ form_propiedades_documento div {
 
 .btns_popup button{
     float: right;
-    height: 23px;
     margin: 15px 1.5px -5px 0;
+}
+
+button.tds-lib_form{
+    padding-top: 1px;
 }
  
 #main-content div.main-content-padding{
@@ -718,4 +682,7 @@ form_propiedades_documento div {
     }
 }
 
+#index_botones1>button[value~='a'] ~ .menuBotones{
+    background-color: red;
+} 
 /*------------------------------------------------------------------------------------CSS para pagina_principal---fin--------------------------*/

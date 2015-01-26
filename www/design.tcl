@@ -8,6 +8,7 @@ ad_page_contract {
 #BIBLIOTECAS
 template::head::add_css -href "/resources/tds-lib/css/tds-lib.css" -order 1
 template::head::add_css -href "/resources/tds-lib/css/tds-fonts.css" -order 2
+# DESARROLLO
 template::head::add_css -href "/resources/tda-gdi/css/gdi_estilos.css" -order 3
 template::head::add_css -href "/resources/tda-gdi/css/di.css" -order 4
 

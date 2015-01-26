@@ -1,10 +1,10 @@
 // ---------------------------------------------funciones jquery para index --inicio--
 $(document).ready(function(){
-	/*// INTEGRACION RATINGS 
+	// INTEGRACION RATINGS 
     var elemt_rating = $(".tda-ratings-paquetes");
-    tamTracking(elemt_rating.attr('package_key'), elemt_rating.attr('instance_name'), elemt_rating.attr('subsector_visitado')) ;
-    elemt_rating.calificar_paquete();
-    // FIN INTEGRACION RATINGS */
+    tamTracking(elemt_rating.attr('package_key'), elemt_rating.attr('instance_name'), elemt_rating.attr('subsector_visitado'));
+    ratings_system.init(elemt_rating);
+    // FIN INTEGRACION RATINGS
 
     //Controla el menú
 	$("ul.menu li span").click(function() {
@@ -13,7 +13,6 @@ $(document).ready(function(){
 		tamTracking("tda-gdi", "Paso_1", "Clic Ícono");
 
 	});
-
 
     //Muestra los botones específicos de la pantalla
      $("#menuMenu").parent().parent().removeClass('oculto');

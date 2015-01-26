@@ -388,32 +388,33 @@ los web service devuelven una lista con el nombre_atributo valor_atributo, por l
 se busca dicho nombre y se le suma 1 a su posición, para así obtener su valor
 se contatena de esa manera, porque es el formato del combo box
 } {
-set planes [lindex [lindex [wsPLANES_Buscar "" "" $id_departamento ""] 3] 1]
-#set planes ""
-set size [llength $planes]
-set resultado {}
-for {set i 0} {$i < $size} {incr i} {
+    set planes [lindex [lindex [wsPLANES_Buscar "" "" $id_departamento ""] 3] 1]
+    #set planes ""
+    set size [llength $planes]
+    set resultado {}
+    for {set i 0} {$i < $size} {incr i} {
 
-    set planActual [lindex $planes $i]
+        set planActual [lindex $planes $i]
 
-    set codigoPlan [lindex $planActual [expr {1+[lsearch $planActual IDE_PLAN]}]]
-    set nombrePlan [lindex $planActual [expr {1+[lsearch $planActual DSC_PLAN]}]]
+        set codigoPlan [lindex $planActual [expr {1+[lsearch $planActual IDE_PLAN]}]]
+        set nombrePlan [lindex $planActual [expr {1+[lsearch $planActual DSC_PLAN]}]]
 
-    set planCodigoNombre [concat "\"" $codigoPlan " - " $nombrePlan "\"" $codigoPlan]
+        set planCodigoNombre [concat "\"" $codigoPlan " - " $nombrePlan "\"" $codigoPlan]
 
-    if {$codigoPlan != "PLANES"} {
-    lappend resultado $planCodigoNombre
+        if {$codigoPlan != "PLANES"} {
+            # lappend resultado $planCodigoNombre
+            lappend resultado $codigoPlan $nombrePlan
+        }
     }
-}
-set resultado [lsort -increasing $resultado]
- 
-if { [ llength $resultado ] == 0 } {
-	set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
-} else {
-	set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
-	}
-set resultado  [linsert $resultado 0 $etiqueta]
-return $resultado
+     
+    # # if { [ llength $resultado ] == 0 } {
+    # # 	set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
+    # # } else {
+    # 	set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
+    # # }
+    set resultado  [linsert $resultado 0 "[_ tda-gdi.optselectanoption]"]
+    set resultado  [linsert $resultado 0 "label"]
+    return $resultado
 }
 ################################################################--------obtenerDepartamentos
 ad_proc -public gdi_utilitarios::obtenerDepartamentos {
@@ -423,40 +424,41 @@ procesa un web service, para que muestre el nombre y el código del departamento
 adicionalmente verifica que el web service no traiga basura como IEPEFDEPTOS, además
 de que el el tipo de departamento IDE_TIP_DEP sea 2 o 3, que son los del área académica.
 } {
-set departamentos [lindex [lindex [wsIEPEFDEPTOS_Buscar "" "" ""] 3] 1]
-#set departamentos ""
-set size [llength $departamentos]
-set resultado {}
+    set departamentos [lindex [lindex [wsIEPEFDEPTOS_Buscar "" "" ""] 3] 1]
+    #set departamentos ""
+    set size [llength $departamentos]
+    set resultado {}
 
-for {set i 0} {$i < $size} {incr i} {
-    set departamentoActual [ lindex $departamentos $i ]
-    set codigoDepartamento [lindex $departamentoActual [expr {1+[lsearch $departamentoActual IDE_DEPTO ]}]]
-    set planes [apc::obtenerPlanes $codigoDepartamento]
+    for {set i 0} {$i < $size} {incr i} {
+        set departamentoActual [ lindex $departamentos $i ]
+        set codigoDepartamento [lindex $departamentoActual [expr {1+[lsearch $departamentoActual IDE_DEPTO ]}]]
+        set planes [apc::obtenerPlanes $codigoDepartamento]
 
-if { $departamentoActual != "IEPEFDEPTOS" && $planes != "" } {
+        if { $departamentoActual != "IEPEFDEPTOS" && $planes != "" } {
 
-    set PostipoDepartamento [lsearch $departamentoActual IDE_TIP_DEP ]
-    set tipoDepartmento [lindex $departamentoActual [expr {1+$PostipoDepartamento}]]
+            set PostipoDepartamento [lsearch $departamentoActual IDE_TIP_DEP ]
+            set tipoDepartmento [lindex $departamentoActual [expr {1+$PostipoDepartamento}]]
 
-  if { $tipoDepartmento == 3 || $tipoDepartmento == 2} {
+            if { $tipoDepartmento == 3 || $tipoDepartmento == 2} {
 
-    set codigoDepartamento [lindex $departamentoActual [expr {1+[lsearch $departamentoActual IDE_DEPTO ]}]]
-    set nombreDepartamento [lindex $departamentoActual [expr {1+[lsearch $departamentoActual DSC_DEPTO ]}]]
-    set departamentoCodigoNombre [concat "\"" $nombreDepartamento "\" " $codigoDepartamento]
+                set codigoDepartamento [lindex $departamentoActual [expr {1+[lsearch $departamentoActual IDE_DEPTO ]}]]
+                set nombreDepartamento [lindex $departamentoActual [expr {1+[lsearch $departamentoActual DSC_DEPTO ]}]]
+                set departamentoCodigoNombre [concat "\"" $nombreDepartamento "\" " $codigoDepartamento]
 
-    if { [lsearch $resultado $departamentoCodigoNombre] == -1 && $codigoDepartamento != "SE"} {
-lappend resultado $departamentoCodigoNombre
+                if { [lsearch $resultado $departamentoCodigoNombre] == -1 && $codigoDepartamento != "SE"} {
+                    lappend resultado $departamentoCodigoNombre
+                }
+            }
+        }
     }
-  }
-}
-}
 
-set resultado [lsort -increasing $resultado]
+    set resultado [lsort -increasing $resultado]
 
-set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
-set resultado  [linsert $resultado 0 $etiqueta]
+    # set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
+    # set resultado  [linsert $resultado 0 "[_ tda-gdi.optselectanoption]"]
+    # set resultado  [linsert $resultado 0 "label"]
 
-return $resultado
+    return $resultado
 }
 ################################################################--------obtenerMaterias
 ad_proc -public gdi_utilitarios::obtenerMaterias {
@@ -477,25 +479,26 @@ for {set i 0} {$i < $size} {incr i} {
 	set nivelMateria [lindex $materiaActual [expr {1+[lsearch $materiaActual NUM_NIVEL]}]]
 	if {$periodo == $nivelMateria} {
 		set codigoMateriaTemp tPER
+        puts $codigoMateriaTemp
 		set nombreMateriaTemp [concat "Periodo $nivelMateria"]
+        puts $nombreMateriaTemp
 		set materiaCodigoNombreTemp [concat "\"$nombreMateriaTemp\"" $codigoMateriaTemp]
-		lappend resultado $materiaCodigoNombreTemp
-	#	set materiaCodigoNombreTemp [concat "\"\"" "label"]
-	#	lappend resultado $materiaCodigoNombreTemp
+		lappend resultado $nombreMateriaTemp $codigoMateriaTemp
 		set periodo [expr {$periodo + 1}] 
 	}
 	set codigoMateria [lindex $materiaActual [expr {1+[lsearch $materiaActual IDE_MATERIA]}]]
 	set nombreMateria [lindex $materiaActual [expr {1+[lsearch $materiaActual DSC_MATERIA]}]]
-	set materiaCodigoNombre [concat "\"" "<div><span>" $nombreMateria "</span><span>" $codigoMateria "</span></div>" "\"" $codigoMateria]
+	# set materiaCodigoNombre [concat "\"" "<div><span>" $nombreMateria "</span><span>" $codigoMateria "</span></div>" "\"" $codigoMateria]
 	
-	lappend resultado $materiaCodigoNombre
+	lappend resultado $codigoMateria $nombreMateria
 }
-if { [ llength $resultado ] == 0 } {
-	set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
-	} else {
-	set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
-	}
-set resultado  [linsert $resultado 0 $etiqueta]
+# if { [ llength $resultado ] == 0 } {
+	# set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
+	# } else {
+	# set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
+	# }
+set resultado  [linsert $resultado 0 "[_ tda-gdi.optselectanoption]"]
+set resultado  [linsert $resultado 0 "label"]
 return $resultado
 }
 ################################################################--------obtenerPeriodos

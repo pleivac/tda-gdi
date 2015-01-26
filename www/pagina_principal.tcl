@@ -4,20 +4,6 @@ ad_page_contract {
     
 }
 
-############ add css and javascript files...
-template::head::add_css -href "/resources/tda-gdi/css/pagina_principal.css" -order 1
-template::head::add_css -href "/resources/tds-lib/css/tds-lib.css" -order 2
-template::head::add_css -href "/resources/tds-lib/css/tds-fonts.css" -order 3
-#template::head::add_css -href "/resources/tda-gdi/css/lib/jquery-ui-1.10.3.custom.css" -order 2
-#template::head::add_css -href "/resources/tda-gdi/css/lib/jquery-ui-1.10.3.custom.css" -order 2
-
-
-template::head::add_javascript -src "/resources/tds-lib/js/tds-lib.js" -order 2
-template::head::add_javascript -src "/resources/tda-gdi/js/lib/jquery-ui-1.10.3.js" -order 3
-template::head::add_javascript -src "/resources/tda-gdi/js/lib/jquery.bpopup.min.js" -order 4
-template::head::add_javascript -src "/resources/tda-gdi/js/pagina_principal.js" -order 5
-template::head::add_javascript -src "/resources/tda-gdi/js/lib/globalize.js" -order 6
-
 ## variables de texto, para la i18n ---inicio---
 set page_title "Bienvenido a GDI"
 set profesor [gdi::obtenerUsuario]
@@ -33,6 +19,10 @@ set error_usuario [gdi::agregarUsuario $profesor]
 
 set cursos [lsort -dictionary [gdi::obtenerCursos]]
 set listaDI [gdi::obtenerDIusuario]
+set departamentos [gdi_utilitarios::obtenerDepartamentos ""]
+set planes [gdi_utilitarios::obtenerPlanes "vacio"]
+set materias [gdi_utilitarios::obtenerMaterias 0]
+
 
 
 
@@ -45,7 +35,7 @@ ad_form \
 	{nombre_profesor:text,optional 
 	    {label "#tda-gdi.lbwelcome4#:"}
 	    {value $profesor}
-    	{html {class "claseprueba"}}}
+    	{html {class "claseprueba tds-lib_form tds-lib_form_long"}}}
 }
 
 ## Form#2 Paso2: Selección
@@ -53,45 +43,45 @@ ad_form \
 -name form_seleccion \
 -has_submit 1 \
 -form {
-	{seleccionar_curso:text(select),optional {label ""}
-	{options { 
-		   $cursos
-         }}
-    	{html {class "selectbox"}}}
+#	{seleccionar_curso:text(select),optional {label ""}
+#	{options { 
+#		   $cursos
+ #        }}
+  #  	{html {class "selectbox"}}}
     
          
-	{seleccionar_di:text(select),optional {label ""}
-	{options { 
-		   $listaDI
-         }}
-    	{html {class "selectbox oculto"}}}
+	# {seleccionar_di:text(select),optional {label ""}
+	# {options { 
+	# 	   $listaDI
+ #         }}
+ #    	{html {class "selectbox oculto"}}}
 }
 
 
 ## Form#3 Paso 2: Selección buscar curso
-ad_form \
+#ad_form \
 -name form_seleccion_buscar_curso \
 -has_submit 1 \
 -form {
 
     
-	{seleccionar_carrera:text(select),optional {label "#tda-gdi.lbslectdepartment#*: "}
-	{options { 
-		   [gdi_utilitarios::obtenerDepartamentos ""]
-         }}
-    	{html {class "selectbox selectbox_oculto"}}}
+#	{seleccionar_carrera:text(select),optional {label "#tda-gdi.lbslectdepartment#*: "}
+#	{options { 
+#		   [gdi_utilitarios::obtenerDepartamentos ""]
+#         }}
+#    	{html {class "selectbox selectbox_oculto"}}}
 
     
-	{seleccionar_plan:text(select),optional {label "#tda-gdi.lbslectplan#*: "}
-	{options { 
-		   [gdi_utilitarios::obtenerPlanes "vacio"]
-         }}
-    	{html {class "selectbox selectbox_oculto"}}}
+#	{seleccionar_plan:text(select),optional {label "#tda-gdi.lbslectplan#*: "}
+#	{options { 
+#		   [gdi_utilitarios::obtenerPlanes "vacio"]
+#         }}
+#    	{html {class "selectbox selectbox_oculto"}}}
     	
-	{seleccionar_materia:text(select),optional {label "#tda-gdi.lbslectterm#*: "}
-	{options { 
-		   [gdi_utilitarios::obtenerMaterias 0]
-         }}
-    	{html {class "selectbox selectbox_oculto"}}}
-}
+#	{seleccionar_materia:text(select),optional {label "#tda-gdi.lbslectterm#*: "}
+#	{options { 
+#		   [gdi_utilitarios::obtenerMaterias 0]
+#         }}
+#    	{html {class "selectbox selectbox_oculto"}}}
+#}
 
