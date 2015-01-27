@@ -395,7 +395,7 @@ $(document).ready(function(){
 			$.ajax({
 				type: 'POST',
 				url: 'utilitarios_ajax/obtenerCantidadSesionesDI.tcl',
-				data: 'di=' + $('#seleccionar_di option:selected').val(),
+				data: 'di=' + seleccionar_di.getSelectValue(),
 				dataType:'text', 
 				success: function(data){
 					cantidadSesiones = data;
@@ -413,7 +413,7 @@ $(document).ready(function(){
 					*/ 
 					post("design", {
 						opcion:0,
-						di:$('#seleccionar_di option:selected').val(),
+						di:seleccionar_di.getSelectValue(),
 						nombre_curso:$.trim($('#info_di_body tr:first td:nth-child(2)').text()),
 						cantidad_sesiones:cantidadSesiones,
 						codigo:codigoCurso,
