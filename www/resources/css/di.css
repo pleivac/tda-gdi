@@ -6,6 +6,7 @@
   position: fixed;
   top: 0;
   visibility: hidden;
+  z-index: 2;
 }
 #di{
    /* height:353px; */
@@ -62,7 +63,7 @@ table.list-table {
     width: 1195px;
 }
 #instructional_design tr.list-header th{
-	width: 132.5px;
+	width: 170.6px;
 }
 
 th.list-table, th.list-table-narrow, .list-table th {
@@ -164,7 +165,7 @@ para el ul y li de tabs, los despliega en línea y bloque
 /*
 para el texto de los li, parque que estén centrados 
 */
-    padding: 0 15px 0 15px;
+    /*padding: 0 15px 0 15px;*/
 }
 #div_programa_curso li.ui-state-default, #div_ayuda_di li.ui-state-default, #div_contexto_di li.ui-state-default{
 /*
@@ -175,6 +176,12 @@ para los tabs inactivos.
     border-right: 2px solid #777777;
     border-bottom: 1px solid #777777;
 }
+
+#contenedor li.ui-state-default.ui-corner-top {
+    margin-left: 0;
+}
+
+
 
 #div_programa_curso #tabs ul li a, #div_ayuda_di #tabs ul li a, #div_contexto_di #tabs ul li a {
 
@@ -188,6 +195,7 @@ centre el texto y no lo decore
     text-align: left;
     text-decoration: none;
     outline: none;
+    padding-left: 10px;
 }
 .ui-state-default .ui-corner-top .ui-tabs-active .ui-state-active{
     color: #FFFFFF;
@@ -270,7 +278,7 @@ para los tabs inactivos, cuando el mouse pasa sobre ellos
 }
 
 #paso_3{;	
-	margin: 10px 0 21px 0px;
+	margin: 10px 0 21px 12px;
 }
 
 
@@ -525,8 +533,8 @@ li:active label {
 }
 
 #contenedor #di #boton_anterior {
-    float: right;
-    margin: 15px 1.5% 0 0;
+    right: 47px;
+    /*margin: 15px 1.5% 0 0;*/
 }
 
 #contenedor #div_programa_curso {
@@ -838,7 +846,7 @@ ul.menu_items_session {
     border: 1px solid #777777;
     border-radius: 3px;
     display: none;
-    margin-left: 43px;
+    margin-left: 52px;
     margin-top: 15px;
     padding-left: 0;
     position: absolute;

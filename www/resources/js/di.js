@@ -1,5 +1,9 @@
 // ---------------------------------------------funciones jquery para di --inicio--
+
 $(document).ready(function(){
+
+    $('#menu-left').css('z-index','-1');
+    $('.main-content-padding').css('margin-left', '0px');
     /*
         En este espacio se encuentran las variables que permiten la internacionalizacion de
         los textos que son agregados a la vista.
@@ -163,73 +167,76 @@ $(document).ready(function(){
                         $('#vistaCurso').text(nombreCurso);
                             //cambia el nombre cuando se importa el programa del curso
                         $('#apc_nombre_curso').text(nombreCurso);
-                        $('#vistaProfesor').text(nombreProfesor);
-                      }
-                });
-                break;    
-            case 1:
-                //Obtiene el nombre del profesor y el nombre del curso
-                nombreProfesor = "";
-                nombreCurso    = "";
-                $.ajax({
-                    type: 'POST',
-                    url: 'utilitarios_ajax/infoProfesorCurso.tcl',
-                    data: { di: idDI, cod_curso: codigoCurso},
-                    dataType:'text', 
-                    success: function(data){
-                        var datos      = data.split("&");
-                        nombreProfesor = datos[1];
-                        nombreCurso    = $("#nombre_curso_param_post").val();
-                        $('#vistaCurso').text(nombreCurso);
-                            //cambia el nombre cuando se importa el programa del curso
-                        $('#apc_nombre_curso').text(nombreCurso);
-                        $('#vistaProfesor').text(nombreProfesor);
-                    }
-                });
-                            
-                actualizarMenu(2);
-                menuAnterior   = 2;
-                break;
-            case 3:
-                actualizarMenu(3);
-                menuAnterior   = 3;                
-                $('#div_programa_curso').hide();
-                $('#div_contexto_di').show();
-                // $('#boton_anterior').hide();
-                $('#programa_curso').hide();
-                    
-                // $('#contenedor #div_contexto_di #boton_anterior').hide();
-                $('#form_guardar #nombre_DI').val(nombreDI);
-                    
-                    //Obtiene el nombre del profesor y el nombre del curso
-                nombreProfesor = "";
-                nombreCurso    = "";
-                $.ajax({
-            	    type: 'POST',
-	                url: 'utilitarios_ajax/infoProfesorCurso.tcl',
-                    data: { di: idDI, cod_curso: codigoCurso},
-		            dataType:'text', 
-                    success: function(data){
-                        var datos      = data.split("&");
-                        nombreProfesor = datos[1];
-                        nombreCurso    = $("#nombre_curso_param_post").val();
-                        $('#vistaCurso').text(nombreCurso);
-                        //cambia el nombre cuando se importa el programa del curso
-                        $('#apc_nombre_curso').text(nombreCurso);
-                        $('#vistaProfesor').text(nombreProfesor);
-                    }
-                });
-                break;
-        }
-    });
+			                $('#vistaProfesor').text(nombreProfesor);
+		                }
+	                });
+                    break;
+                
+                case 1:
+                   //Obtiene el nombre del profesor y el nombre del curso
+                   nombreProfesor = "";
+                   nombreCurso = "";
+                   $.ajax({
+                      	type: 'POST',
+    		            url: 'utilitarios_ajax/infoProfesorCurso.tcl',
+    		            data: { di: idDI, cod_curso: codigoCurso},
+    		            dataType:'text', 
+    		            success: function(data){
+    			            var datos = data.split("&");
+    			            nombreProfesor = datos[1];
+    			            nombreCurso = $("#nombre_curso_param_post").val();
+    			            $('#vistaCurso').text(nombreCurso);
+			        //cambia el nombre cuando se importa el programa del curso
+                           $('#apc_nombre_curso').text(nombreCurso);
+    			            $('#vistaProfesor').text(nombreProfesor);
+    		            }
+    		        });
+	           
+                    actualizarMenu(2);
+                    menuAnterior = 2;
+           	        break;
+                case 3:
+                    actualizarMenu(3);
+                    menuAnterior = 3;                
+                    $('#div_programa_curso').hide();
+                    $('#div_contexto_di').show();
+                   // $('#boton_anterior').hide();
+                    $('#programa_curso').hide();
+                
+                   // $('#contenedor #div_contexto_di #boton_anterior').hide();
+                    $('#form_guardar #nombre_DI').val(nombreDI);
 
+                //cargarDI();
+              
+                //Obtiene el nombre del profesor y el nombre del curso
+                    nombreProfesor = "";
+                    nombreCurso = "";
+                    $.ajax({
+                	    type: 'POST',
+		                url: 'utilitarios_ajax/infoProfesorCurso.tcl',
+		                data: { di: idDI, cod_curso: codigoCurso},
+		                dataType:'text', 
+		                success: function(data){
+			                var datos = data.split("&");
+			                nombreProfesor = datos[1];
+			                nombreCurso = $("#nombre_curso_param_post").val();
+			                $('#vistaCurso').text(nombreCurso);
+			        //cambia el nombre cuando se importa el programa del curso
+                            $('#apc_nombre_curso').text(nombreCurso);
+        			        $('#vistaProfesor').text(nombreProfesor);
+		                }
+	                });
+           	        break;
+          }
+        //}
+    });
     //indica que el div con id progressbar es una barra de progreso en 0.
 	$( "#progressbar" ).progressbar({
 		value: 0
 	});
 
     //Genera el arreglo que permite obtener las ayudas del wizard
-    ayudas = jQuery.makeArray(); 
+        ayudas = jQuery.makeArray(); 
     	$.ajax({
 		type: 'POST',
 		url: 'utilitarios_ajax/ayudas.tcl',
@@ -351,6 +358,8 @@ $('#agregar').click(function(){
     }
 });
 /*agregar más campos de texto ------- fin ---*/ 
+
+
 
 /*marca como completa o incompleta una sección ------- inicio ---*/
 $('#img_completo').click(function(){
@@ -814,29 +823,31 @@ $('#menuExportar').click(function(){
                 $( this ).dialog( "close" );
             };
     
-            buttonOpts[int_btnCancelar] = function () {
-                $(this).dialog("close");
-            };
-            
-            $( "#dialog-form" ).dialog({
-                autoOpen: false,
-                height: 'auto',
-                width: 'auto',
-                modal: true,
-                closeText: "X",
-                title: int_msjDialogGuardar,
-                buttons: buttonOpts, 
-                open:function () {
-                    $(this).closest(".ui-dialog").find(".ui-dialog-buttonpane .ui-dialog-buttonset button").addClass("btn");
-                    $(this).closest(".ui-dialog").find("#nombre_DI").css("width", "100%");
-                }
-            }).next(".ui-widget-overlay").css("background", "#f00ba2");
-                    $( "#dialog-form" ).dialog( "open" );
-        } else {
-        	guardarDI();
-        }
-        $("ul.menu li span").parent().find("ul.menu_items_menu").slideUp('fast');
-        actualizarMenu(menuAnterior);	
+                buttonOpts[int_btnCancelar] = function () {
+                    $(this).dialog("close");
+                };
+	    
+	            $( "#dialog-form" ).dialog({
+		            autoOpen: false,
+		            height: 'auto',
+		            width: 'auto',
+		            modal: true,
+		            closeText: "X",
+		            title: int_msjDialogGuardar,
+		            buttons: buttonOpts, 
+		            open:function () {
+		    	       //$(this).closest(".ui-dialog").find("ui-dialog-buttonset").find(".ui-button").addClass("btn");
+		    	       $(this).closest(".ui-dialog").find(".ui-dialog-buttonpane .ui-dialog-buttonset button").addClass("btn");
+			           $(this).closest(".ui-dialog").find("#nombre_DI").css("width", "100%");
+		            }
+	            }).next(".ui-widget-overlay").css("background", "#f00ba2");
+        	    $( "#dialog-form" ).dialog( "open" );
+        	} else {
+        	    guardarDI();
+        	}
+        	$("ul.menu li span").parent().find("ul.menu_items_menu").slideUp('fast');
+        	actualizarMenu(menuAnterior);
+        	
     });
     	
     $('#menu_guardar_como').click(function(){
@@ -1214,7 +1225,7 @@ $('#menuExportar').click(function(){
     
     $('#instructional_design').addClass("persist-area");
     $('#instructional_design thead').addClass("persist-header");
-    $('#instructional_design thead').css("margin","-2px");
+    $('#instructional_design thead').css("margin","-1px");
     $('#instructional_design thead').css("width","auto");
     $('#main-content .main-content-padding').css("padding", "0px");
     $('body').css("width", "99%");
@@ -1235,8 +1246,8 @@ $('#menuExportar').click(function(){
         
     var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
     if( is_chrome ) {
-        $('.floatingHeader').css("margin", "1");
-        $('#di').css("margin", "0 0.75% 1%"); 
+        $('#instructional_design tr.list-header th').css('width','170px');
+        $('#instructional_design').css('width', '1191px');
     }
     
     $('#apc_nombre_curso').hide();
@@ -1397,7 +1408,6 @@ $('#menuExportar').click(function(){
     
 }); // FINALIZA EL READY
 
-
 $(document).delegate('textarea','keyup',function() {
     // 
         var $th = $(this);
@@ -1472,7 +1482,6 @@ function salvar_contenido(){
             elementos[insertarEn] = valor;
             insertarEn++;
             texto = texto + valor + "<br>";
-
         }
     }
     di_matriz[fila-1][id-1] = elementos;
@@ -1572,7 +1581,6 @@ function actualizar_contenido(){
     btnBorrar = 1;
     var id = parseInt($('#menu_opciones .seleccionado').attr('id'));
     var fila = parseInt($('#encabezado #encabezado_num_sesion').text());
-
     var elementos = di_matriz[fila-1][id-1];
     var cantidadElementos = elementos.length;
     

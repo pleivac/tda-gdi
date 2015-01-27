@@ -5,7 +5,10 @@ $(document).ready(function(){
 	//lenguaje 0 = ingles
 	//lenguaje 1 = espannol
 	lenguaje = $("#language").val();
-		
+
+    $('#menu-left').css('z-index','-1');
+
+	    
 	$('#menuCrearDI').hide();
 	
 
@@ -703,7 +706,6 @@ function clickPropiedadesDI(identificadorDI) {
 		, modalColor: 'white'
 	});
 }
-
 
 function tieneTexto(texto) {  
 	for ( caracter = 0; caracter < texto.length; caracter++ ) {  

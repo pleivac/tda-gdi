@@ -4,6 +4,12 @@ ad_page_contract {
 
 }
 
+
+############ add css and javascript files...
+template::head::add_css -href "/resources/tda-gdi/css/gdi_mensajes_estilos.css" -order 1
+
+
+
 ##variables del mensaje
 set hl_curso "Curso: "
 set dsc_curso "Curso ejemplo"

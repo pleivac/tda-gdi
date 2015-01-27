@@ -179,24 +179,6 @@ para los tabs inactivos, cuando el mouse pasa sobre ellos
     font-size: 11pt;
     /*margin-bottom: 36px;*/
     width: 300px;
-/*
-#contenedor input {
-    background-color: #ffffff;
-    border: 1px solid #cdcccc;
-    border-radius: 3px;
-    clear: both;
-    color: #808081;
-    display: block;
-    font-family: HelveticaNeue-Light,"Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-    font-size: 11pt;
-    height: 19px;
-    margin-bottom: 36px;
-    margin-top: 6px;
-    padding: 8px;
-    right: auto;
-    top: auto;
-    width: 300px;
-}*/
 }
 
 #contenedor .selectbox {
@@ -279,7 +261,7 @@ button::-moz-focus-inner {border: 2px solid transparent;}
     position: absolute;
     right: 19px;
     top: 14px;*/
-    height:23px;
+    /*height:23px;*/
 }
 
 .boton_cerrar_popup:hover {/*background-color: #9C9C9C; color:#FFFFFF; cursor:  pointer;*/color: #CCCCCC; cursor:  pointer; }
@@ -324,25 +306,8 @@ element.style {
 }
 
 .popup input{ 
-/*    background-color: #FFFFFF;
-    border: 1px solid #CDCCCC;
-    border-radius: 3px 3px 3px 3px;
-    color: #808081; */
     font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
-/*    font-size: 10pt;
-    height: 13px;
-    margin-left: -21px;
-    margin-right: 17px;
-    margin-top: 7px;
-    padding: 8px;
-    right: auto;
-    top: auto;
-    width: 102%;
-*/}
-/*
-#cantidad_sesiones, #cantidad_sesiones_asignar {
-    width: 20%;
-}*/
+}
 
 #minus, #plus, #minus_asignar, #plus_asignar{
     border: 1px solid #D0D3CF;
@@ -395,7 +360,7 @@ element.style {
 .txtTitulosList{
 	font: 11pt "Helvetica"; 
 	font-family: HelveticaNeue-Light,'Helvetica Neue Light','Helvetica Neue',Helvetica,Arial,'Lucida Grande',sans-serif;
-	color: #4E4E4E;
+	color: #4E4E4E;	
 }
 
 
@@ -421,6 +386,7 @@ element.style {
 /*-------------------Botones de Atras y siguiente---*/
 
 .menuBotones{
+     list-style:none;
      margin-bottom: 30%;
      margin-left: 618px;
 }
@@ -429,12 +395,15 @@ element.style {
      list-style:none;
      float:left;
 }
-.menuBotonesRight > button {
+.menuBotonesRight div {
     float: right;
+    list-style: none outside none;
     margin-right: 21px;
 }
 .menuBotonesRight {
+    float: right;
     margin-bottom: 30%;
+    margin-right: 21px;
 }
 
 .textoActivo {
@@ -646,10 +615,7 @@ form_propiedades_documento div {
 
 
 .propiedades_btn_cerrar {
-	/*margin-bottom: -10px;
-    margin-top: -7px;*/
     float: right;
-    height: 25px;
     margin: 15px 1px -6px auto;	
 }
 #propiedades_space { /*Sirve para dar espacio en el texto de las propiedades */

@@ -1,6 +1,10 @@
 /*------------------------------------------------------------------------------------CSS para los mensajes---inicio--------------------------*/
 
 /*---------------------------guardar---inicio---*/
+/*#marco ul {
+    margin-left: 0px;
+}*/
+
 .ui-dialog {
      background-color: #FFFFFF;
      border: 1px solid #777777;
@@ -13,8 +17,6 @@
      padding: 12px 7px;
 }
 .ui-dialog .ui-dialog-titlebar {
-/*     background-color: #777777;
-     color: #FFFFFF;*/
      padding: 5px 0 4.5px;
      position: relative;
      font: 11pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
@@ -25,16 +27,6 @@
      border-width: 1px;
      margin-bottom: -1px;
      padding-bottom: 4.5px;
-     /*
-     margin-top: -5px;
-     font: 11pt "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
-	font-weight:bold;
-	border-bottom-color: #808080;
-        border-bottom-style: solid;
-        border-width: 1px;
-        margin-bottom: -1px;
-        padding-bottom: 4.5px;
-     */
 }
 .ui-dialog .ui-dialog-titlebar-close {
      position: absolute;
@@ -53,11 +45,10 @@
      background-color: #FFFFFF;
      text-decoration: none;
 }
-.ui-dialog .ui-dialog-content {
-     /*margin-left: -95px;*/
-}
+
 .ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
      float: right;
+     margin-top: 15px;
 }
 .ui-dialog .ui-dialog-buttonpane button {
      cursor: pointer;
@@ -74,7 +65,6 @@
      font-size: 10pt;
      height: 26px;
      margin: 7px -8px 9px -5px;
-     /*margin: -2px -2px -2px 10px;*/
      padding: 2px;
      right: auto;
      top: auto;
@@ -118,7 +108,7 @@
 #wizard{
     position:absolute;
     min-height:250px;
-    width:800px;
+    width:801px;
 	border: 1px solid #808080;
 	z-index:3500;
 	background-color:#ffffff;
@@ -147,15 +137,16 @@
 	padding-bottom:20px;
 	margin-top:0px;
 	margin-bottom:50px;
-        color: #4E4E4E; 
-        font: 11pt "Helvetica";
-        font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif; 
-        color: #4E4E4E; 
+    color: #4E4E4E; 
+    font: 11pt "Helvetica";
+    font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif; 
+    color: #4E4E4E; 
 }
 #menu_opciones li{
     cursor: pointer;
     display: block;
-    margin-left: -40px;
+    /*margin-left: -40px;*/
+    margin-left: 0px;
     padding-bottom: 7px;
     padding-left: 17px;
     padding-top: 7px;
@@ -174,7 +165,7 @@
 }
 
 .seleccionado{
-	margin-right:-1px;
+	margin-right:0px;
     background-color:#ffffff;
 	border-top: 1px solid #777777;
 	border-bottom: 1px solid #777777;

@@ -270,9 +270,9 @@ span.ui-widget-content {
     	margin-left: -21px;
     	margin-right: 17px;
     	margin-top: 7px;
-    	padding: 5px 8px 12px;
+    	padding: 9px 8px 5px;
     	width: 50px;
-    	height: 13px;
+    	/*height: 13px;*/
 }
 #cantidad_sesiones {
     border: none;

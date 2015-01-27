@@ -408,9 +408,9 @@ se contatena de esa manera, porque es el formato del combo box
     }
      
     # # if { [ llength $resultado ] == 0 } {
-    # # 	set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
+    # #     set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
     # # } else {
-    # 	set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
+    #   set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
     # # }
     set resultado  [linsert $resultado 0 "[_ tda-gdi.optselectanoption]"]
     set resultado  [linsert $resultado 0 "label"]
@@ -457,7 +457,7 @@ de que el el tipo de departamento IDE_TIP_DEP sea 2 o 3, que son los del área a
     # set etiqueta [concat "\" [_ tda-gdi.optselectanoption] \"" "label"]
     # set resultado  [linsert $resultado 0 "[_ tda-gdi.optselectanoption]"]
     # set resultado  [linsert $resultado 0 "label"]
-
+    puts $resultado
     return $resultado
 }
 ################################################################--------obtenerMaterias
@@ -479,9 +479,7 @@ for {set i 0} {$i < $size} {incr i} {
 	set nivelMateria [lindex $materiaActual [expr {1+[lsearch $materiaActual NUM_NIVEL]}]]
 	if {$periodo == $nivelMateria} {
 		set codigoMateriaTemp tPER
-        puts $codigoMateriaTemp
 		set nombreMateriaTemp [concat "Periodo $nivelMateria"]
-        puts $nombreMateriaTemp
 		set materiaCodigoNombreTemp [concat "\"$nombreMateriaTemp\"" $codigoMateriaTemp]
 		lappend resultado $nombreMateriaTemp $codigoMateriaTemp
 		set periodo [expr {$periodo + 1}] 
@@ -620,10 +618,7 @@ ad_proc -public gdi::salvarDI {
     set sesiones [split "$di" "`"]
     set cantidadSesiones [llength $sesiones]
     set estados [split "$estados" "-"]
-
-    #if {[catch {db_dml borrarTodoDependendencias {*SQL*}} errmsg]} {
-    #                 ns_log error $errmsg }
-
+   
     for {set numSesion 1} {$numSesion <= $cantidadSesiones} {incr numSesion} {
         set sesion [lindex $sesiones [expr {$numSesion - 1}]]
         set componentes [split "$sesion" "^"]
@@ -673,9 +668,6 @@ ad_proc gdi::guardarDI {
             set queryBorrar "eliminarEvaluacion" }
     }
     set elementos [split "$componente" "\\"]
-    #puts "Iteración en fila de la matriz -----------"
-    #puts "Componente: $numComponente"
-    #puts "elementos: $elementos"
     set cantidadActualElementos [llength $elementos]
     set cantidadBdElementos 0
     if {[catch {set cantidadBdElementos [db_list $queryCantidad {}]} errmsg]} {
@@ -699,17 +691,7 @@ ad_proc gdi::guardarDI {
                 #puts "... actualizando la posición $posicion con estado $estado"
                 #luego borra los que sobran en la base de datos
             } else {
-                #puts "*************" 
-                
-                #puts "numComponente $numComponente"
-                #puts "componente $componente"
-                #puts "numSesion $numSesion"
-                #puts "estado $estado"
-                #puts "nombre_curso $nombre_curso"
-                #puts "*** FIN"
                 set posicionBorrado [expr {$posicion - $pivoteBorrado}]
-                #puts "posicion - pivoteBorrado: $posicion - $pivoteBorrado"
-                #puts "Eliminando la posicion $posicionBorrado"
                 if {[catch {db_dml $queryBorrar {*SQL*}} errmsg]} {
                      ns_log error $errmsg }
 #                puts "... borra --- B $posicion  estado $estado"

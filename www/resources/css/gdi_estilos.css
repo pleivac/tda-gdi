@@ -7,6 +7,10 @@
     box-sizing: content-box;
 }
 
+div[data-role="left_panel"]  {
+    z-index: -1;
+}
+/* fin del workaround */
 .marco {
      font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
      font-size: 11px;
@@ -146,7 +150,8 @@ ul.menu_items_menu:before
 {
     border-color: #7F7F7F rgba(0, 0, 0, 0);
     border-style: solid;
-    border-width: 0 7px 14px;
+    /*border-width: 0 7px 14px;*/
+    border-width: 0px 8px 15px;;
     content: "";
     display: block;
     left: 6px;
@@ -192,7 +197,7 @@ para los links del menú desplegable cuando tiene el mouse sobre ellos
      color: #000000;
      cursor: pointer;
      text-align: left;
-     width: 118%;
+     width: 124%;
 }
 .inhabilitados:hover {
 /*
@@ -250,7 +255,8 @@ para los links del menú desplegable cuando tiene el mouse sobre ellos
 }
 
 #progresstext {
-     position: absolute;
+    position: absolute;
+    margin-left: -7px;
 }
 /*-------------------------------------- progressbar ---fin---*/
 

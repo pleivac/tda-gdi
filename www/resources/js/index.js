@@ -14,6 +14,7 @@ $(document).ready(function(){
 
 	});
 
+
     //Muestra los botones específicos de la pantalla
      $("#menuMenu").parent().parent().removeClass('oculto');
      $("#menuAyuda").parent().removeClass('oculto');
